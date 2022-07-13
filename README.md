@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Star Wars Character Sheets
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+This project is based on Star Wars roleplaying game from fantasy flight games. This eliminates the use of pencil and paper from play sessions, and you'll be able to digitize your character sheets and bring them anywhere you go. This is largely beneficial for sessions that rotate between remote sessions and in-person sessions.
 
-In the project directory, you can run:
+## RESTful Routing Chart
 
-### `npm start`
+## Wireframes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## User Stories
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [ ] As a user, I want to be able to log in and out while keeping characters saved
+- [ ] As a user, I want to be able to create multiple characters
+- [ ] As a user, I want to be able to build my skills
+- [ ] As a user, I want to take notes
+- [ ] As a user, I want to keep track of all my stats
+- [ ] As a user, I should be able to choose my careers
+- [ ] As a user, I want to be able to save character instances
+- [ ] As a user, I want to have the ability to complete full CRUD on characters
 
-### `npm test`
+## Goals
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### MVP
 
-### `npm run build`
+- [ ] Create back-end for character sheet saving
+- [ ] Create account and delete account
+- [ ] Create user log-in and log-out
+- [ ] Create page 1 (Character name, desc, motivations, stats)
+- [ ] Create page 2 (Careers & skills)
+- [ ] Create page 3 (Combat)
+- [ ] Create page 4 (Inventory)
+- [ ] Create page 5 (Notes)
+- [ ] Style character sheets
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Stretch
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ] Allow user to change color schemes (light side, or dark side)
+- [ ] Dice rolling
+- [ ] Make it for mobile
