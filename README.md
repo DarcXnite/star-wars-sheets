@@ -2,9 +2,24 @@
 
 ## Project Description
 
-This project is based on Star Wars roleplaying game from fantasy flight games. This eliminates the use of pencil and paper from play sessions, and you'll be able to digitize your character sheets and bring them anywhere you go. This is largely beneficial for sessions that rotate between remote sessions and in-person sessions.
+This project is based on Star Wars roleplaying game from fantasy flight games(https://www.fantasyflightgames.com/en/starwarsrpg/). This eliminates the use of pencil and paper from play sessions, and you'll be able to digitize your character sheets and bring them anywhere you go. This is largely beneficial for sessions that rotate between remote sessions and in-person sessions.
+
+Think Dungeons & Dragons character sheets, but translated for the use in Star Wars RPG.
+
+## Collaborators
+
+[Davis Nguyen](https://github.com/DarcXnite) | [Grace Narez](https://github.com/gracenarez333)
+
+## Tech Stacks
+
+- MongoDb
+- Express.js
+- React
+- Node.js
 
 ## RESTful Routing Chart
+
+![RESTful routing chart](./images/RESTful-routes.jpeg)
 
 ## Wireframes
 
@@ -54,3 +69,7 @@ This project is based on Star Wars roleplaying game from fantasy flight games. T
 - [ ] Allow user to change color schemes (light side, or dark side)
 - [ ] Dice rolling
 - [ ] Make it for mobile
+
+### Potential Roadblocks
+
+- No forseeable potential roadblocks at this time.
