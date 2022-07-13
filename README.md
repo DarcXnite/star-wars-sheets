@@ -8,6 +8,22 @@ This project is based on Star Wars roleplaying game from fantasy flight games. T
 
 ## Wireframes
 
+<details>
+<summary>
+==>
+</summary>
+
+![Login/Home Page](./wireframes/login.png)
+![Signup Page](./wireframes/signup.png)
+![Profile/Characters Page](./wireframes/profile.png)
+![Characters Sheet](./wireframes/character.png)
+![Skills Sheet](./wireframes/skills.png)
+![Armor/Tools Sheet](./wireframes/armorandtools.png)
+![Weapons Sheet](./wireframes/weapons.png)
+![Notes Sheet](./wireframes/notes.png)
+
+</details>
+
 ## User Stories
 
 - [ ] As a user, I want to be able to log in and out while keeping characters saved
