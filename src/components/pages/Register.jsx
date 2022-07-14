@@ -21,10 +21,7 @@ export default function Register({ currentUser, setCurrentUser }) {
         password,
       }
 
-      const res = await axios.post(
-        `${serverUrl}/api-v1/users/register`,
-        reqBody
-      )
+      const res = await axios.post(`${serverUrl}/users/register`, reqBody)
 
       // save the token in localstorage
       const { token } = res.data

@@ -19,7 +19,7 @@ export default function Login({ currentUser, setCurrentUser }) {
         password,
       }
 
-      const res = await axios.post(`${serverUrl}/api-v1/users/login`, reqBody)
+      const res = await axios.post(`${serverUrl}/users/login`, reqBody)
 
       // save the token in localstorage
       const { token } = res.data

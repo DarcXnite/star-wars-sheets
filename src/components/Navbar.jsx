@@ -17,11 +17,5 @@ export default function Navbar({ currentUser, handleLogout }) {
       <Link to='/login'>Login</Link>
     </React.Fragment>
   )
-  return (
-    <nav>
-      <Link to='/'>User App</Link>
-
-      {currentUser ? loggedIn : loggedOut}
-    </nav>
-  )
+  return <nav>{currentUser ? loggedIn : loggedOut}</nav>
 }

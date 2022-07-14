@@ -22,7 +22,7 @@ export default function Profile({
         }
         // hit the auth locked endpoint
         const res = await axios.get(
-          `${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`,
+          `${process.env.REACT_APP_SERVER_URL}/users/auth-locked`,
           options
         )
         // set the secret user message in state

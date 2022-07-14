@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react'
 import Login from './components/pages/Login'
 import Profile from './components/pages/Profile'
 import Register from './components/pages/Register'
-import Welcome from './components/pages/Welcome'
 import Navbar from './components/Navbar'
 import jwt_decode from 'jwt-decode'
 import { Navigate } from 'react-router-dom'
+import CharacterSheet from './components/pages/CharacterSheet'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null)
@@ -37,9 +37,14 @@ function App() {
       <header>
         <Navbar currentUser={currentUser} handleLogout={handleLogout} />
       </header>
-      <h2>hello world</h2>
       <Routes>
-        <Route exact path='/' element={<Welcome />} />
+        <Route
+          exact
+          path='/'
+          element={
+            <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          }
+        />
         <Route
           exact
           path='/register'
@@ -72,6 +77,7 @@ function App() {
             )
           }
         />
+        <Route exact path='/characters/:id' element={<CharacterSheet />} />
       </Routes>
     </div>
   )
