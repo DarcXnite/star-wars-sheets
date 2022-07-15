@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
-export default function Notes({ characterForm: { notes }, setCharacterForm }) {
+export default function Notes({
+  characterForm: { notes },
+  characterForm,
+  setCharacterForm,
+}) {
   const [currentNotes, setCurrentNotes] = useState(notes)
 
   return (
@@ -11,7 +15,10 @@ export default function Notes({ characterForm: { notes }, setCharacterForm }) {
         id='notes'
         cols='30'
         rows='10'
-        onChange={e => setCurrentNotes(e.target.value)}
+        onChange={e => {
+          setCurrentNotes(e.target.value)
+          setCharacterForm({ ...characterForm, notes: currentNotes })
+        }}
       >
         {currentNotes}
       </textarea>

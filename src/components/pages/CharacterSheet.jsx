@@ -48,20 +48,12 @@ export default function CharacterSheet() {
     rarity: 0,
     attachments: [],
   })
-  const [inventory, setInventory] = useState({
-    itemName: '',
-    cost: 0,
-    encumbrance: 0,
-    description: '',
-  })
-  const [customSkills, setCustomSkills] = useState({
-    skill: '',
-    career: false,
-    type: '',
-    rank: 0,
-  })
 
-  const [characterForm, setCharacterForm] = useState(character)
+  const [characterForm, setCharacterForm] = useState({
+    combatSkills: [],
+    generalSkills: [],
+    knowledgeSkills: [],
+  })
 
   const { id } = useParams()
 
@@ -86,15 +78,13 @@ export default function CharacterSheet() {
     if (characterForm.combatSkills.length === 0) {
       characterForm.combatSkills = combatSkills
     }
-    if (characterForm.combatSkills.length === 0) {
+    if (characterForm.knowledgeSkills.length === 0) {
       characterForm.knowledgeSkills = knowledgeSkills
     }
   }
 
-  console.log(characterForm.knowledgeSkills)
-
-  const onSubmit = () => {
-    console.log('data submitted')
+  const saveCharacterSheet = () => {
+    console.log('character sheet saved')
   }
 
   return (
@@ -102,7 +92,6 @@ export default function CharacterSheet() {
       <h2>Character Sheet</h2>
 
       <Characteristics
-        character={character}
         setCharacterForm={setCharacterForm}
         characterForm={characterForm}
       />
@@ -193,8 +182,6 @@ export default function CharacterSheet() {
       ) : null}
       {showInventory ? (
         <InventoryInfo
-          setInventory={setInventory}
-          inventory={inventory}
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
         />
@@ -206,7 +193,7 @@ export default function CharacterSheet() {
         />
       ) : null}
 
-      <button onClick={onSubmit}>Save</button>
+      <button onClick={saveCharacterSheet}>Save</button>
     </div>
   )
 }

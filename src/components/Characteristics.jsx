@@ -1,9 +1,7 @@
-import React from 'react'
-
 export default function Characteristics({
-  character,
   setCharacterForm,
   characterForm: { brawn, agility, intellect, cunning, willpower, presence },
+  characterForm,
 }) {
   return (
     <div>
@@ -14,7 +12,12 @@ export default function Characteristics({
             id='brawn'
             type='number'
             value={brawn}
-            onChange={e => setCharacterForm({ brawn: e.target.value })}
+            onChange={e =>
+              setCharacterForm({
+                ...characterForm,
+                brawn: parseInt(e.target.value),
+              })
+            }
             min='1'
             max='6'
           />
@@ -25,39 +28,80 @@ export default function Characteristics({
             id='agility'
             type='number'
             value={agility}
-            onChange={e => setCharacterForm({ agility: e.target.value })}
+            onChange={e =>
+              setCharacterForm({
+                ...characterForm,
+                agility: parseInt(e.target.value),
+              })
+            }
             min='1'
             max='6'
           />
         </div>
-        <input
-          type='number'
-          value={intellect}
-          onChange={e => setCharacterForm({ intellect: e.target.value })}
-          min='1'
-          max='6'
-        />
-        <input
-          type='number'
-          value={cunning}
-          onChange={e => setCharacterForm({ cunning: e.target.value })}
-          min='1'
-          max='6'
-        />
-        <input
-          type='number'
-          value={willpower}
-          onChange={e => setCharacterForm({ willpower: e.target.value })}
-          min='1'
-          max='6'
-        />
-        <input
-          type='number'
-          value={presence}
-          onChange={e => setCharacterForm({ presence: e.target.value })}
-          min='1'
-          max='6'
-        />
+        <div>
+          <label htmlFor='intellect'>Intellect</label>
+          <input
+            id='intellect'
+            type='number'
+            value={intellect}
+            onChange={e =>
+              setCharacterForm({
+                ...characterForm,
+                intellect: parseInt(e.target.value),
+              })
+            }
+            min='1'
+            max='6'
+          />
+        </div>
+        <div>
+          <label htmlFor='cunning'>Cunning</label>
+          <input
+            id='cunning'
+            type='number'
+            value={cunning}
+            onChange={e =>
+              setCharacterForm({
+                ...characterForm,
+                cunning: parseInt(e.target.value),
+              })
+            }
+            min='1'
+            max='6'
+          />
+        </div>
+        <div>
+          <label htmlFor='willpower'>Willpower</label>
+          <input
+            id='willpower'
+            type='number'
+            value={willpower}
+            onChange={e =>
+              setCharacterForm({
+                ...characterForm,
+                willpower: parseInt(e.target.value),
+              })
+            }
+            min='1'
+            max='6'
+          />
+        </div>
+        <div>
+          <label htmlFor='presence'>Presence</label>
+          <input
+            id='presence'
+            type='number'
+            value={presence}
+            onChange={e =>
+              setCharacterForm({
+                ...characterForm,
+                presence: parseInt(e.target.value),
+              })
+            }
+            min='1'
+            max='6'
+          />
+        </div>
       </div>
     </div>
   )
