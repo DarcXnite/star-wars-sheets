@@ -80,9 +80,15 @@ export default function CharacterSheet() {
 
   // sets defaults for all of default skills
   if (characterForm) {
-    characterForm.generalSkills = generalSkills
-    characterForm.combatSkills = combatSkills
-    characterForm.knowledgeSkills = knowledgeSkills
+    if (characterForm.generalSkills.length === 0) {
+      characterForm.generalSkills = generalSkills
+    }
+    if (characterForm.combatSkills.length === 0) {
+      characterForm.combatSkills = combatSkills
+    }
+    if (characterForm.combatSkills.length === 0) {
+      characterForm.knowledgeSkills = knowledgeSkills
+    }
   }
 
   console.log(characterForm.knowledgeSkills)

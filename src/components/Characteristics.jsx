@@ -19,13 +19,17 @@ export default function Characteristics({
             max='6'
           />
         </div>
-        <input
-          type='number'
-          value={agility}
-          onChange={e => setCharacterForm({ agility: e.target.value })}
-          min='1'
-          max='6'
-        />
+        <div>
+          <label htmlFor='agility'>Agility</label>
+          <input
+            id='agility'
+            type='number'
+            value={agility}
+            onChange={e => setCharacterForm({ agility: e.target.value })}
+            min='1'
+            max='6'
+          />
+        </div>
         <input
           type='number'
           value={intellect}

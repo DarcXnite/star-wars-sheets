@@ -12,9 +12,18 @@ export default function SkillsInfo({ characterForm, setCharacterForm }) {
         characterForm={characterForm}
         setCharacterForm={setCharacterForm}
       />
-      <CombatSkills />
-      <KnowledgeSkills />
-      <CustomSkills />
+      <CombatSkills
+        characterForm={characterForm}
+        setCharacterForm={setCharacterForm}
+      />
+      <KnowledgeSkills
+        characterForm={characterForm}
+        setCharacterForm={setCharacterForm}
+      />
+      <CustomSkills
+        characterForm={characterForm}
+        setCharacterForm={setCharacterForm}
+      />
     </div>
   )
 }
