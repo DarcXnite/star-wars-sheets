@@ -8,6 +8,7 @@ import InventoryInfo from '../InventoryInfo'
 import Notes from '../Notes'
 import Characteristics from '../Characteristics'
 import Stats from '../Stats'
+import { knowledgeSkills, generalSkills, combatSkills } from '../defaults'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL
 
@@ -53,34 +54,16 @@ export default function CharacterSheet() {
     encumbrance: 0,
     description: '',
   })
-
-  // const [characterForm, setCharacterForm] = useState({
-  //   name: '',
-  //   species: '',
-  //   gender: '',
-  //   age: '',
-  //   height: '',
-  //   build: '',
-  //   hair: '',
-  //   careers: [],
-  //   combatSkills: [],
-  //   generalSkills: [],
-  //   knowledgeSkills: [],
-  //   customSkills: [],
-  //   inventory: [],
-  //   weapons: [],
-  //   talents: [],
-  //   forcePowers: [],
-  //   criticalInjuries: [],
-  //   armors: [],
-  //   cybernetics: [],
-  //   tools: [],
-  // })
+  const [customSkills, setCustomSkills] = useState({
+    skill: '',
+    career: false,
+    type: '',
+    rank: 0,
+  })
 
   const [characterForm, setCharacterForm] = useState(character)
 
   const { id } = useParams()
-  console.log(characterForm)
 
   useEffect(() => {
     const getCharacter = async () => {
@@ -94,6 +77,15 @@ export default function CharacterSheet() {
     }
     getCharacter()
   }, [id])
+
+  // sets defaults for all of default skills
+  if (characterForm) {
+    characterForm.generalSkills = generalSkills
+    characterForm.combatSkills = combatSkills
+    characterForm.knowledgeSkills = knowledgeSkills
+  }
+
+  console.log(characterForm.knowledgeSkills)
 
   const onSubmit = () => {
     console.log('data submitted')
@@ -179,7 +171,12 @@ export default function CharacterSheet() {
           characterForm={characterForm}
         />
       ) : null}
-      {showSkills ? <SkillsInfo /> : null}
+      {showSkills ? (
+        <SkillsInfo
+          setCharacterForm={setCharacterForm}
+          characterForm={characterForm}
+        />
+      ) : null}
       {showCombat ? (
         <CombatInfo
           setWeapon={setWeapon}
@@ -196,7 +193,12 @@ export default function CharacterSheet() {
           characterForm={characterForm}
         />
       ) : null}
-      {showNotes ? <Notes /> : null}
+      {showNotes ? (
+        <Notes
+          characterForm={characterForm}
+          setCharacterForm={setCharacterForm}
+        />
+      ) : null}
 
       <button onClick={onSubmit}>Save</button>
     </div>

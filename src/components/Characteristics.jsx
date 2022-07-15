@@ -7,14 +7,18 @@ export default function Characteristics({
 }) {
   return (
     <div>
-      <div>
-        <input
-          type='number'
-          value={brawn}
-          onChange={e => setCharacterForm({ brawn: e.target.value })}
-          min='1'
-          max='6'
-        />
+      <div className='container'>
+        <div>
+          <label htmlFor='brawn'>Brawn</label>
+          <input
+            id='brawn'
+            type='number'
+            value={brawn}
+            onChange={e => setCharacterForm({ brawn: e.target.value })}
+            min='1'
+            max='6'
+          />
+        </div>
         <input
           type='number'
           value={agility}
