@@ -1,21 +1,22 @@
-import React from 'react'
+import KnowledgeSkill from './skillsComponents/KnowledgeSkill'
 
 export default function KnowledgeSkills({
   characterForm: { knowledgeSkills },
   setCharacterForm,
   characterForm,
 }) {
-  const allKnowledgeSkills = knowledgeSkills.map(eachSkill => {
-    const { skill, career, type, rank } = eachSkill
+  const allKnowledgeSkills = knowledgeSkills.map((eachSkill, idx) => {
+    const { skill } = eachSkill
 
     return (
-      <div>
-        <p>{`${skill} (${type})`}</p>
-        <label htmlFor='career'>Career</label>
-        <input id='career' type='boolean' name='career' value={career} />
-        <label htmlFor='rank'>Rank</label>
-        <input id='rank' type='number' name='rank' value={rank} />
-      </div>
+      <KnowledgeSkill
+        key={skill}
+        eachSkill={eachSkill}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        knowledgeSkills={knowledgeSkills}
+        idx={idx}
+      />
     )
   })
   return (

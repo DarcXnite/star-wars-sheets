@@ -1,23 +1,25 @@
-import React from 'react'
+import GeneralSkill from './skillsComponents/GeneralSkill'
 
 export default function GeneralSkills({
   characterForm: { generalSkills },
+  characterForm,
   setCharacterForm,
 }) {
-  const allGeneralSkills = generalSkills.map(eachSkill => {
-    const { skill, career, type, rank } = eachSkill
+  const allGeneralSkills = generalSkills.map((eachSkill, idx) => {
+    const { skill } = eachSkill
 
     return (
-      <div>
-        <p>{`${skill} (${type})`}</p>
-        <label htmlFor='career'>Career</label>
-        <input id='career' type='boolean' name='career' value={career} />
-
-        <label htmlFor='rank'>Rank</label>
-        <input id='rank' type='number' name='rank' value={rank} />
-      </div>
+      <GeneralSkill
+        key={skill}
+        eachSkill={eachSkill}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        generalSkills={generalSkills}
+        idx={idx}
+      />
     )
   })
+
   return (
     <div>
       <h3>General Skills</h3>

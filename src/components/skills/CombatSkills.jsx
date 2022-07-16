@@ -1,20 +1,23 @@
 import React from 'react'
+import CombatSkill from './skillsComponents/CombatSkill'
 
 export default function CombatSkills({
   characterForm: { combatSkills },
+  characterForm,
   setCharacterForm,
 }) {
-  const allCombatSkills = combatSkills.map(eachSkill => {
-    const { skill, career, type, rank } = eachSkill
+  const allCombatSkills = combatSkills.map((eachSkill, idx) => {
+    const { skill } = eachSkill
 
     return (
-      <div key={skill}>
-        <p>{`${skill} (${type})`}</p>
-        <label htmlFor='career'>Career</label>
-        <input id='career' type='boolean' name='career' value={career} />
-        <label htmlFor='rank'>Rank</label>
-        <input id='rank' type='number' name='rank' value={rank} />
-      </div>
+      <CombatSkill
+        key={skill}
+        eachSkill={eachSkill}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        combatSkills={combatSkills}
+        idx={idx}
+      />
     )
   })
   return (
