@@ -146,7 +146,7 @@ export default function Weapons({
         value={condition}
         onChange={e => updateWeapon(e, weaponIndex)}
       />
-      <label htmlFor='restricted'>Restricted</label>
+      <label htmlFor='restricted'>Restricted?</label>
       <input
         id='restricted'
         type='checkbox'

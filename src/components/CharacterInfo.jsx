@@ -20,18 +20,15 @@ export default function CharacterInfo({
 }) {
   const allCareers = careers.map((career, idx) => {
     return (
-      <details open={true}>
-        <summary>Career</summary>
-        <Career
-          key={career._id}
-          careerName={career.career}
-          careerSpec={career.specialization}
-          careerIndex={idx}
-          careers={careers}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-        />
-      </details>
+      <Career
+        key={career._id}
+        careerName={career.career}
+        careerSpec={career.specialization}
+        careerIndex={idx}
+        careers={careers}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+      />
     )
   })
 
@@ -48,6 +45,12 @@ export default function CharacterInfo({
   return (
     <div>
       <h2>Character Info</h2>
+      <a
+        href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Species'
+        target='_blank'
+      >
+        Species Guide
+      </a>
       <label htmlFor='name'>Name</label>
       <input
         id='name'
@@ -139,9 +142,19 @@ export default function CharacterInfo({
         }
       />
       <div>
-        <h3>Careers</h3>
-        {allCareers}
-        <button onClick={addCareer}>Add Career</button>
+        <details open={true}>
+          <summary>
+            Careers{' '}
+            <a
+              href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Careers'
+              target='_blank'
+            >
+              Careers Guide
+            </a>
+          </summary>
+          {allCareers}
+          <button onClick={addCareer}>Add Career</button>
+        </details>
       </div>
     </div>
   )
