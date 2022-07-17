@@ -1,5 +1,7 @@
 import React from 'react'
 import CombatSkill from './skillsComponents/CombatSkill'
+import LightsaberSkill from './skillsComponents/LightsaberSkill'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function CombatSkills({
   characterForm: { combatSkills },
@@ -7,17 +9,30 @@ export default function CombatSkills({
   setCharacterForm,
 }) {
   const allCombatSkills = combatSkills.map((eachSkill, idx) => {
-    const { skill } = eachSkill
-
     return (
-      <CombatSkill
-        key={skill}
-        eachSkill={eachSkill}
-        setCharacterForm={setCharacterForm}
-        characterForm={characterForm}
-        combatSkills={combatSkills}
-        idx={idx}
-      />
+      <React.Fragment>
+        <div>
+          {eachSkill.skill === 'Lightsaber' ? (
+            <LightsaberSkill
+              key={eachSkill.skill}
+              eachSkill={eachSkill}
+              setCharacterForm={setCharacterForm}
+              characterForm={characterForm}
+              combatSkills={combatSkills}
+              idx={idx}
+            />
+          ) : (
+            <CombatSkill
+              key={eachSkill.skill}
+              eachSkill={eachSkill}
+              setCharacterForm={setCharacterForm}
+              characterForm={characterForm}
+              combatSkills={combatSkills}
+              idx={idx}
+            />
+          )}
+        </div>
+      </React.Fragment>
     )
   })
   return (

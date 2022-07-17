@@ -1,12 +1,19 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
+const serverUrl = process.env.REACT_APP_SERVER_URL
+
 export default function Profile({
-  currentUser: { name, email },
+  currentUser: { name, email, id },
+  currentUser,
   handleLogout,
 }) {
   // state for the secret message for user priv data
   const [msg, setMsg] = useState('')
+  const [userData, setUserData] = useState({
+    characters: [],
+  })
 
   // useEffect for getting the user data and checking auth
   useEffect(() => {
@@ -40,10 +47,32 @@ export default function Profile({
     fetchData()
   })
 
-  return (
+  // fetch user data
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await axios.get(`${serverUrl}/users/${id}`)
+        setUserData(res.data)
+      } catch (err) {
+        console.warn(err)
+      }
+    }
+    fetchUser()
+    // eslint-disable-next-line
+  }, [id])
+
+  // console.log(currentUser)
+
+  const allCharacters = userData.characters.map(char => {
+    const { name, _id } = char
+    return <Link to={`/characters/${_id}`}>{name}</Link>
+  })
+
+  const loggedIn = (
     <div>
       <h1>Hello, {name}</h1>
       <p>Your email is: {email}</p>
+      {allCharacters}
 
       <h2>
         Here is the secret message that is only available to users of User App:{' '}
@@ -51,4 +80,6 @@ export default function Profile({
       <h3>{msg}</h3>
     </div>
   )
+
+  return <div>{currentUser ? loggedIn : <div>Loading Profile</div>}</div>
 }

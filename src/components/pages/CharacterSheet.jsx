@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import CharacterInfo from '../CharacterInfo'
 import SkillsInfo from '../SkillsInfo'
 import CombatInfo from '../CombatInfo'
@@ -18,21 +18,22 @@ export default function CharacterSheet() {
   const [showCombat, setShowCombat] = useState(false)
   const [showInventory, setShowInventory] = useState(false)
   const [showNotes, setShowNotes] = useState(false)
-  const [character, setCharacter] = useState({
-    careers: [],
-    combatSkills: [],
-    generalSkills: [],
-    knowledgeSkills: [],
-    customSkills: [],
-    inventory: [],
-    weapons: [],
-    talents: [],
-    forcePowers: [],
-    criticalInjuries: [],
-    armors: [],
-    cybernetics: [],
-    tools: [],
-  })
+  // const [character, setCharacter] = useState({
+  //   careers: [],
+  //   combatSkills: [],
+  //   generalSkills: [],
+  //   knowledgeSkills: [],
+  //   customSkills: [],
+  //   inventory: [],
+  //   weapons: [],
+  //   talents: [],
+  //   forcePowers: [],
+  //   criticalInjuries: [],
+  //   armors: [],
+  //   cybernetics: [],
+  //   tools: [],
+  // })
+  // const [updateCharacter, setUpdateCharacter] = useState(false)
   const [weapon, setWeapon] = useState({
     weaponName: '',
     usesSkill: '',
@@ -56,12 +57,14 @@ export default function CharacterSheet() {
   })
 
   const { id } = useParams()
+  const navigate = useNavigate()
 
+  // gets character as soon as the url changes
   useEffect(() => {
     const getCharacter = async () => {
       try {
         const foundCharacter = await axios.get(`${serverUrl}/characters/${id}`)
-        setCharacter(foundCharacter.data)
+        // setCharacter(foundCharacter.data)
         setCharacterForm(foundCharacter.data)
       } catch (err) {
         console.warn(err)
@@ -69,6 +72,20 @@ export default function CharacterSheet() {
     }
     getCharacter()
   }, [id])
+
+  // useEffect(() => {
+  //   setUpdateCharacter(true)
+  //   if (updateCharacter) {
+  //     console.log('data sent to server')
+  //     const updateCheck = async () => {
+  //       const foundChar = await axios.get(`${serverUrl}/characters/${id}`)
+  //       setCharacterForm(foundChar.data)
+  //       setUpdateCharacter(false)
+  //     }
+  //     saveCharacterSheet()
+  //     updateCheck()
+  //   }
+  // }, [characterForm])
 
   // sets defaults for all of default skills
   if (characterForm) {
@@ -83,13 +100,26 @@ export default function CharacterSheet() {
     }
   }
 
-  const saveCharacterSheet = () => {
-    console.log('character sheet saved')
+  // update character
+  // if (updateCharacter) {
+  //   saveCharacterSheet()
+  // }
+
+  const saveCharacterSheet = async () => {
+    try {
+      console.log('character updated')
+      await axios.put(`${serverUrl}/characters/${id}`, characterForm)
+      const foundChar = await axios.get(`${serverUrl}/characters/${id}`)
+      setCharacterForm(foundChar.data)
+    } catch (err) {
+      console.warn(err)
+    }
   }
 
   return (
     <div>
       <h2>Character Sheet</h2>
+      <button onClick={saveCharacterSheet}>Save</button>
 
       <Characteristics
         setCharacterForm={setCharacterForm}
@@ -161,7 +191,6 @@ export default function CharacterSheet() {
 
       {showCharacter ? (
         <CharacterInfo
-          character={character}
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
         />

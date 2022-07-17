@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function ToolsInfo({
   setCharacterForm,
@@ -15,7 +16,7 @@ export default function ToolsInfo({
     const { toolName, encumbrance, summary, rarity } = eachTool
 
     return (
-      <div>
+      <div key={uuidv4()}>
         <label htmlFor='toolName'>Tool Name</label>
         <input
           id='toolName'

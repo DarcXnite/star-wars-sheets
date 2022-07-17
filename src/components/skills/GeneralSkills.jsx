@@ -1,4 +1,5 @@
 import GeneralSkill from './skillsComponents/GeneralSkill'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function GeneralSkills({
   characterForm: { generalSkills },
@@ -6,11 +7,9 @@ export default function GeneralSkills({
   setCharacterForm,
 }) {
   const allGeneralSkills = generalSkills.map((eachSkill, idx) => {
-    const { skill } = eachSkill
-
     return (
       <GeneralSkill
-        key={skill}
+        key={eachSkill.skill}
         eachSkill={eachSkill}
         setCharacterForm={setCharacterForm}
         characterForm={characterForm}

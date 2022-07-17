@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function InventoryItems({
   setCharacterForm,
@@ -16,7 +17,7 @@ export default function InventoryItems({
     const { itemName, cost, encumbrance, description } = eachItem
 
     return (
-      <div>
+      <div key={uuidv4()}>
         <label htmlFor='itemName'>Item Name</label>
         <input
           id='itemName'

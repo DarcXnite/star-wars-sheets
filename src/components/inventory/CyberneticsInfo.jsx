@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function CyberneticsInfo({
   setCharacterForm,
@@ -14,7 +15,7 @@ export default function CyberneticsInfo({
   const allCybernetics = cybernetics.map(eachCybernetic => {
     const { implantName, active, summary, rarity } = eachCybernetic
     return (
-      <div>
+      <div key={uuidv4()}>
         <label htmlFor='implantName'>Implant Name</label>
         <input
           id='implantName'

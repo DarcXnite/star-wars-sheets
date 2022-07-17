@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Armor from './inventoryComponents/Armor'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function ArmorInfo({
   setCharacterForm,
@@ -18,7 +19,7 @@ export default function ArmorInfo({
     const { name, condition, value, qualities, features, rarity } = armor
 
     return (
-      <div>
+      <div key={uuidv4()}>
         <label htmlFor='name'>Name</label>
         <input
           id='name'

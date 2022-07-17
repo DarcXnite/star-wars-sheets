@@ -1,4 +1,5 @@
 import KnowledgeSkill from './skillsComponents/KnowledgeSkill'
+import { v4 as uuidv4 } from 'uuid'
 
 export default function KnowledgeSkills({
   characterForm: { knowledgeSkills },
@@ -6,11 +7,9 @@ export default function KnowledgeSkills({
   characterForm,
 }) {
   const allKnowledgeSkills = knowledgeSkills.map((eachSkill, idx) => {
-    const { skill } = eachSkill
-
     return (
       <KnowledgeSkill
-        key={skill}
+        key={eachSkill.skill}
         eachSkill={eachSkill}
         setCharacterForm={setCharacterForm}
         characterForm={characterForm}

@@ -45,6 +45,12 @@ export const knowledgeSkills = [
 
 export const combatSkills = [
   {
+    skill: 'Lightsaber',
+    career: false,
+    type: 'Br',
+    rank: 0,
+  },
+  {
     skill: 'Brawl',
     career: false,
     type: 'Br',
