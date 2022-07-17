@@ -77,7 +77,6 @@ export default function Weapons({
 
   const deleteWeapon = () => {
     const updatedWeapons = weapons.filter((weap, i) => i !== weaponIndex)
-    // console.log(updatedWeapons)
     setCharacterForm({ ...characterForm, weapons: updatedWeapons })
   }
 

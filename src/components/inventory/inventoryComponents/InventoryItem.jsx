@@ -2,9 +2,10 @@ import React from 'react'
 
 export default function InventoryItem({
   item: { itemName, cost, encumbrance, description },
+  inventory,
   setCharacterForm,
   characterForm,
-  idx,
+  inventoryIdx,
 }) {
   const updateInventoryItem = (e, idx) => {
     console.log('toggled')
@@ -18,6 +19,13 @@ export default function InventoryItem({
     setCharacterForm({ ...characterForm, inventory: updatedInventoryItems })
   }
 
+  const deleteInventoryItem = () => {
+    const updatedInventoryItems = inventory.filter(
+      (invItem, i) => i !== inventoryIdx
+    )
+    setCharacterForm({ ...characterForm, inventory: updatedInventoryItems })
+  }
+
   return (
     <React.Fragment>
       <label htmlFor='itemName'>Item Name</label>
@@ -26,7 +34,7 @@ export default function InventoryItem({
         type='text'
         name='itemName'
         value={itemName}
-        onChange={e => updateInventoryItem(e, idx)}
+        onChange={e => updateInventoryItem(e, inventoryIdx)}
       />
       <label htmlFor='cost'>Cost</label>
       <input
@@ -34,7 +42,7 @@ export default function InventoryItem({
         type='number'
         name='cost'
         value={cost}
-        onChange={e => updateInventoryItem(e, idx)}
+        onChange={e => updateInventoryItem(e, inventoryIdx)}
       />
       <label htmlFor='encumbrance'>Encumbrance</label>
       <input
@@ -42,7 +50,7 @@ export default function InventoryItem({
         type='number'
         name='encumbrance'
         value={encumbrance}
-        onChange={e => updateInventoryItem(e, idx)}
+        onChange={e => updateInventoryItem(e, inventoryIdx)}
       />
       <label htmlFor='description'>Description</label>
       <input
@@ -50,8 +58,9 @@ export default function InventoryItem({
         type='text'
         name='description'
         value={description}
-        onChange={e => updateInventoryItem(e, idx)}
+        onChange={e => updateInventoryItem(e, inventoryIdx)}
       />
+      <button onClick={deleteInventoryItem}>Delete Item</button>
     </React.Fragment>
   )
 }

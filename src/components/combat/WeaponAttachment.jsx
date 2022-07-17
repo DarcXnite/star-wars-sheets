@@ -62,6 +62,7 @@ export default function WeaponAttachment({
     <React.Fragment>
       <label htmlFor='attachment'>Attachment</label>
       <input
+        id='attachment'
         type='text'
         name='attachment'
         value={attachment}
@@ -70,6 +71,7 @@ export default function WeaponAttachment({
 
       <label htmlFor='hardPoint'>Hard Points</label>
       <input
+        id='hardPoint'
         type='number'
         name='hardPointCost'
         value={hardPointCost}
@@ -78,6 +80,7 @@ export default function WeaponAttachment({
 
       <label htmlFor='modifications'>Modifications</label>
       <input
+        id='modifications'
         type='text'
         name='modifications'
         value={modifications}
@@ -86,6 +89,7 @@ export default function WeaponAttachment({
 
       <label htmlFor='rarity'>Rarity</label>
       <input
+        id='rarity'
         type='number'
         name='rarity'
         value={rarity}

@@ -15,9 +15,10 @@ export default function InventoryItems({
         <InventoryItem
           key={_id}
           item={item}
+          inventory={inventory}
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
-          idx={idx}
+          inventoryIdx={idx}
         />
       </details>
     )

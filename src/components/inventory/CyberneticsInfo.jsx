@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import Cybernetics from './inventoryComponents/Cybernetics'
+import Cybernetic from './inventoryComponents/Cybernetic'
 
 export default function CyberneticsInfo({
   setCharacterForm,
@@ -12,12 +11,13 @@ export default function CyberneticsInfo({
     return (
       <details>
         <summary>Cybernetics</summary>
-        <Cybernetics
+        <Cybernetic
           key={_id}
           cybernetics={cybernetics}
+          cybernetic={cybernetic}
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
-          idx={idx}
+          cyberneticIdx={idx}
         />
       </details>
     )

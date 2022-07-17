@@ -1,4 +1,5 @@
 import React from 'react'
+import Career from './Career'
 
 export default function CharacterInfo({
   setCharacterForm,
@@ -13,9 +14,37 @@ export default function CharacterInfo({
     eyes,
     morality,
     conflict,
+    careers,
   },
   characterForm,
 }) {
+  const allCareers = careers.map((career, idx) => {
+    return (
+      <details open={true}>
+        <summary>Career</summary>
+        <Career
+          key={career._id}
+          careerName={career.career}
+          careerSpec={career.specialization}
+          careerIndex={idx}
+          careers={careers}
+          setCharacterForm={setCharacterForm}
+          characterForm={characterForm}
+        />
+      </details>
+    )
+  })
+
+  const careerForm = {
+    career: '',
+    specialization: '',
+  }
+
+  const addCareer = () => {
+    careers.push(careerForm)
+    setCharacterForm({ ...characterForm, careers })
+  }
+
   return (
     <div>
       <h2>Character Info</h2>
@@ -109,6 +138,11 @@ export default function CharacterInfo({
           setCharacterForm({ ...characterForm, conflict: e.target.value })
         }
       />
+      <div>
+        <h3>Careers</h3>
+        {allCareers}
+        <button onClick={addCareer}>Add Career</button>
+      </div>
     </div>
   )
 }

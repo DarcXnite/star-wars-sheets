@@ -7,7 +7,6 @@ export default function CustomSkill({
   idx,
 }) {
   const updateCustomSkill = (e, idx) => {
-    console.log('toggled')
     const updatedCustomSkills = characterForm.customSkills.map(
       (customSkill, i) => {
         if (idx === i) {
@@ -32,6 +31,14 @@ export default function CustomSkill({
     )
     setCharacterForm({ ...characterForm, customSkills: updatedCustomSkills })
   }
+
+  const deleteSkill = () => {
+    const filteredSkills = characterForm.customSkills.filter(
+      (eachSkill, i) => i !== idx
+    )
+    setCharacterForm({ ...characterForm, customSkills: filteredSkills })
+  }
+
   return (
     <React.Fragment>
       <label htmlFor='skill'>Skill</label>
@@ -67,6 +74,7 @@ export default function CustomSkill({
         value={rank}
         onChange={e => updateCustomSkill(e, idx)}
       />
+      <button onClick={deleteSkill}>Delete Skill</button>
     </React.Fragment>
   )
 }

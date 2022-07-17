@@ -45,14 +45,14 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 
 ## User Stories
 
-- [ ] As a user, I want to be able to log in and out while keeping characters saved
+- [ x] As a user, I want to be able to log in and out while keeping characters saved
 - [ ] As a user, I want to be able to create multiple characters
-- [ ] As a user, I want to be able to build my skills
-- [ ] As a user, I want to take notes
-- [ ] As a user, I want to keep track of all my stats
+- [ x] As a user, I want to be able to build my skills
+- [ x] As a user, I want to take notes
+- [ x] As a user, I want to keep track of all my stats
 - [ ] As a user, I should be able to choose my careers
-- [ ] As a user, I want to be able to save character instances
-- [ ] As a user, I want to have the ability to complete full CRUD on characters
+- [ x] As a user, I want to be able to save character instances
+- [ x] As a user, I want to have the ability to complete full CRUD on characters
 
 ## Goals
 
@@ -60,12 +60,12 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 
 - [x] Create back-end for character sheet saving
 - [x] Create account and delete account
-- [ ] Create user log-in and log-out
+- [ x] Create user log-in and log-out
 - [ ] Create page 1 (Character name, desc, motivations, stats)
 - [ ] Create page 2 (Careers & skills)
-- [ ] Create page 3 (Combat)
+- [ x] Create page 3 (Combat)
 - [ ] Create page 4 (Inventory)
-- [ ] Create page 5 (Notes)
+- [ x] Create page 5 (Notes)
 - [ ] Style character sheets
 
 ### Stretch

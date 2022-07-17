@@ -19,19 +19,19 @@ export default function CharacterSheet() {
   const [showInventory, setShowInventory] = useState(false)
   const [showNotes, setShowNotes] = useState(false)
   // const [character, setCharacter] = useState({
-  //   careers: [],
-  //   combatSkills: [],
-  //   generalSkills: [],
-  //   knowledgeSkills: [],
-  //   customSkills: [],
-  //   inventory: [],
-  //   weapons: [],
-  //   talents: [],
-  //   forcePowers: [],
-  //   criticalInjuries: [],
-  //   armors: [],
-  //   cybernetics: [],
-  //   tools: [],
+  // careers: [],
+  // combatSkills: [],
+  // generalSkills: [],
+  // knowledgeSkills: [],
+  // customSkills: [],
+  // inventory: [],
+  // weapons: [],
+  // talents: [],
+  // forcePowers: [],
+  // criticalInjuries: [],
+  // armors: [],
+  // cybernetics: [],
+  // tools: [],
   // })
   // const [updateCharacter, setUpdateCharacter] = useState(false)
   const [weapon, setWeapon] = useState({
@@ -51,9 +51,19 @@ export default function CharacterSheet() {
   })
 
   const [characterForm, setCharacterForm] = useState({
+    careers: [],
     combatSkills: [],
     generalSkills: [],
     knowledgeSkills: [],
+    customSkills: [],
+    inventory: [],
+    weapons: [],
+    talents: [],
+    forcePowers: [],
+    criticalInjuries: [],
+    armors: [],
+    cybernetics: [],
+    tools: [],
   })
 
   const { id } = useParams()

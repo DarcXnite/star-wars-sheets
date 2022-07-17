@@ -1,13 +1,14 @@
 import React from 'react'
+import Login from '../../pages/Login'
 
 export default function Cybernetics({
-  cybernetics: { implantName, active, summary, rarity },
+  cybernetic: { implantName, active, summary, rarity },
+  cybernetics,
   setCharacterForm,
   characterForm,
-  idx,
+  cyberneticIdx,
 }) {
   const updateCybernetic = (e, idx) => {
-    console.log('toggled')
     const updatedCybernetics = characterForm.cybernetics.map(
       (cybernetic, i) => {
         if (idx === i) {
@@ -32,6 +33,13 @@ export default function Cybernetics({
     )
     setCharacterForm({ ...characterForm, cybernetics: updatedCybernetics })
   }
+
+  const deleteCybernetic = () => {
+    const updatedCybernetics = cybernetics.filter(
+      (cyber, i) => i !== cyberneticIdx
+    )
+    setCharacterForm({ ...characterForm, cybernetics: updatedCybernetics })
+  }
   return (
     <React.Fragment>
       <label htmlFor='implantName'>Implant Name</label>
@@ -40,7 +48,7 @@ export default function Cybernetics({
         type='text'
         name='implantName'
         value={implantName}
-        onChange={e => updateCybernetic(e, idx)}
+        onChange={e => updateCybernetic(e, cyberneticIdx)}
       />
       <label htmlFor='active'>Active</label>
       <input
@@ -48,7 +56,7 @@ export default function Cybernetics({
         type='checkbox'
         name='active'
         value={active}
-        onChange={e => activeCheck(e, idx)}
+        onChange={e => activeCheck(e, cyberneticIdx)}
         checked={active}
       />
       <label htmlFor='summary'>Summary</label>
@@ -57,7 +65,7 @@ export default function Cybernetics({
         type='text'
         name='summary'
         value={summary}
-        onChange={e => updateCybernetic(e, idx)}
+        onChange={e => updateCybernetic(e, cyberneticIdx)}
       />
       <label htmlFor='rarity'>Rarity</label>
       <input
@@ -65,8 +73,9 @@ export default function Cybernetics({
         type='number'
         name='rarity'
         value={rarity}
-        onChange={e => updateCybernetic(e, idx)}
+        onChange={e => updateCybernetic(e, cyberneticIdx)}
       />
+      <button onClick={deleteCybernetic}>Delete Cybernetic</button>
     </React.Fragment>
   )
 }
