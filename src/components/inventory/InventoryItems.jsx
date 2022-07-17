@@ -1,71 +1,45 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import InventoryItem from './inventoryComponents/InventoryItem'
 
 export default function InventoryItems({
   setCharacterForm,
   characterForm: { inventory },
   characterForm,
 }) {
-  const [newInventory, setNewInventory] = useState({
+  const allInventoryItems = inventory.map((item, idx) => {
+    const { _id } = item
+    return (
+      <details>
+        <summary>Inventory Items</summary>
+        <InventoryItem
+          key={_id}
+          item={item}
+          setCharacterForm={setCharacterForm}
+          characterForm={characterForm}
+          idx={idx}
+        />
+      </details>
+    )
+  })
+
+  const initialInventoryItemForm = {
     itemName: '',
     cost: 0,
     encumbrance: 0,
     description: '',
-  })
+  }
 
-  const allInventory = inventory.map(eachItem => {
-    const { itemName, cost, encumbrance, description } = eachItem
-
-    return (
-      <div key={uuidv4()}>
-        <label htmlFor='itemName'>Item Name</label>
-        <input
-          id='itemName'
-          type='text'
-          name='itemName'
-          value={itemName}
-          onChange={e =>
-            newInventory({ ...characterForm, itemName: e.target.value })
-          }
-        />
-        <label htmlFor='cost'>Cost</label>
-        <input
-          id='cost'
-          type='number'
-          name='cost'
-          value={cost}
-          onChange={e =>
-            newInventory({ ...characterForm, cost: e.target.value })
-          }
-        />
-        <label htmlFor='encumbrance'>Encumbrance</label>
-        <input
-          id='encumbrance'
-          type='number'
-          name='encumbrance'
-          value={encumbrance}
-          onChange={e =>
-            newInventory({ ...characterForm, encumbrance: e.target.value })
-          }
-        />
-        <label htmlFor='description'>Description</label>
-        <input
-          id='description'
-          type='text'
-          name='description'
-          value={description}
-          onChange={e =>
-            newInventory({ ...characterForm, description: e.target.value })
-          }
-        />
-      </div>
-    )
-  })
+  const addInventoryItem = () => {
+    inventory.push(initialInventoryItemForm)
+    setCharacterForm({ ...characterForm, inventory })
+  }
 
   return (
     <div>
       <h2>Inventory Items</h2>
-      {allInventory}
+      {allInventoryItems}
+      <button onClick={addInventoryItem}>Add an Inventory Item</button>
     </div>
   )
 }

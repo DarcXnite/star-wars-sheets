@@ -1,31 +1,43 @@
-import { useState } from 'react'
+import CustomSkill from './skillsComponents/CustomSkill'
 
 export default function CustomSkills({
   characterForm: { customSkills },
+  characterForm,
   setCharacterForm,
 }) {
-  const [newCustomSkills, setNewCustomSkills] = useState({
+  const allCustomSkills = customSkills.map((customSkill, idx) => {
+    const { _id } = customSkills
+    return (
+      <details>
+        <summary>Custom Skill</summary>
+        <CustomSkill
+          key={_id}
+          customSkill={customSkill}
+          setCharacterForm={setCharacterForm}
+          characterForm={characterForm}
+          idx={idx}
+        />
+      </details>
+    )
+  })
+
+  const initialCustomSkillForm = {
     skill: '',
     career: false,
     type: '',
     rank: 0,
-  })
+  }
+
+  const addCustomSkill = () => {
+    customSkills.push(initialCustomSkillForm)
+    setCharacterForm({ ...characterForm, customSkills })
+  }
+
   return (
     <div>
       <h2>Custom Skills</h2>
-      <label htmlFor='skill'>Skill</label>
-      <input id='skill' type='text' name='skill' value={customSkills.skill} />
-      <label htmlFor='career'>Career</label>
-      <input
-        id='career'
-        type='boolean'
-        name='career'
-        value={customSkills.career}
-      />
-      <label htmlFor='type'>Type</label>
-      <input id='type' type='text' name='type' value={customSkills.type} />
-      <label htmlFor='rank'>Rank</label>
-      <input id='rank' type='number' name='rank' value={customSkills.rank} />
+      {allCustomSkills}
+      <button onClick={addCustomSkill}>Add a Custom Skill</button>
     </div>
   )
 }

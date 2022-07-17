@@ -1,68 +1,45 @@
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+import Cybernetics from './inventoryComponents/Cybernetics'
 
 export default function CyberneticsInfo({
   setCharacterForm,
   characterForm: { cybernetics },
   characterForm,
 }) {
-  const [newCybernetic, setNewCybernetic] = useState({
+  const allCybernetics = cybernetics.map((cybernetic, idx) => {
+    const { _id } = cybernetic
+    return (
+      <details>
+        <summary>Cybernetics</summary>
+        <Cybernetics
+          key={_id}
+          cybernetics={cybernetics}
+          setCharacterForm={setCharacterForm}
+          characterForm={characterForm}
+          idx={idx}
+        />
+      </details>
+    )
+  })
+
+  const initialCyberneticsForm = {
     implantName: '',
     active: false,
     summary: '',
     rarity: 0,
-  })
-  const allCybernetics = cybernetics.map(eachCybernetic => {
-    const { implantName, active, summary, rarity } = eachCybernetic
-    return (
-      <div key={uuidv4()}>
-        <label htmlFor='implantName'>Implant Name</label>
-        <input
-          id='implantName'
-          type='text'
-          name='implantName'
-          value={implantName}
-          onChange={e =>
-            newCybernetic({ ...characterForm, implantName: e.target.value })
-          }
-        />
-        <label htmlFor='active'>Active</label>
-        <input
-          id='active'
-          type='boolean'
-          name='active'
-          value={active}
-          onChange={e =>
-            newCybernetic({ ...characterForm, active: e.target.value })
-          }
-        />
-        <label htmlFor='summary'>Summary</label>
-        <input
-          id='summary'
-          type='text'
-          name='summary'
-          value={summary}
-          onChange={e =>
-            newCybernetic({ ...characterForm, summary: e.target.value })
-          }
-        />
-        <label htmlFor='rarity'>Implant Name</label>
-        <input
-          id='rarity'
-          type='number'
-          name='rarity'
-          value={rarity}
-          onChange={e =>
-            newCybernetic({ ...characterForm, rarity: e.target.value })
-          }
-        />
-      </div>
-    )
-  })
+  }
+
+  const addCybernetic = () => {
+    cybernetics.push(initialCyberneticsForm)
+    setCharacterForm({ ...characterForm, cybernetics })
+  }
+
   return (
     <div>
       <h2>Cybernetics</h2>
       {allCybernetics}
+      <button onClick={addCybernetic}>Add a Cybernetic</button>
     </div>
   )
 }

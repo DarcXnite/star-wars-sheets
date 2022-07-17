@@ -1,4 +1,5 @@
 import React from 'react'
+import WeaponAttachment from './WeaponAttachment'
 
 export default function Weapons({
   weapon: {
@@ -14,28 +15,14 @@ export default function Weapons({
     qualities,
     modifiers,
     rarity,
+    attachments,
   },
+  weapon,
   setCharacterForm,
   characterForm,
-  idx,
+  characterForm: { weapons },
+  weaponIndex,
 }) {
-  // initialWeaponForm = {
-  //   weaponName: '',
-  //   usesSkill: '',
-  //   damage: 0,
-  //   range: '',
-  //   encumbrance: 0,
-  //   hardPoints: 0,
-  //   critRating: 0,
-  //   condition: 'New',
-  //   restricted: 'No',
-  //   qualities: '',
-  //   modifiers: '',
-  //   rarity: 0,
-  // }
-
-  // const [weaponForm, setWeaponForm] = useState(weapon)
-
   const updateWeapon = (e, idx) => {
     console.log('toggled')
     const updatedWeapons = characterForm.weapons.map((weapon, i) => {
@@ -59,6 +46,41 @@ export default function Weapons({
     setCharacterForm({ ...characterForm, weapons: updatedWeapons })
   }
 
+  const allWeaponAttachments = attachments.map((attachment, idx) => {
+    return (
+      <details open={true}>
+        <summary>Attachment</summary>
+        <WeaponAttachment
+          key={attachment._id}
+          characterForm={characterForm}
+          setCharacterForm={setCharacterForm}
+          idx={idx}
+          weaponIndex={weaponIndex}
+          weaponAttachment={attachment}
+          weapon={weapon}
+        />
+      </details>
+    )
+  })
+
+  const weaponAttachmentForm = {
+    attachment: '',
+    hardPointCost: 0,
+    modifications: '',
+    rarity: 0,
+  }
+
+  const addAttachment = () => {
+    attachments.push(weaponAttachmentForm)
+    setCharacterForm({ ...characterForm, weapons })
+  }
+
+  const deleteWeapon = () => {
+    const updatedWeapons = weapons.filter((weap, i) => i !== weaponIndex)
+    // console.log(updatedWeapons)
+    setCharacterForm({ ...characterForm, weapons: updatedWeapons })
+  }
+
   return (
     <React.Fragment>
       <label htmlFor='weaponName'>Weapon Name</label>
@@ -67,7 +89,7 @@ export default function Weapons({
         type='text'
         name='weaponName'
         value={weaponName}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='usesSkill'>Uses Skill</label>
       <input
@@ -75,7 +97,7 @@ export default function Weapons({
         type='text'
         name='usesSkill'
         value={usesSkill}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='damage'>Damage</label>
       <input
@@ -83,7 +105,7 @@ export default function Weapons({
         type='number'
         name='damage'
         value={damage}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='range'>Range</label>
       <input
@@ -91,7 +113,7 @@ export default function Weapons({
         type='text'
         name='range'
         value={range}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='encumbrance'>Encumbrance</label>
       <input
@@ -99,7 +121,7 @@ export default function Weapons({
         type='number'
         name='encumbrance'
         value={encumbrance}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='hardPoints'>Hard Points</label>
       <input
@@ -107,7 +129,7 @@ export default function Weapons({
         type='number'
         name='hardPoints'
         value={hardPoints}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='critRating'>Crit Rating</label>
       <input
@@ -115,7 +137,7 @@ export default function Weapons({
         type='number'
         name='critRating'
         value={critRating}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='condition'>Condition</label>
       <input
@@ -123,14 +145,14 @@ export default function Weapons({
         type='text'
         name='condition'
         value={condition}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='restricted'>Restricted</label>
       <input
         id='restricted'
         type='checkbox'
         name='restricted'
-        onChange={e => restrictedCheck(e, idx)}
+        onChange={e => restrictedCheck(e, weaponIndex)}
         checked={restricted}
       />
       <label htmlFor='qualities'>Qualities</label>
@@ -139,7 +161,7 @@ export default function Weapons({
         type='text'
         name='qualities'
         value={qualities}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='modifiers'>Modifiers</label>
       <input
@@ -147,7 +169,7 @@ export default function Weapons({
         type='text'
         name='modifiers'
         value={modifiers}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
       <label htmlFor='rarity'>Rarity</label>
       <input
@@ -155,8 +177,12 @@ export default function Weapons({
         type='number'
         name='rarity'
         value={rarity}
-        onChange={e => updateWeapon(e, idx)}
+        onChange={e => updateWeapon(e, weaponIndex)}
       />
+      {allWeaponAttachments}
+
+      <button onClick={addAttachment}>Add Attachment</button>
+      <button onClick={deleteWeapon}>Delete Weapon</button>
     </React.Fragment>
   )
 }

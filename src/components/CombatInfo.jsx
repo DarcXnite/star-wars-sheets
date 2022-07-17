@@ -7,16 +7,17 @@ export default function CombatInfo({
   characterForm,
 }) {
   const allWeapons = weapons.map((weapon, idx) => {
-    const keyId = uuidv4()
+    // const keyId = uuidv4()
+    const { _id } = weapon
     return (
-      <details>
+      <details open={true}>
         <summary>Weapon</summary>
         <Weapon
-          key={weapon.weaponName}
+          key={_id}
           weapon={weapon}
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
-          idx={idx}
+          weaponIndex={idx}
         />
       </details>
     )
