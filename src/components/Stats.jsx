@@ -32,6 +32,7 @@ export default function Stats({
               woundsThreshold: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='woundsThres'>Threshold</label>
         <input
@@ -44,6 +45,7 @@ export default function Stats({
               wounds: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='currentWounds'>Current</label>
       </div>
@@ -60,6 +62,7 @@ export default function Stats({
               strainThreshold: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='strainThres'>Threshold</label>
         <input
@@ -72,6 +75,7 @@ export default function Stats({
               strain: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='currentStrain'>Current</label>
       </div>
@@ -87,6 +91,7 @@ export default function Stats({
               soakValue: parseInt(e.target.value),
             })
           }
+          min='0'
         />
       </div>
 
@@ -102,6 +107,7 @@ export default function Stats({
               rangedDef: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='rangedDef'>Ranged</label>
         <input
@@ -114,6 +120,7 @@ export default function Stats({
               meleeDef: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='meleeDef'>Melee</label>
       </div>
@@ -130,6 +137,7 @@ export default function Stats({
               encumThreshold: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='encumThres'>Threshold</label>
         <input
@@ -142,6 +150,7 @@ export default function Stats({
               encumCurrent: parseInt(e.target.value),
             })
           }
+          min='0'
         />
         <label htmlFor='encumCurrent'>Current</label>
       </div>
@@ -157,6 +166,7 @@ export default function Stats({
               forcePool: parseInt(e.target.value),
             })
           }
+          min='0'
         />
       </div>
     </div>

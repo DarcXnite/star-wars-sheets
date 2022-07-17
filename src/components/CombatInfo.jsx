@@ -32,7 +32,7 @@ export default function CombatInfo({
     return (
       <details open={true}>
         <summary>Force Power</summary>
-        <power
+        <ForcePower
           key={_id}
           power={power}
           setCharacterForm={setCharacterForm}

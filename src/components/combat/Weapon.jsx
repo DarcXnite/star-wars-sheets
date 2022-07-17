@@ -24,7 +24,6 @@ export default function Weapons({
   weaponIndex,
 }) {
   const updateWeapon = (e, idx) => {
-    console.log('toggled')
     const updatedWeapons = characterForm.weapons.map((weapon, i) => {
       if (idx === i) {
         return { ...weapon, [e.target.name]: e.target.value }

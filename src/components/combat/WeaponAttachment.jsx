@@ -44,7 +44,7 @@ export default function WeaponAttachment({
     const filteredAttachments = weapon.attachments.filter(
       (attach, i) => i !== idx
     )
-    console.log(filteredAttachments)
+    // console.log(filteredAttachments)
     tempWeapon.attachments = filteredAttachments
     // map through the weapons (NOT WEAPON) array and find the matching weaponIndex and replace that object with the temp weapon obj
     const updatedWeapons = weapons.map((weap, i) => {
