@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../../ui/Input'
 
 export default function CustomSkill({
   customSkill: { skill, career, type, rank },
@@ -41,40 +42,42 @@ export default function CustomSkill({
 
   return (
     <React.Fragment>
-      <label htmlFor='skill'>Skill</label>
-      <input
-        id='skill'
-        type='text'
-        name='skill'
-        value={skill}
-        onChange={e => updateCustomSkill(e, idx)}
-      />
-      <label htmlFor='career'>Career</label>
-      <input
-        id='career'
-        type='checkbox'
-        name='career'
-        value={career}
-        onChange={e => careerCheck(e, idx)}
-        checked={career}
-      />
-      <label htmlFor='type'>Type</label>
-      <input
-        id='type'
-        type='text'
-        name='type'
-        value={type}
-        onChange={e => updateCustomSkill(e, idx)}
-      />
-      <label htmlFor='rank'>Rank</label>
-      <input
-        id='rank'
-        type='number'
-        name='rank'
-        value={rank}
-        onChange={e => updateCustomSkill(e, idx)}
-      />
-      <button onClick={deleteSkill}>Delete Skill</button>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
+        <Input
+          label='Skill:'
+          id='skill'
+          type='text'
+          name='skill'
+          value={skill}
+          onChange={e => updateCustomSkill(e, idx)}
+        />
+        <Input
+          label='Career:'
+          id='career'
+          type='checkbox'
+          name='career'
+          value={career}
+          onChange={e => careerCheck(e, idx)}
+          checked={career}
+        />
+        <Input
+          label='Type:'
+          id='type'
+          type='text'
+          name='type'
+          value={type}
+          onChange={e => updateCustomSkill(e, idx)}
+        />
+        <Input
+          label='Rank:'
+          id='rank'
+          type='number'
+          name='rank'
+          value={rank}
+          onChange={e => updateCustomSkill(e, idx)}
+        />
+        <button onClick={deleteSkill}>Delete Skill</button>
+      </div>
     </React.Fragment>
   )
 }

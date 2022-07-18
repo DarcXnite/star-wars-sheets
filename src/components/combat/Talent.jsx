@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../ui/Input'
 
 export default function Talent({
   talent: { talentName, rank, xpCost, passive, summary },
@@ -37,16 +38,16 @@ export default function Talent({
 
   return (
     <React.Fragment>
-      <label htmlFor='talentName'>Talent</label>
-      <input
+      <Input
+        label='Talent:'
         type='text'
         value={talentName}
         name='talentName'
         onChange={e => updateTalent(e, talentIndex)}
       />
 
-      <label htmlFor='rank'>Rank</label>
-      <input
+      <Input
+        label='Rank:'
         type='number'
         value={rank}
         name='rank'
@@ -54,8 +55,8 @@ export default function Talent({
         min='0'
       />
 
-      <label htmlFor='xpCost'>Talent</label>
-      <input
+      <Input
+        label='XP Cost:'
         type='number'
         value={xpCost}
         name='xpCost'
@@ -63,16 +64,16 @@ export default function Talent({
         min='0'
       />
 
-      <label htmlFor='passive'>Passive?</label>
-      <input
+      <Input
+        label='Passive?'
         type='checkbox'
         name='passive'
         checked={passive}
         onChange={e => passiveCheck(e, talentIndex)}
       />
 
-      <label htmlFor='summary'>Summary</label>
-      <input
+      <Input
+        label='Summary:'
         type='text'
         value={summary}
         name='summary'

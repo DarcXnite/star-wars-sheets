@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../ui/Input'
 
 export default function CritInjury({
   crit: { criticalName, rollRange },
@@ -26,16 +27,16 @@ export default function CritInjury({
 
   return (
     <React.Fragment>
-      <label htmlFor='critName'>Critical Injury</label>
-      <input
+      <Input
+        label='Critical Injury:'
         type='text'
         name='criticalName'
         value={criticalName}
         onChange={e => updateInjury(e, critIndex)}
       />
 
-      <label htmlFor='rollRange'>Roll Range</label>
-      <input
+      <Input
+        label='Roll Range:'
         type='text'
         name='rollRange'
         value={rollRange}

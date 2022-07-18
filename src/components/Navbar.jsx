@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 export default function Navbar({ currentUser, handleLogout }) {
   const [menuToggle, setMenuToggle] = useState(false)
 
-  // return <nav>{currentUser ? loggedIn : loggedOut}</nav>
+  useEffect(() => {
+    const toggle = () => {
+      if (window.innerWidth > 640) {
+        if (menuToggle) {
+          console.log('toggled')
+          setMenuToggle(false)
+        }
+      }
+    }
+
+    window.addEventListener('resize', toggle)
+
+    return () => {
+      window.removeEventListener('resize', toggle)
+    }
+  })
+
   return (
     <nav className='bg-gray-800'>
       <div className=' mx-auto px-2 sm:px-6 lg:px-8'>
@@ -82,17 +98,21 @@ export default function Navbar({ currentUser, handleLogout }) {
               <div className='flex space-x-4'>
                 <a
                   href='/profile'
-                  className='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium'
+                  className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium'
                   aria-current='page'
                 >
-                  Your Profile
+                  <span className='material-symbols-outlined mr-2'>
+                    account_circle
+                  </span>
+                  <span>Your Profile</span>
                 </a>
                 <div
                   onClick={() => handleLogout()}
-                  className='bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium hover:cursor-pointer'
+                  className='bg-gray-900 flex starjedi hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:cursor-pointer'
                   aria-current='page'
                 >
-                  Sign Out
+                  <span className='material-symbols-outlined mr-2'>logout</span>
+                  <span>Sign out</span>
                 </div>
               </div>
             </div>
@@ -110,19 +130,23 @@ export default function Navbar({ currentUser, handleLogout }) {
             <div className='px-2 pt-2 pb-3 space-y-1'>
               <a
                 href='/profile'
-                className='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
+                className='bg-gray-900 flex starjedi hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium'
                 aria-current='page'
               >
-                Your Profile
+                <span className='material-symbols-outlined mr-2'>
+                  account_circle
+                </span>
+                <span>Your Profile</span>
               </a>
             </div>
             <div className='px-2 pt-2 pb-3 space-y-1'>
               <div
                 onClick={() => handleLogout()}
-                className='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium hover:cursor-pointer'
+                className='bg-gray-900 flex starjedi hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium hover:cursor-pointer'
                 aria-current='page'
               >
-                Sign Out
+                <span className='material-symbols-outlined mr-2'>logout</span>
+                <span>Sign out</span>
               </div>
             </div>
           </div>
@@ -130,20 +154,22 @@ export default function Navbar({ currentUser, handleLogout }) {
           <div>
             <div className='px-2 pt-2 pb-3 space-y-1'>
               <a
-                href='#'
-                className='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
+                href='/register'
+                className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium'
                 aria-current='page'
               >
-                Register
+                <span class='material-symbols-outlined mr-2'>how_to_reg</span>
+                <span>Register</span>
               </a>
             </div>
             <div className='px-2 pt-2 pb-3 space-y-1'>
               <a
-                href='#'
-                className='bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium'
+                href='/'
+                className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium'
                 aria-current='page'
               >
-                Login
+                <span class='material-symbols-outlined mr-2'>login</span>
+                <span>Login</span>
               </a>
             </div>
           </div>

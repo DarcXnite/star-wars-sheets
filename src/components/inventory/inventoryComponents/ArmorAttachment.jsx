@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../../ui/Input'
 
 export default function ArmorAttachments({
   armorAttachment: { attachmentName, hardPoints, description },
@@ -59,8 +60,8 @@ export default function ArmorAttachments({
 
   return (
     <React.Fragment>
-      <label htmlFor='attachmentName'>Attachment</label>
-      <input
+      <Input
+        label='Attachment:'
         id='attachmentName'
         type='text'
         name='attachmentName'
@@ -68,17 +69,18 @@ export default function ArmorAttachments({
         onChange={e => updateAttachments(e, idx)}
       />
 
-      <label htmlFor='hardPoints'>Hard Points</label>
-      <input
+      <Input
+        label='Hard Points:'
         id='hardPoints'
         type='number'
         name='hardPoints'
         value={hardPoints}
         onChange={e => updateAttachments(e, idx)}
+        min='0'
       />
 
-      <label htmlFor='description'>Description</label>
-      <input
+      <Input
+        label='Description:'
         id='description'
         type='text'
         name='description'

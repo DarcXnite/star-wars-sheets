@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../ui/Input'
 
 export default function WeaponAttachment({
   weaponAttachment: { attachment, hardPointCost, modifications, rarity },
@@ -60,8 +61,8 @@ export default function WeaponAttachment({
 
   return (
     <React.Fragment>
-      <label htmlFor='attachment'>Attachment</label>
-      <input
+      <Input
+        label='Attachment:'
         id='attachment'
         type='text'
         name='attachment'
@@ -69,8 +70,8 @@ export default function WeaponAttachment({
         onChange={e => updateAttachments(e, idx)}
       />
 
-      <label htmlFor='hardPoint'>Hard Points</label>
-      <input
+      <Input
+        label='Hard Points:'
         id='hardPoint'
         type='number'
         name='hardPointCost'
@@ -78,8 +79,8 @@ export default function WeaponAttachment({
         onChange={e => updateAttachments(e, idx)}
       />
 
-      <label htmlFor='modifications'>Modifications</label>
-      <input
+      <Input
+        label='Modifications:'
         id='modifications'
         type='text'
         name='modifications'
@@ -87,8 +88,8 @@ export default function WeaponAttachment({
         onChange={e => updateAttachments(e, idx)}
       />
 
-      <label htmlFor='rarity'>Rarity</label>
-      <input
+      <Input
+        label='Rarity:'
         id='rarity'
         type='number'
         name='rarity'

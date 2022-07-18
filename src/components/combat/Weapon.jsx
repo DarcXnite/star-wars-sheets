@@ -1,5 +1,6 @@
 import React from 'react'
 import WeaponAttachment from './WeaponAttachment'
+import Input from '../ui/Input'
 
 export default function Weapons({
   weapon: {
@@ -81,101 +82,106 @@ export default function Weapons({
 
   return (
     <React.Fragment>
-      <label htmlFor='weaponName'>Weapon Name</label>
-      <input
+      <Input
+        label='Weapon Name:'
         id='weaponName'
         type='text'
         name='weaponName'
         value={weaponName}
         onChange={e => updateWeapon(e, weaponIndex)}
       />
-      <label htmlFor='usesSkill'>Uses Skill</label>
-      <input
+      <Input
+        label='Uses Skill:'
         id='usesSkill'
         type='text'
         name='usesSkill'
         value={usesSkill}
         onChange={e => updateWeapon(e, weaponIndex)}
       />
-      <label htmlFor='damage'>Damage</label>
-      <input
+      <Input
+        label='Damage:'
         id='damage'
         type='number'
         name='damage'
         value={damage}
         onChange={e => updateWeapon(e, weaponIndex)}
+        min='0'
       />
-      <label htmlFor='range'>Range</label>
-      <input
+      <Input
+        label='Range:'
         id='range'
         type='text'
         name='range'
         value={range}
         onChange={e => updateWeapon(e, weaponIndex)}
       />
-      <label htmlFor='encumbrance'>Encumbrance</label>
-      <input
+      <Input
+        label='Encumbrance:'
         id='encumbrance'
         type='number'
         name='encumbrance'
         value={encumbrance}
         onChange={e => updateWeapon(e, weaponIndex)}
+        min='0'
       />
-      <label htmlFor='hardPoints'>Hard Points</label>
-      <input
+      <Input
+        label='Hard Points:'
         id='hardPoints'
         type='number'
         name='hardPoints'
         value={hardPoints}
         onChange={e => updateWeapon(e, weaponIndex)}
+        min='0'
       />
-      <label htmlFor='critRating'>Crit Rating</label>
-      <input
+      <Input
+        label='Crit Rating:'
         id='critRating'
         type='number'
         name='critRating'
         value={critRating}
         onChange={e => updateWeapon(e, weaponIndex)}
+        min='0'
       />
-      <label htmlFor='condition'>Condition</label>
-      <input
+      <Input
+        label='Condition:'
         id='condition'
         type='text'
         name='condition'
         value={condition}
         onChange={e => updateWeapon(e, weaponIndex)}
       />
-      <label htmlFor='restricted'>Restricted?</label>
-      <input
+      <Input
+        label='Restricted?'
         id='restricted'
         type='checkbox'
         name='restricted'
         onChange={e => restrictedCheck(e, weaponIndex)}
         checked={restricted}
       />
-      <label htmlFor='qualities'>Qualities</label>
-      <input
+      <Input
+        label='Qualities:'
         id='qualities'
         type='text'
         name='qualities'
         value={qualities}
         onChange={e => updateWeapon(e, weaponIndex)}
       />
-      <label htmlFor='modifiers'>Modifiers</label>
-      <input
+      <Input
+        label='Modifiers:'
         id='modifiers'
         type='text'
         name='modifiers'
         value={modifiers}
         onChange={e => updateWeapon(e, weaponIndex)}
       />
-      <label htmlFor='rarity'>Rarity</label>
-      <input
+      <Input
+        label='Rarity:'
         id='rarity'
         type='number'
         name='rarity'
         value={rarity}
         onChange={e => updateWeapon(e, weaponIndex)}
+        min='0'
       />
       {allWeaponAttachments}
 

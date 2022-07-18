@@ -1,5 +1,6 @@
 import React from 'react'
 import ArmorAttachment from './ArmorAttachment'
+import Input from '../../ui/Input'
 
 export default function Armor({
   armor: { name, condition, value, qualities, features, rarity, attachments },
@@ -55,53 +56,55 @@ export default function Armor({
 
   return (
     <React.Fragment>
-      <label htmlFor='name'>Name</label>
-      <input
+      <Input
+        label='Name:'
         id='name'
         type='text'
         name='name'
         value={name}
         onChange={e => updateArmor(e, armorIndex)}
       />
-      <label htmlFor='condition'>Condition</label>
-      <input
+      <Input
+        label='Condition:'
         id='condition'
         type='text'
         name='condition'
         value={condition}
         onChange={e => updateArmor(e, armorIndex)}
       />
-      <label htmlFor='value'>Value</label>
-      <input
+      <Input
+        label='Value:'
         id='value'
         type='number'
         name='value'
         value={value}
         onChange={e => updateArmor(e, armorIndex)}
+        min='0'
       />
-      <label htmlFor='qualities'>Qualities</label>
-      <input
+      <Input
+        label='Qualities:'
         id='qualities'
         type='text'
         name='qualities'
         value={qualities}
         onChange={e => updateArmor(e, armorIndex)}
       />
-      <label htmlFor='features'>Features</label>
-      <input
+      <Input
+        label='Features:'
         id='features'
         type='text'
         name='features'
         value={features}
         onChange={e => updateArmor(e, armorIndex)}
       />
-      <label htmlFor='rarity'>Rarity</label>
-      <input
+      <Input
+        label='Rarity:'
         id='rarity'
         type='number'
         name='rarity'
         value={rarity}
         onChange={e => updateArmor(e, armorIndex)}
+        min='0'
       />
       {allArmorAttachments}
       <button onClick={deleteArmor}>Delete Armor</button>

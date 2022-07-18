@@ -34,7 +34,7 @@ function App() {
   }
   return (
     <div className='App'>
-      <header>
+      <header className='fixed top-0 w-full'>
         <Navbar currentUser={currentUser} handleLogout={handleLogout} />
       </header>
       <Routes>
@@ -77,7 +77,11 @@ function App() {
             )
           }
         />
-        <Route exact path='/characters/:id' element={<CharacterSheet />} />
+        <Route
+          exact
+          path='/characters/:id'
+          element={currentUser ? <CharacterSheet /> : <Navigate to='/login' />}
+        />
       </Routes>
     </div>
   )

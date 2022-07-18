@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from './ui/Input'
 
 export default function Careers({
   careerName,
@@ -26,24 +27,25 @@ export default function Careers({
 
   return (
     <React.Fragment>
-      <label htmlFor='career'>Career</label>
-      <input
-        id='career'
-        type='text'
-        name='career'
-        value={careerName}
-        onChange={e => updateCareer(e, careerIndex)}
-      />
-
-      <label htmlFor='spec'>Specialization</label>
-      <input
-        id='spec'
-        type='text'
-        name='specialization'
-        value={careerSpec}
-        onChange={e => updateCareer(e, careerIndex)}
-      />
-      <button onClick={removeCareer}>Remove Career</button>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
+        <Input
+          label='Career:'
+          id='career'
+          type='text'
+          name='career'
+          value={careerName}
+          onChange={e => updateCareer(e, careerIndex)}
+        />
+        <Input
+          label='Specialization:'
+          id='spec'
+          type='text'
+          name='specialization'
+          value={careerSpec}
+          onChange={e => updateCareer(e, careerIndex)}
+        />
+        <button onClick={removeCareer}>Remove Career</button>
+      </div>
     </React.Fragment>
   )
 }

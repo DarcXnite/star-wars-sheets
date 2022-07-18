@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../../ui/Input'
 
 export default function InventoryItem({
   item: { itemName, cost, encumbrance, description },
@@ -28,32 +29,34 @@ export default function InventoryItem({
 
   return (
     <React.Fragment>
-      <label htmlFor='itemName'>Item Name</label>
-      <input
+      <Input
+        label='Item Name:'
         id='itemName'
         type='text'
         name='itemName'
         value={itemName}
         onChange={e => updateInventoryItem(e, inventoryIdx)}
       />
-      <label htmlFor='cost'>Cost</label>
-      <input
+      <Input
+        label='Cost:'
         id='cost'
         type='number'
         name='cost'
         value={cost}
         onChange={e => updateInventoryItem(e, inventoryIdx)}
+        min='0'
       />
-      <label htmlFor='encumbrance'>Encumbrance</label>
-      <input
+      <Input
+        label='Encumbrance:'
         id='encumbrance'
         type='number'
         name='encumbrance'
         value={encumbrance}
         onChange={e => updateInventoryItem(e, inventoryIdx)}
+        min='0'
       />
-      <label htmlFor='description'>Description</label>
-      <input
+      <Input
+        label='Description:'
         id='description'
         type='text'
         name='description'

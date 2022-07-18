@@ -132,7 +132,7 @@ export default function Profile({
   }
 
   const loggedIn = (
-    <div>
+    <div className='mt-20'>
       <h1>Hello, {name}</h1>
       <p>Your email is: {email}</p>
       <a href='https://sw-eote-srd.vercel.app/character-creation/'>

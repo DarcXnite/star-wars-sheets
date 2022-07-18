@@ -1,5 +1,6 @@
 import React from 'react'
 import ForcePowerUpgrade from './ForcePowerUpgrade'
+import Input from '../ui/Input'
 
 export default function ForcePower({
   power: { powerName, modifiers, xpCost, summary, upgrades },
@@ -56,30 +57,30 @@ export default function ForcePower({
 
   return (
     <React.Fragment>
-      <label htmlFor='powerName'>Power Name</label>
-      <input
+      <Input
+        label='Power Name:'
         type='text'
         name='powerName'
         value={powerName}
         onChange={e => updatePower(e, powerIndex)}
       />
-      <label htmlFor='modifiers'>Modifiers</label>
-      <input
+      <Input
+        label='Modifiers:'
         type='text'
         name='modifiers'
         value={modifiers}
         onChange={e => updatePower(e, powerIndex)}
       />
-      <label htmlFor='xpCost'>XP Cost</label>
-      <input
+      <Input
+        label='XP Cost:'
         type='number'
         name='xpCost'
         value={xpCost}
         onChange={e => updatePower(e, powerIndex)}
         min='0'
       />
-      <label htmlFor='summary'>Summary</label>
-      <input
+      <Input
+        label='Summary:'
         type='text'
         name='summary'
         value={summary}

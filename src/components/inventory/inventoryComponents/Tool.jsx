@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../../ui/Input'
 
 export default function Tool({
   tool: { toolName, encumbrance, summary, rarity },
@@ -25,37 +26,39 @@ export default function Tool({
 
   return (
     <React.Fragment>
-      <label htmlFor='toolName'>Tool Name</label>
-      <input
+      <Input
+        label='Tool Name:'
         id='toolName'
         type='text'
         name='toolName'
         value={toolName}
         onChange={e => updateTool(e, toolIdx)}
       />
-      <label htmlFor='encumbrance'>Encumbrance</label>
-      <input
+      <Input
+        label='Encumbrance:'
         id='encumbrance'
         type='number'
         name='encumbrance'
         value={encumbrance}
         onChange={e => updateTool(e, toolIdx)}
+        min='0'
       />
-      <label htmlFor='summary'>Summary</label>
-      <input
+      <Input
+        label='Summary:'
         id='summary'
         type='text'
         name='summary'
         value={summary}
         onChange={e => updateTool(e, toolIdx)}
       />
-      <label htmlFor='rarity'>Rarity</label>
-      <input
+      <Input
+        label='Rarity:'
         id='rarity'
         type='number'
         name='rarity'
         value={rarity}
         onChange={e => updateTool(e, toolIdx)}
+        min='0'
       />
       <button onClick={deleteTool}>Delete Tool</button>
     </React.Fragment>

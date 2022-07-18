@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../ui/Input'
 
 export default function ForcePowerUpgrade({
   upg: { type, rank, xpCost, description },
@@ -56,16 +57,16 @@ export default function ForcePowerUpgrade({
 
   return (
     <React.Fragment>
-      <label htmlFor='type'>Type</label>
-      <input
+      <Input
+        label='Type:'
         id='type'
         type='text'
         name='type'
         value={type}
         onChange={e => updateUpgrade(e, idx)}
       />
-      <label htmlFor='rank'>Rank</label>
-      <input
+      <Input
+        label='Rank:'
         id='rank'
         type='number'
         name='rank'
@@ -73,8 +74,8 @@ export default function ForcePowerUpgrade({
         onChange={e => updateUpgrade(e, idx)}
         min='0'
       />
-      <label htmlFor='xpCost'>XP Cost</label>
-      <input
+      <Input
+        label='XP Cost:'
         id='xpCost'
         type='number'
         name='xpCost'
@@ -82,8 +83,8 @@ export default function ForcePowerUpgrade({
         onChange={e => updateUpgrade(e, idx)}
         min='0'
       />
-      <label htmlFor='description'>Description</label>
-      <input
+      <Input
+        label='Description:'
         id='description'
         type='text'
         name='description'

@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../../ui/Input'
 
 export default function Cybernetics({
   cybernetic: { implantName, active, summary, rarity },
@@ -41,16 +42,16 @@ export default function Cybernetics({
   }
   return (
     <React.Fragment>
-      <label htmlFor='implantName'>Implant Name</label>
-      <input
+      <Input
+        label='Implant Name:'
         id='implantName'
         type='text'
         name='implantName'
         value={implantName}
         onChange={e => updateCybernetic(e, cyberneticIdx)}
       />
-      <label htmlFor='active'>Active</label>
-      <input
+      <Input
+        label='Active:'
         id='active'
         type='checkbox'
         name='active'
@@ -58,21 +59,22 @@ export default function Cybernetics({
         onChange={e => activeCheck(e, cyberneticIdx)}
         checked={active}
       />
-      <label htmlFor='summary'>Summary</label>
-      <input
+      <Input
+        label='Summary'
         id='summary'
         type='text'
         name='summary'
         value={summary}
         onChange={e => updateCybernetic(e, cyberneticIdx)}
       />
-      <label htmlFor='rarity'>Rarity</label>
-      <input
+      <Input
+        label='Rarity:'
         id='rarity'
         type='number'
         name='rarity'
         value={rarity}
         onChange={e => updateCybernetic(e, cyberneticIdx)}
+        min='0'
       />
       <button onClick={deleteCybernetic}>Delete Cybernetic</button>
     </React.Fragment>

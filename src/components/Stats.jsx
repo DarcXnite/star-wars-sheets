@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from './ui/Input'
 
 export default function Stats({
   characterForm: {
@@ -20,9 +21,10 @@ export default function Stats({
     <div>
       <h2>Stats</h2>
 
-      <div>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <h2>Wounds</h2>
-        <input
+        <Input
+          label='Threshold:'
           id='woundsThres'
           type='number'
           value={woundsThreshold}
@@ -34,8 +36,8 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='woundsThres'>Threshold</label>
-        <input
+        <Input
+          label='Current:'
           id='currentWounds'
           type='number'
           value={wounds}
@@ -47,12 +49,12 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='currentWounds'>Current</label>
       </div>
 
-      <div>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <h3>Strain</h3>
-        <input
+        <Input
+          label='Threshold:'
           id='strainThres'
           type='number'
           value={strainThreshold}
@@ -64,8 +66,8 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='strainThres'>Threshold</label>
-        <input
+        <Input
+          label='Current:'
           id='currentStrain'
           type='number'
           value={strain}
@@ -77,12 +79,12 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='currentStrain'>Current</label>
       </div>
 
-      <div>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <h3>Soak</h3>
-        <input
+        <Input
+          label='Value:'
           type='number'
           value={soakValue}
           onChange={e =>
@@ -95,9 +97,10 @@ export default function Stats({
         />
       </div>
 
-      <div>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <h3>Defense</h3>
-        <input
+        <Input
+          label='Ranged:'
           id='rangedDef'
           type='number'
           value={rangedDef}
@@ -109,8 +112,8 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='rangedDef'>Ranged</label>
-        <input
+        <Input
+          label='Melee:'
           id='meleeDef'
           type='number'
           value={meleeDef}
@@ -122,12 +125,12 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='meleeDef'>Melee</label>
       </div>
 
-      <div>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <h3>Encumbrance</h3>
-        <input
+        <Input
+          label='Encumbrance:'
           id='encumThres'
           type='number'
           value={encumThreshold}
@@ -139,8 +142,8 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='encumThres'>Threshold</label>
-        <input
+        <Input
+          label='Current:'
           id='encumCurrent'
           type='number'
           value={encumCurrent}
@@ -152,12 +155,12 @@ export default function Stats({
           }
           min='0'
         />
-        <label htmlFor='encumCurrent'>Current</label>
       </div>
 
-      <div>
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <h3>Force Pool</h3>
-        <input
+        <Input
+          label='Value:'
           type='number'
           value={forcePool}
           onChange={e =>

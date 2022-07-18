@@ -1,3 +1,5 @@
+import Input from '../../ui/Input'
+
 export default function CombatSkill({
   eachSkill: { skill, career, type, rank },
   characterForm,
@@ -23,16 +25,17 @@ export default function CombatSkill({
         {`${skill}`}
         <input type='text' value={type} />
       </p>
-      <label htmlFor='career'>Career</label>
-      <input
-        id='career'
-        type='checkbox'
-        name='career'
-        onChange={e => checkboxToggle(e, idx)}
-        checked={career}
-      />
-      <label htmlFor='rank'>Rank</label>
-      <input id='rank' type='number' name='rank' value={rank} />
+      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
+        <Input
+          label='Career:'
+          id='career'
+          type='checkbox'
+          name='career'
+          onChange={e => checkboxToggle(e, idx)}
+          checked={career}
+        />
+        <Input label='Rank:' id='rank' type='number' name='rank' value={rank} />
+      </div>
     </div>
   )
 }

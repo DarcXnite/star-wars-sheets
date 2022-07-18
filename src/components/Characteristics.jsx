@@ -1,3 +1,5 @@
+import Input from './ui/Input'
+
 export default function Characteristics({
   setCharacterForm,
   characterForm: { brawn, agility, intellect, cunning, willpower, presence },
@@ -5,10 +7,10 @@ export default function Characteristics({
 }) {
   return (
     <div>
-      <div className='container'>
+      <div className='flex flex-wrap px-5 py-3 space-x-2'>
         <div>
-          <label htmlFor='brawn'>Brawn</label>
-          <input
+          <Input
+            label='Brawn:'
             id='brawn'
             type='number'
             value={brawn}
@@ -23,8 +25,8 @@ export default function Characteristics({
           />
         </div>
         <div>
-          <label htmlFor='agility'>Agility</label>
-          <input
+          <Input
+            label='Agility:'
             id='agility'
             type='number'
             value={agility}
@@ -39,8 +41,8 @@ export default function Characteristics({
           />
         </div>
         <div>
-          <label htmlFor='intellect'>Intellect</label>
-          <input
+          <Input
+            label='Intellect:'
             id='intellect'
             type='number'
             value={intellect}
@@ -55,8 +57,8 @@ export default function Characteristics({
           />
         </div>
         <div>
-          <label htmlFor='cunning'>Cunning</label>
-          <input
+          <Input
+            label='Cunning:'
             id='cunning'
             type='number'
             value={cunning}
@@ -71,8 +73,8 @@ export default function Characteristics({
           />
         </div>
         <div>
-          <label htmlFor='willpower'>Willpower</label>
-          <input
+          <Input
+            label='Willpower:'
             id='willpower'
             type='number'
             value={willpower}
@@ -87,8 +89,8 @@ export default function Characteristics({
           />
         </div>
         <div>
-          <label htmlFor='presence'>Presence</label>
-          <input
+          <Input
+            label='Presence:'
             id='presence'
             type='number'
             value={presence}
