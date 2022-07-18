@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Character from '../Character'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL
 
@@ -72,12 +72,12 @@ export default function Profile({
     build: '',
     hair: '',
     eyes: '',
-    brawn: 0,
-    agility: 0,
-    intellect: 0,
-    cunning: 0,
-    willpower: 0,
-    presence: 0,
+    brawn: 1,
+    agility: 1,
+    intellect: 1,
+    cunning: 1,
+    willpower: 1,
+    presence: 1,
     woundsThreshold: 0,
     wounds: 0,
     strainThreshold: 0,
@@ -108,10 +108,10 @@ export default function Profile({
   }
 
   const allCharacters = userData.characters.map(char => {
-    const { name, _id } = char
+    const { _id } = char
     return (
       <div key={_id}>
-        <Link to={`/characters/${_id}`}>{name}</Link>
+        <Character char={char} userData={userData} setUserData={setUserData} />
       </div>
     )
   })
@@ -135,6 +135,9 @@ export default function Profile({
     <div>
       <h1>Hello, {name}</h1>
       <p>Your email is: {email}</p>
+      <a href='https://sw-eote-srd.vercel.app/character-creation/'>
+        Character Creation Guide
+      </a>
       {allCharacters}
       <button onClick={createCharacter}>Create Character</button>
 
