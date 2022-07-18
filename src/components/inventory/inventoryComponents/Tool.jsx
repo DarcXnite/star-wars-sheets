@@ -60,7 +60,9 @@ export default function Tool({
         onChange={e => updateTool(e, toolIdx)}
         min='0'
       />
-      <button onClick={deleteTool}>Delete Tool</button>
+      <button onClick={deleteTool}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }

@@ -37,7 +37,11 @@ export default function CombatSkills({
   })
   return (
     <div>
-      <h3>Combat Skills</h3>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
+        <span>Skill</span>
+        <span>Career</span>
+        <span>Rank</span>
+      </div>
       {allCombatSkills}
     </div>
   )

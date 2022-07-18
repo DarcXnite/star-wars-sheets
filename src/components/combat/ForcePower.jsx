@@ -88,8 +88,12 @@ export default function ForcePower({
       />
       {allUpgrades}
 
-      <button onClick={addUpgrade}>Add Upgrade</button>
-      <button onClick={removePower}>Remove Power</button>
+      <button onClick={addUpgrade}>
+        <span className='material-symbols-outlined'>add</span>
+      </button>
+      <button onClick={removePower}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }

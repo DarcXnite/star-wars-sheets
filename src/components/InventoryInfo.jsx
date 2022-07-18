@@ -6,7 +6,7 @@ import ToolsInfo from './inventory/ToolsInfo'
 
 export default function InventoryInfo({ setCharacterForm, characterForm }) {
   return (
-    <div>
+    <div className='container mx-auto bg-slate-500 p-10 rounded'>
       <h2>Inventory</h2>
       <InventoryItems
         characterForm={characterForm}

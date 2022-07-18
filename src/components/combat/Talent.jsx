@@ -79,7 +79,9 @@ export default function Talent({
         name='summary'
         onChange={e => updateTalent(e, talentIndex)}
       />
-      <button onClick={removeTalent}>Remove Talent</button>
+      <button onClick={removeTalent}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }

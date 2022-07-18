@@ -44,7 +44,9 @@ export default function Careers({
           value={careerSpec}
           onChange={e => updateCareer(e, careerIndex)}
         />
-        <button onClick={removeCareer}>Remove Career</button>
+        <button onClick={removeCareer}>
+          <span className='material-symbols-outlined'>delete</span>
+        </button>
       </div>
     </React.Fragment>
   )

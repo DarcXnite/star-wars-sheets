@@ -8,16 +8,13 @@ export default function CustomSkills({
   const allCustomSkills = customSkills.map((customSkill, idx) => {
     const { _id } = customSkills
     return (
-      <details>
-        <summary>Custom Skill</summary>
-        <CustomSkill
-          key={_id}
-          customSkill={customSkill}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          idx={idx}
-        />
-      </details>
+      <CustomSkill
+        key={_id}
+        customSkill={customSkill}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        idx={idx}
+      />
     )
   })
 
@@ -35,7 +32,12 @@ export default function CustomSkills({
 
   return (
     <div>
-      <h2>Custom Skills</h2>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
+        <span>Skill</span>
+        <span>Career</span>
+        <span>Type</span>
+        <span>Rank</span>
+      </div>
       {allCustomSkills}
       <button onClick={addCustomSkill}>Add a Custom Skill</button>
     </div>

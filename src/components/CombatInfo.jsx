@@ -135,7 +135,7 @@ export default function CombatInfo({
   }
 
   return (
-    <div>
+    <div className='container mx-auto bg-slate-500 p-10 rounded'>
       <div>
         <div>
           <h2>Weapons</h2>

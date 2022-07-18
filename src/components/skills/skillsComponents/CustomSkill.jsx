@@ -42,9 +42,9 @@ export default function CustomSkill({
 
   return (
     <React.Fragment>
-      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
+      <div className='grid grid-cols-4 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
-          label='Skill:'
+          className='w-20 h-5'
           id='skill'
           type='text'
           name='skill'
@@ -52,7 +52,7 @@ export default function CustomSkill({
           onChange={e => updateCustomSkill(e, idx)}
         />
         <Input
-          label='Career:'
+          className='w-20 h-5'
           id='career'
           type='checkbox'
           name='career'
@@ -61,7 +61,7 @@ export default function CustomSkill({
           checked={career}
         />
         <Input
-          label='Type:'
+          className='w-20 h-5'
           id='type'
           type='text'
           name='type'
@@ -69,7 +69,7 @@ export default function CustomSkill({
           onChange={e => updateCustomSkill(e, idx)}
         />
         <Input
-          label='Rank:'
+          className='w-20 h-6'
           id='rank'
           type='number'
           name='rank'

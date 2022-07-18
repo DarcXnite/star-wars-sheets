@@ -88,7 +88,9 @@ export default function ArmorAttachments({
         onChange={e => updateAttachments(e, idx)}
       />
 
-      <button onClick={removeAttachment}>Remove Attachment</button>
+      <button onClick={removeAttachment}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }

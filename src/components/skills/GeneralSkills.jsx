@@ -21,8 +21,12 @@ export default function GeneralSkills({
 
   return (
     <div>
-      <h3>General Skills</h3>
-      {allGeneralSkills}
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
+        <span>Skill</span>
+        <span>Career</span>
+        <span>Rank</span>
+      </div>
+      <div>{allGeneralSkills}</div>
     </div>
   )
 }

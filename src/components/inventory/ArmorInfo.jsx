@@ -42,7 +42,9 @@ export default function ArmorInfo({
     <div>
       <h2>Armor</h2>
       {allArmor}
-      <button onClick={addArmor}>Add Armor</button>
+      <button onClick={addArmor}>
+        <span className='material-symbols-outlined'>add</span>
+      </button>
     </div>
   )
 }

@@ -138,6 +138,102 @@ export default function CharacterSheet() {
     }
   }
 
+  const tabs = (
+    <ul className='flex flex-wrap justify-evenly text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 mt-4'>
+      <li className='mx-2'>
+        <button
+          onClick={() => {
+            setShowCharacter(true)
+            setShowSkills(false)
+            setShowCombat(false)
+            setShowInventory(false)
+            setShowNotes(false)
+          }}
+          aria-current='page'
+          className={`inline-block p-4 rounded-t-lg dark:bg-gray-100 dark:text-blue-500 ${
+            showCharacter
+              ? 'text-white bg-gray-400 hover:bg-gray-100 dark:bg-slate-500 dark:text-white'
+              : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+          }`}
+        >
+          Character
+        </button>
+      </li>
+      <li className='mx-2'>
+        <button
+          onClick={() => {
+            setShowCharacter(false)
+            setShowSkills(true)
+            setShowCombat(false)
+            setShowInventory(false)
+            setShowNotes(false)
+          }}
+          className={`inline-block py-4 px-6 rounded-t-lg dark:bg-gray-100 dark:text-blue-500 ${
+            showSkills
+              ? 'text-white bg-gray-300 hover:bg-gray-100 dark:bg-slate-500 dark:text-white'
+              : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+          }`}
+        >
+          Skills
+        </button>
+      </li>
+      <li className='mx-2'>
+        <button
+          onClick={() => {
+            setShowCharacter(false)
+            setShowSkills(false)
+            setShowCombat(true)
+            setShowInventory(false)
+            setShowNotes(false)
+          }}
+          className={`inline-block p-4 rounded-t-lg dark:bg-gray-100 dark:text-blue-500 ${
+            showCombat
+              ? 'text-white bg-gray-300 hover:bg-gray-100 dark:bg-slate-500 dark:text-white'
+              : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+          }`}
+        >
+          Combat
+        </button>
+      </li>
+      <li className='mx-2'>
+        <button
+          onClick={() => {
+            setShowCharacter(false)
+            setShowSkills(false)
+            setShowCombat(false)
+            setShowInventory(true)
+            setShowNotes(false)
+          }}
+          className={`inline-block p-4 rounded-t-lg dark:bg-gray-100 dark:text-blue-500 ${
+            showInventory
+              ? 'text-white bg-gray-300 hover:bg-gray-100 dark:bg-slate-500 dark:text-white'
+              : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+          }`}
+        >
+          Inventory
+        </button>
+      </li>
+      <li className='mx-2'>
+        <button
+          onClick={() => {
+            setShowCharacter(false)
+            setShowSkills(false)
+            setShowCombat(false)
+            setShowInventory(false)
+            setShowNotes(true)
+          }}
+          className={`inline-block p-4 rounded-t-lg dark:bg-gray-100 dark:text-blue-500 ${
+            showNotes
+              ? 'text-white bg-gray-300 hover:bg-gray-100 dark:bg-slate-500 dark:text-white'
+              : 'hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300'
+          }`}
+        >
+          Notes
+        </button>
+      </li>
+    </ul>
+  )
+
   return (
     <div>
       <h2>Character Sheet</h2>
@@ -154,63 +250,7 @@ export default function CharacterSheet() {
         setCharacterForm={setCharacterForm}
       />
 
-      <div>
-        <button
-          onClick={() => {
-            setShowCharacter(true)
-            setShowSkills(false)
-            setShowCombat(false)
-            setShowInventory(false)
-            setShowNotes(false)
-          }}
-        >
-          Character
-        </button>
-        <button
-          onClick={() => {
-            setShowCharacter(false)
-            setShowSkills(true)
-            setShowCombat(false)
-            setShowInventory(false)
-            setShowNotes(false)
-          }}
-        >
-          Skills
-        </button>
-        <button
-          onClick={() => {
-            setShowCharacter(false)
-            setShowSkills(false)
-            setShowCombat(true)
-            setShowInventory(false)
-            setShowNotes(false)
-          }}
-        >
-          Combat
-        </button>
-        <button
-          onClick={() => {
-            setShowCharacter(false)
-            setShowSkills(false)
-            setShowCombat(false)
-            setShowInventory(true)
-            setShowNotes(false)
-          }}
-        >
-          Inventory
-        </button>
-        <button
-          onClick={() => {
-            setShowCharacter(false)
-            setShowSkills(false)
-            setShowCombat(false)
-            setShowInventory(false)
-            setShowNotes(true)
-          }}
-        >
-          Notes
-        </button>
-      </div>
+      {tabs}
 
       {showCharacter ? (
         <CharacterInfo

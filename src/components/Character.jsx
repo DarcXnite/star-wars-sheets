@@ -19,11 +19,18 @@ export default function Character({
   }
 
   return (
-    <div>
+    <div className='w-40 mt-7'>
       <Link to={`/characters/${_id}`}>
-        <h4>{name}</h4>
+        <div className='hover:text-red-700 flex flex-wrap flex-col'>
+          <span className='material-symbols-outlined text-8xl'>
+            account_circle
+          </span>
+          <span>{name}</span>
+        </div>
       </Link>
-      <button onClick={deleteCharacter}>Delete Character</button>
+      <button onClick={deleteCharacter}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </div>
   )
 }

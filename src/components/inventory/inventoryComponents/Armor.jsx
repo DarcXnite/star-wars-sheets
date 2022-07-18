@@ -107,8 +107,10 @@ export default function Armor({
         min='0'
       />
       {allArmorAttachments}
-      <button onClick={deleteArmor}>Delete Armor</button>
-      <button onClick={addArmorAttachments}>Add Attachments</button>
+      <button onClick={deleteArmor}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
+      <button onClick={addArmorAttachments}>Add Attachment</button>
     </React.Fragment>
   )
 }

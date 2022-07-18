@@ -40,7 +40,9 @@ export default function InventoryItems({
     <div>
       <h2>Inventory Items</h2>
       {allInventoryItems}
-      <button onClick={addInventoryItem}>Add an Inventory Item</button>
+      <button onClick={addInventoryItem}>
+        <span className='material-symbols-outlined'>add</span>
+      </button>
     </div>
   )
 }

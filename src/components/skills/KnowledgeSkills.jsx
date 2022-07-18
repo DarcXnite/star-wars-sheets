@@ -20,26 +20,12 @@ export default function KnowledgeSkills({
   })
   return (
     <div>
-      <h3>Knowledge Skills</h3>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
+        <span>Skill</span>
+        <span>Career</span>
+        <span>Rank</span>
+      </div>
       {allKnowledgeSkills}
-      {/* <label htmlFor='skill'>Skill</label>
-      <input
-        id='skill'
-        type='text'
-        name='skill'
-        value={knowledgeSkills[0].skill}
-      />
-      <label htmlFor='career'>Career</label>
-      <input
-        id='career'
-        type='boolean'
-        name='career'
-        // value={knowledgeSkills.career}
-      />
-      <label htmlFor='type'>Type</label>
-      <input id='type' type='text' name='type' />
-      <label htmlFor='rank'>Rank</label>
-      <input id='rank' type='number' name='rank' /> */}
     </div>
   )
 }

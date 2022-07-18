@@ -63,7 +63,9 @@ export default function InventoryItem({
         value={description}
         onChange={e => updateInventoryItem(e, inventoryIdx)}
       />
-      <button onClick={deleteInventoryItem}>Delete Item</button>
+      <button onClick={deleteInventoryItem}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }

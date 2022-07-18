@@ -76,7 +76,9 @@ export default function Cybernetics({
         onChange={e => updateCybernetic(e, cyberneticIdx)}
         min='0'
       />
-      <button onClick={deleteCybernetic}>Delete Cybernetic</button>
+      <button onClick={deleteCybernetic}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }

@@ -39,7 +39,9 @@ export default function CyberneticsInfo({
     <div>
       <h2>Cybernetics</h2>
       {allCybernetics}
-      <button onClick={addCybernetic}>Add a Cybernetic</button>
+      <button onClick={addCybernetic}>
+        <span className='material-symbols-outlined'>add</span>
+      </button>
     </div>
   )
 }

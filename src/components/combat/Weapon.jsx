@@ -186,7 +186,9 @@ export default function Weapons({
       {allWeaponAttachments}
 
       <button onClick={addAttachment}>Add Attachment</button>
-      <button onClick={deleteWeapon}>Delete Weapon</button>
+      <button onClick={deleteWeapon}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }

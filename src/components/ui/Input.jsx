@@ -5,8 +5,8 @@ export default function Input({ className, label, ...props }) {
   const id = useId()
   return (
     <React.Fragment>
-      <div className='flex flex-col mb-3'>
-        <label className='text-gray-500 font-semibold text-xl' htmlFor={id}>
+      <div className='flex flex-col items-center justify-center mb-3'>
+        <label className='text-gray-700 font-semibold text-xl' htmlFor={id}>
           {label}
         </label>
         <input

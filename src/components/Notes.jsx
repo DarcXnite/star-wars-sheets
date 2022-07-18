@@ -8,7 +8,7 @@ export default function Notes({
   const [currentNotes, setCurrentNotes] = useState(notes)
 
   return (
-    <div>
+    <div className='container mx-auto bg-slate-500 p-10 rounded'>
       <h2>Notes</h2>
       <textarea
         name='notes'

@@ -132,19 +132,29 @@ export default function Profile({
   }
 
   const loggedIn = (
-    <div className='mt-20'>
-      <h1>Hello, {name}</h1>
-      <p>Your email is: {email}</p>
-      <a href='https://sw-eote-srd.vercel.app/character-creation/'>
+    <div className='mt-20 text-center'>
+      <h2 className='starjedi text-7xl'>Your Characters</h2>
+      {/* <a href='https://sw-eote-srd.vercel.app/character-creation/'>
         Character Creation Guide
-      </a>
-      {allCharacters}
-      <button onClick={createCharacter}>Create Character</button>
+      </a> */}
+      <div className='flex flex-wrap shrink-0 justify-center items-center'>
+        {allCharacters}
 
-      <h2>
+        <button
+          className='w-40 flex flex-col items-center justify-center'
+          onClick={createCharacter}
+        >
+          <span className='material-symbols-outlined text-7xl hover:text-sky-700'>
+            person_add
+          </span>
+          <span>Create Character</span>
+        </button>
+      </div>
+
+      {/* <h2>
         Here is the secret message that is only available to users of User App:{' '}
       </h2>
-      <h3>{msg}</h3>
+      <h3>{msg}</h3> */}
     </div>
   )
 

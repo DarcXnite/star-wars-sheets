@@ -40,7 +40,9 @@ export default function ToolsInfo({
     <div>
       <h2>Tools</h2>
       {allTools}
-      <button onClick={addTool}>Add a Tool</button>
+      <button onClick={addTool}>
+        <span className='material-symbols-outlined'>add</span>
+      </button>
     </div>
   )
 }

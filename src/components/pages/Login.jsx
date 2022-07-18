@@ -84,7 +84,7 @@ export default function Login({ currentUser, setCurrentUser }) {
             className='flex justify-center items-center text-white bg-gray-700 rounded px-4 py-2 mt-3 w-full starjedi hover:bg-gray-600 hover:text-red-700'
             type='submit'
           >
-            <span class='material-symbols-outlined mr-2'>login</span>
+            <span className='material-symbols-outlined mr-2'>login</span>
             <span>Login</span>
           </button>
         </form>

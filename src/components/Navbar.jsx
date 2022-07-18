@@ -96,6 +96,24 @@ export default function Navbar({ currentUser, handleLogout }) {
             {/* end of logo */}
             <div className={`sm:block sm:ml-6 hidden`}>
               <div className='flex space-x-4'>
+                {/* darkmode toggler */}
+                {/* <div>
+                  <input type='checkbox' className='checkbox' id='checkbox' />
+                  <label for='checkbox' className='label'>
+                    <img
+                      className='w-4'
+                      src='/images/triumph.png'
+                      alt='light'
+                    />
+                    <img
+                      className='w-4'
+                      src='/images/despair.png'
+                      alt='light'
+                    />
+                    <div className='ball'></div>
+                  </label>
+                </div> */}
+                {/* end of darkmode toggler */}
                 <a
                   href='/profile'
                   className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium'
@@ -158,7 +176,9 @@ export default function Navbar({ currentUser, handleLogout }) {
                 className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium'
                 aria-current='page'
               >
-                <span class='material-symbols-outlined mr-2'>how_to_reg</span>
+                <span className='material-symbols-outlined mr-2'>
+                  how_to_reg
+                </span>
                 <span>Register</span>
               </a>
             </div>
@@ -168,7 +188,7 @@ export default function Navbar({ currentUser, handleLogout }) {
                 className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium'
                 aria-current='page'
               >
-                <span class='material-symbols-outlined mr-2'>login</span>
+                <span className='material-symbols-outlined mr-2'>login</span>
                 <span>Login</span>
               </a>
             </div>

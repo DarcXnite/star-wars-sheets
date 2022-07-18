@@ -44,8 +44,8 @@ export default function CharacterInfo({
   }
 
   return (
-    <div>
-      <h2>Character Info</h2>
+    <div className='container mx-auto bg-slate-500 p-10 rounded'>
+      <h2 className='starjedi'>Character info</h2>
       <a
         href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Species'
         target='_blank'
@@ -158,7 +158,9 @@ export default function CharacterInfo({
             </a>
           </summary>
           {allCareers}
-          <button onClick={addCareer}>Add Career</button>
+          <button onClick={addCareer}>
+            <span className='material-symbols-outlined'>add</span>
+          </button>
         </details>
       </div>
     </div>

@@ -21,17 +21,22 @@ export default function CombatSkill({
 
   return (
     <div>
-      <p>{`${skill} (${type})`}</p>
-      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
+      <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <p className='text-white text-lg font-bold'>{`${skill} (${type})`}</p>
         <Input
-          label='Career:'
           id='career'
           type='checkbox'
           name='career'
           onChange={e => checkboxToggle(e, idx)}
           checked={career}
         />
-        <Input label='Rank:' id='rank' type='number' name='rank' value={rank} />
+        <Input
+          className='w-20 h-5'
+          id='rank'
+          type='number'
+          name='rank'
+          value={rank}
+        />
       </div>
     </div>
   )

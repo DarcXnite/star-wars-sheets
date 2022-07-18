@@ -7,10 +7,11 @@ export default function Characteristics({
 }) {
   return (
     <div>
-      <div className='flex flex-wrap px-5 py-3 space-x-2'>
-        <div>
+      <div className='flex flex-wrap px-5 py-3 bg-red-700 items-center justify-center mt-4'>
+        <div className='text-center mx-8'>
           <Input
-            label='Brawn:'
+            className='w-20 text-center'
+            label='Brawn'
             id='brawn'
             type='number'
             value={brawn}
@@ -24,9 +25,10 @@ export default function Characteristics({
             max='6'
           />
         </div>
-        <div>
+        <div className='text-center mx-8'>
           <Input
-            label='Agility:'
+            className='w-20 text-center'
+            label='Agility'
             id='agility'
             type='number'
             value={agility}
@@ -40,9 +42,10 @@ export default function Characteristics({
             max='6'
           />
         </div>
-        <div>
+        <div className='text-center mx-8'>
           <Input
-            label='Intellect:'
+            className='w-20 text-center'
+            label='Intellect'
             id='intellect'
             type='number'
             value={intellect}
@@ -56,9 +59,10 @@ export default function Characteristics({
             max='6'
           />
         </div>
-        <div>
+        <div className='text-center mx-8'>
           <Input
-            label='Cunning:'
+            className='w-20 text-center'
+            label='Cunning'
             id='cunning'
             type='number'
             value={cunning}
@@ -72,9 +76,10 @@ export default function Characteristics({
             max='6'
           />
         </div>
-        <div>
+        <div className='text-center mx-8'>
           <Input
-            label='Willpower:'
+            className='w-20 text-center'
+            label='Willpower'
             id='willpower'
             type='number'
             value={willpower}
@@ -88,9 +93,10 @@ export default function Characteristics({
             max='6'
           />
         </div>
-        <div>
+        <div className='text-center mx-8'>
           <Input
-            label='Presence:'
+            className='w-20 text-center'
+            label='Presence'
             id='presence'
             type='number'
             value={presence}

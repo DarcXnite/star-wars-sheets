@@ -19,23 +19,44 @@ export default function CombatSkill({
     setCharacterForm({ ...characterForm, combatSkills: updatedSkills })
   }
 
+  const lightsaberType = (e, idx) => {
+    console.log('type changed')
+  }
+
   return (
-    <div>
-      <p>
+    <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <p className='flex text-white text-lg font-bold'>
         {`${skill}`}
-        <input type='text' value={type} />
+        {/* <Input className='w-20 h-5' type='text' value={type} /> */}
+        <select
+          className='text-black ml-4 rounded'
+          name='type'
+          id='type'
+          value={type}
+          onChange={e => lightsaberType(e, idx)}
+        >
+          <option value='brawn'>Brawn</option>
+          <option value='agility'>Agility</option>
+          <option value='intellect'>Intellect</option>
+          <option value='cunning'>Cunning</option>
+          <option value='willpower'>Willpower</option>
+          <option value='presence'>Presence</option>
+        </select>
       </p>
-      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
-        <Input
-          label='Career:'
-          id='career'
-          type='checkbox'
-          name='career'
-          onChange={e => checkboxToggle(e, idx)}
-          checked={career}
-        />
-        <Input label='Rank:' id='rank' type='number' name='rank' value={rank} />
-      </div>
+      <Input
+        id='career'
+        type='checkbox'
+        name='career'
+        onChange={e => checkboxToggle(e, idx)}
+        checked={career}
+      />
+      <Input
+        className='w-20 h-5'
+        id='rank'
+        type='number'
+        name='rank'
+        value={rank}
+      />
     </div>
   )
 }

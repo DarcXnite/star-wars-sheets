@@ -91,7 +91,9 @@ export default function ForcePowerUpgrade({
         value={description}
         onChange={e => updateUpgrade(e, idx)}
       />
-      <button onClick={removeUpgrade}>Remove Upgrade</button>
+      <button onClick={removeUpgrade}>
+        <span className='material-symbols-outlined'>delete</span>
+      </button>
     </React.Fragment>
   )
 }
