@@ -12,6 +12,8 @@ import { knowledgeSkills, generalSkills, combatSkills } from '../defaults'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL
 
+// guide to the RPG https://sw-eote-srd.vercel.app/
+
 export default function CharacterSheet() {
   const [showCharacter, setShowCharacter] = useState(true)
   const [showSkills, setShowSkills] = useState(false)
@@ -126,10 +128,21 @@ export default function CharacterSheet() {
     }
   }
 
+  const deleteCharacter = async () => {
+    console.log('character deleted')
+    try {
+      await axios.delete(`${serverUrl}/characters/${id}`)
+      navigate('/profile')
+    } catch (err) {
+      console.warn(err)
+    }
+  }
+
   return (
     <div>
       <h2>Character Sheet</h2>
       <button onClick={saveCharacterSheet}>Save</button>
+      <button onClick={deleteCharacter}>Delete Character</button>
 
       <Characteristics
         setCharacterForm={setCharacterForm}

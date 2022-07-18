@@ -111,6 +111,7 @@ export default function CombatInfo({
     qualities: '',
     modifiers: '',
     rarity: 0,
+    attachments: [],
   }
 
   const addWeapon = () => {
@@ -136,22 +137,70 @@ export default function CombatInfo({
   return (
     <div>
       <div>
-        <h2>Weapons</h2>
+        <div>
+          <h2>Weapons</h2>
+          <span>
+            ({' '}
+            <a
+              href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Weapon'
+              target='_blank'
+            >
+              Weapons Guide
+            </a>{' '}
+            )
+          </span>
+        </div>
         {allWeapons}
         <button onClick={addWeapon}>Add a weapon</button>
       </div>
       <div>
-        <h2>Critical Injuries</h2>
+        <div>
+          <h2>Critical Injuries</h2>
+          <span>
+            ({' '}
+            <a
+              href='https://sw-eote-srd.vercel.app/personal/status-recovery/critical-injuries/'
+              target='_blank'
+            >
+              Critical Injuries Guide
+            </a>{' '}
+            )
+          </span>
+        </div>
         {allCritInjuries}
         <button onClick={addCritInjury}>Add Critical Injury</button>
       </div>
       <div>
-        <h2>Force Powers</h2>
+        <div>
+          <h2>Force Powers </h2>
+          <span>
+            ({' '}
+            <a
+              href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Force_Power'
+              target='_blank'
+            >
+              Force Powers Guide
+            </a>{' '}
+            )
+          </span>
+        </div>
         {allForcePowers}
         <button onClick={addForcePower}>Add Force Power</button>
       </div>
       <div>
-        <h2>Talents</h2>
+        <div>
+          <h2>Talents</h2>
+          <span>
+            ({' '}
+            <a
+              href='https://star-wars-rpg-saga-edition.fandom.com/wiki/Talents'
+              target='_blank'
+            >
+              Talents Guide
+            </a>{' '}
+            )
+          </span>
+        </div>
         {allTalents}
         <button onClick={addTalent}>Add Talent</button>
       </div>
