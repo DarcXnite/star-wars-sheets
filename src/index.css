@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Starjedi';
+  src: local('Starjedi'),
+    url('./fonts/Starjedi/Starjedi.ttf') format('truetype');
+  font-weight: bold;
+}
+
+.starjedi {
+  font-family: 'Starjedi';
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

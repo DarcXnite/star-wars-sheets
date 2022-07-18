@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Link } from 'react-router-dom'
 
 const serverUrl = process.env.REACT_APP_SERVER_URL
 
@@ -44,29 +44,48 @@ export default function Login({ currentUser, setCurrentUser }) {
   }
 
   return (
-    <div>
-      <h1>Login to your Account:</h1>
+    <div className='bg-red-700 flex justify-between items-center px-12 py-12 h-full'>
+      <div className='bg-gray-800 mx-auto px-14 py-6 rounded-3xl shadow-md pt-12 max-w-lg w-[500px]'>
+        <h1 className='text-3xl text-center font-bold mb-5 text-white'>
+          Login
+        </h1>
 
-      <p>{msg}</p>
+        <p>{msg}</p>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor='email'>Email: </label>
-        <input
-          type='email'
-          id='email'
-          placeholder='Your email...'
-          onChange={e => setEmail(e.target.value)}
-        />
-
-        <label htmlFor='password'>Password: </label>
-        <input
-          type='password'
-          id='password'
-          placeholder='Your Password...'
-          onChange={e => setPassword(e.target.value)}
-        />
-        <button type='submit'>Login</button>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <div className='flex flex-col mb-3'>
+            <label className='text-white font-semibold text-xl' htmlFor='email'>
+              Email:{' '}
+            </label>
+            <input
+              className='max--md bg-red-300 text-gray-800 rounded-sm shadow-inner hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-800 px-4 py-2 placeholder:text-gray-800'
+              type='email'
+              id='email'
+              placeholder='Your email...'
+              onChange={e => setEmail(e.target.value)}
+            />
+          </div>
+          <div className='flex flex-col mb-3'>
+            <label
+              className='text-white font-semibold text-xl'
+              htmlFor='password'
+            >
+              Password:{' '}
+            </label>
+            <input
+              className='max--md bg-red-300 text-gray-800 rounded-sm shadow-inner hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-gray-800 px-4 py-2 placeholder:text-gray-800'
+              type='password'
+              id='password'
+              placeholder='Your Password...'
+              onChange={e => setPassword(e.target.value)}
+            />
+          </div>
+          <button type='submit'>Login</button>
+        </form>
+      </div>
+      <Link to='/register'>
+        <span>Don't have an account? Sign up here</span>
+      </Link>
     </div>
   )
 }
