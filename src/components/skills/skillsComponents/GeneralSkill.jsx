@@ -18,6 +18,16 @@ export default function CombatSkill({
     })
     setCharacterForm({ ...characterForm, generalSkills: updatedSkills })
   }
+  const updateRank = (e, idx) => {
+    const updatedSkills = generalSkills.map((skill, i) => {
+      if (idx === i) {
+        return { ...skill, [e.target.name]: e.target.value }
+      } else {
+        return skill
+      }
+    })
+    setCharacterForm({ ...characterForm, generalSkills: updatedSkills })
+  }
 
   return (
     <div>
@@ -36,7 +46,10 @@ export default function CombatSkill({
             id='rank'
             type='number'
             name='rank'
+            onChange={e => updateRank(e, idx)}
             value={rank}
+            min='0'
+            max='6'
           />
         </div>
       </div>

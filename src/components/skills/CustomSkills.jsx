@@ -41,6 +41,7 @@ export default function CustomSkills({
       {allCustomSkills}
       <button onClick={addCustomSkill}>
         <span className='material-symbols-outlined'>add</span>
+        <span className='text-gray-800'>Add</span>
       </button>
     </div>
   )
