@@ -2,8 +2,8 @@ import Weapon from './combat/Weapon'
 import Talent from './combat/Talent'
 import ForcePower from './combat/ForcePower'
 import CritInjury from './combat/CritInjury'
-import ReactTooltip from 'react-tooltip'
 import { useState } from 'react'
+import Summary from './Summary'
 // import { v4 as uuidv4 } from 'uuid'
 
 export default function CombatInfo({
@@ -136,33 +136,19 @@ export default function CombatInfo({
           combat
         </h2>
         <details>
-          <summary className='text-gray-800 text-xl font-bold flex items-center'>
-            <span className='material-symbols-outlined text-4xl'>
-              arrow_drop_down
-            </span>
-            <span>Weapons</span>
-            <a
-              href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Weapon'
-              target='_blank'
-              rel='noreferrer'
-              data-tip='Weapons Guide'
-              data-for='weapon'
-              onMouseEnter={() => setWeaponTip(true)}
-              onMouseLeave={() => setWeaponTip(false)}
-              className='material-symbols-outlined ml-2'
-            >
-              help
-            </a>
-            <div className={`${!weaponTip ? 'hidden' : ''}`}>
-              <ReactTooltip id='weapon' />
-            </div>
-          </summary>
+          <Summary
+            link='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Weapon'
+            toolTip='Weapons Guide'
+            id='weapon'
+            toolTipFunc={setWeaponTip}
+            toolTipBool={weaponTip}
+            name='Weapons'
+          />
           {allWeapons}
           <button onClick={addWeapon}>
             <span className='material-symbols-outlined'>add</span>
           </button>
         </details>
-        <div></div>
       </div>
       <div>
         <details>
