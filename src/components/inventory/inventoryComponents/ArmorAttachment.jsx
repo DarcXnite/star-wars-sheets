@@ -60,12 +60,12 @@ export default function ArmorAttachments({
 
   return (
     <React.Fragment>
-      <div className='text-center text-white text-xl font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
+      <div className='text-center text-white sm:text-xl text-sm font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
         <span>Name</span>
         <span>Hard Points</span>
         <span>Description</span>
       </div>
-      <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='sm:grid grid-cols-3 px-5 sm:py-3 pb-28 pt-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-25 h-5'
           id='attachmentName'

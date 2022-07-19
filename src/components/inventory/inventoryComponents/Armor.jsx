@@ -58,7 +58,7 @@ export default function Armor({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-6 px-8 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='flex flex-wrap items-center justify-center sm:grid grid-cols-6 px-8 sm:py-3 pb-36 pt-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-20 h-5'
           id='name'

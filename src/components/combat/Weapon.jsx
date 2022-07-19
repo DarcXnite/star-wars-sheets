@@ -222,7 +222,7 @@ export default function Weapons({
         </div>
       </div>
       <div>
-        <div className='text-center text-white sm:text-xl text-xs font-extrabold grid grid-cols-4 bg-gray-800 rounded-md sm:visible invisible'>
+        <div className='text-center text-white sm:text-xl text-xs font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
           <span>Attachment</span>
           <span>Hard Point</span>
           <span>Modifications</span>

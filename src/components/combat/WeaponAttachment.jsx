@@ -61,7 +61,7 @@ export default function WeaponAttachment({
 
   return (
     <React.Fragment>
-      <div className='flex flex-wrap items-center justify-center sm:grid grid-cols-4 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='flex flex-wrap items-center justify-center sm:grid grid-cols-4 px-5 sm:py-3 pb-16 pt-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-20 h-5'
           id='attachment'

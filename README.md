@@ -19,6 +19,10 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 - React
 - Node.js
 
+## Approach
+
+## Installation Instructions
+
 ## RESTful Routing Chart
 
 <details>
@@ -109,6 +113,3 @@ Starting with as basic functionality as we could. We added CRUD functionality to
 - No forseeable potential roadblocks at this time.
 
 ## Hurdles
-
-- Handling all components without getting lost or losing code
-- Functionality for nested embedded references in backend schemas
