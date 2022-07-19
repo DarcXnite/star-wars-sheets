@@ -60,34 +60,40 @@ export default function ArmorAttachments({
 
   return (
     <React.Fragment>
-      <Input
-        label='Attachment:'
-        id='attachmentName'
-        type='text'
-        name='attachmentName'
-        value={attachmentName}
-        onChange={e => updateAttachments(e, idx)}
-      />
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
+        <span>Name</span>
+        <span>Hard Points</span>
+        <span>Description</span>
+      </div>
+      <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-25 h-5'
+          id='attachmentName'
+          type='text'
+          name='attachmentName'
+          value={attachmentName}
+          onChange={e => updateAttachments(e, idx)}
+        />
 
-      <Input
-        label='Hard Points:'
-        id='hardPoints'
-        type='number'
-        name='hardPoints'
-        value={hardPoints}
-        onChange={e => updateAttachments(e, idx)}
-        min='0'
-      />
+        <Input
+          className='w-20 h-5'
+          id='hardPoints'
+          type='number'
+          name='hardPoints'
+          value={hardPoints}
+          onChange={e => updateAttachments(e, idx)}
+          min='0'
+        />
 
-      <Input
-        label='Description:'
-        id='description'
-        type='text'
-        name='description'
-        value={description}
-        onChange={e => updateAttachments(e, idx)}
-      />
-
+        <Input
+          className='w-25 h-5'
+          id='description'
+          type='text'
+          name='description'
+          value={description}
+          onChange={e => updateAttachments(e, idx)}
+        />
+      </div>
       <button onClick={removeAttachment}>
         <span className='material-symbols-outlined'>delete</span>
       </button>

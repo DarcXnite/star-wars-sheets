@@ -10,17 +10,14 @@ export default function InventoryItems({
   const allInventoryItems = inventory.map((item, idx) => {
     const { _id } = item
     return (
-      <details>
-        <summary>Inventory Items</summary>
-        <InventoryItem
-          key={_id}
-          item={item}
-          inventory={inventory}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          inventoryIdx={idx}
-        />
-      </details>
+      <InventoryItem
+        key={_id}
+        item={item}
+        inventory={inventory}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        inventoryIdx={idx}
+      />
     )
   })
 
@@ -38,7 +35,12 @@ export default function InventoryItems({
 
   return (
     <div>
-      <h2>Inventory Items</h2>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
+        <span>Item</span>
+        <span>Cost</span>
+        <span>Encumbrance</span>
+        <span>Description</span>
+      </div>
       {allInventoryItems}
       <button onClick={addInventoryItem}>
         <span className='material-symbols-outlined'>add</span>

@@ -10,16 +10,13 @@ export default function ArmorInfo({
   const allArmor = armors.map((armor, idx) => {
     const { _id } = armor
     return (
-      <details>
-        <summary>Armor</summary>
-        <Armor
-          key={_id}
-          armor={armor}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          armorIndex={idx}
-        />
-      </details>
+      <Armor
+        key={_id}
+        armor={armor}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        armorIndex={idx}
+      />
     )
   })
 
@@ -40,7 +37,14 @@ export default function ArmorInfo({
 
   return (
     <div>
-      <h2>Armor</h2>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-7 bg-gray-800 rounded-md'>
+        <span>Name</span>
+        <span>Condition</span>
+        <span>Value</span>
+        <span>Qualities</span>
+        <span>Features</span>
+        <span>Rarity</span>
+      </div>
       {allArmor}
       <button onClick={addArmor}>
         <span className='material-symbols-outlined'>add</span>

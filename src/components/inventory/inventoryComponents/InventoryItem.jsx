@@ -29,43 +29,45 @@ export default function InventoryItem({
 
   return (
     <React.Fragment>
-      <Input
-        label='Item Name:'
-        id='itemName'
-        type='text'
-        name='itemName'
-        value={itemName}
-        onChange={e => updateInventoryItem(e, inventoryIdx)}
-      />
-      <Input
-        label='Cost:'
-        id='cost'
-        type='number'
-        name='cost'
-        value={cost}
-        onChange={e => updateInventoryItem(e, inventoryIdx)}
-        min='0'
-      />
-      <Input
-        label='Encumbrance:'
-        id='encumbrance'
-        type='number'
-        name='encumbrance'
-        value={encumbrance}
-        onChange={e => updateInventoryItem(e, inventoryIdx)}
-        min='0'
-      />
-      <Input
-        label='Description:'
-        id='description'
-        type='text'
-        name='description'
-        value={description}
-        onChange={e => updateInventoryItem(e, inventoryIdx)}
-      />
-      <button onClick={deleteInventoryItem}>
-        <span className='material-symbols-outlined'>delete</span>
-      </button>
+      <div className='grid grid-cols-5 px-10 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-22 h-5'
+          id='itemName'
+          type='text'
+          name='itemName'
+          value={itemName}
+          onChange={e => updateInventoryItem(e, inventoryIdx)}
+        />
+        <Input
+          className='w-20 h-5'
+          id='cost'
+          type='number'
+          name='cost'
+          value={cost}
+          onChange={e => updateInventoryItem(e, inventoryIdx)}
+          min='0'
+        />
+        <Input
+          className='w-20 h-5'
+          id='encumbrance'
+          type='number'
+          name='encumbrance'
+          value={encumbrance}
+          onChange={e => updateInventoryItem(e, inventoryIdx)}
+          min='0'
+        />
+        <Input
+          className='w-30 h-5'
+          id='description'
+          type='text'
+          name='description'
+          value={description}
+          onChange={e => updateInventoryItem(e, inventoryIdx)}
+        />
+        <button onClick={deleteInventoryItem}>
+          <span className='material-symbols-outlined'>delete</span>
+        </button>
+      </div>
     </React.Fragment>
   )
 }

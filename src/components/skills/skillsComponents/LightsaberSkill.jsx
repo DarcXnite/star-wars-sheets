@@ -20,12 +20,20 @@ export default function CombatSkill({
   }
 
   const lightsaberType = (e, idx) => {
-    console.log('type changed')
+    console.log(e.target.name)
+    const updatedLightsaber = combatSkills.map((skill, i) => {
+      if (idx === i) {
+        return { ...skill, [e.target.name]: e.target.value }
+      } else {
+        return skill
+      }
+    })
+    setCharacterForm({ ...characterForm, combatSkills: updatedLightsaber })
   }
 
   return (
     <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
-      <p className='flex text-white text-lg font-bold'>
+      <p className='flex flex-wrap text-white sm:text-lg text-xs font-bold'>
         {`${skill}`}
         {/* <Input className='w-20 h-5' type='text' value={type} /> */}
         <select

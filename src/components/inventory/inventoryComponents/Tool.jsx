@@ -26,43 +26,45 @@ export default function Tool({
 
   return (
     <React.Fragment>
-      <Input
-        label='Tool Name:'
-        id='toolName'
-        type='text'
-        name='toolName'
-        value={toolName}
-        onChange={e => updateTool(e, toolIdx)}
-      />
-      <Input
-        label='Encumbrance:'
-        id='encumbrance'
-        type='number'
-        name='encumbrance'
-        value={encumbrance}
-        onChange={e => updateTool(e, toolIdx)}
-        min='0'
-      />
-      <Input
-        label='Summary:'
-        id='summary'
-        type='text'
-        name='summary'
-        value={summary}
-        onChange={e => updateTool(e, toolIdx)}
-      />
-      <Input
-        label='Rarity:'
-        id='rarity'
-        type='number'
-        name='rarity'
-        value={rarity}
-        onChange={e => updateTool(e, toolIdx)}
-        min='0'
-      />
-      <button onClick={deleteTool}>
-        <span className='material-symbols-outlined'>delete</span>
-      </button>
+      <div className='grid grid-cols-5 px-9 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-25 h-5'
+          id='toolName'
+          type='text'
+          name='toolName'
+          value={toolName}
+          onChange={e => updateTool(e, toolIdx)}
+        />
+        <Input
+          className='w-20 h-5'
+          id='encumbrance'
+          type='number'
+          name='encumbrance'
+          value={encumbrance}
+          onChange={e => updateTool(e, toolIdx)}
+          min='0'
+        />
+        <Input
+          className='w-25 h-5'
+          id='summary'
+          type='text'
+          name='summary'
+          value={summary}
+          onChange={e => updateTool(e, toolIdx)}
+        />
+        <Input
+          className='w-20 h-5'
+          id='rarity'
+          type='number'
+          name='rarity'
+          value={rarity}
+          onChange={e => updateTool(e, toolIdx)}
+          min='0'
+        />
+        <button onClick={deleteTool}>
+          <span className='material-symbols-outlined'>delete</span>
+        </button>
+      </div>
     </React.Fragment>
   )
 }

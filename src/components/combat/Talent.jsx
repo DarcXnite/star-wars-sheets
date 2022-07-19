@@ -38,50 +38,52 @@ export default function Talent({
 
   return (
     <React.Fragment>
-      <Input
-        label='Talent:'
-        type='text'
-        value={talentName}
-        name='talentName'
-        onChange={e => updateTalent(e, talentIndex)}
-      />
+      <div className='grid grid-cols-6 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-20 h-5'
+          type='text'
+          value={talentName}
+          name='talentName'
+          onChange={e => updateTalent(e, talentIndex)}
+        />
 
-      <Input
-        label='Rank:'
-        type='number'
-        value={rank}
-        name='rank'
-        onChange={e => updateTalent(e, talentIndex)}
-        min='0'
-      />
+        <Input
+          className='w-20 h-5'
+          type='number'
+          value={rank}
+          name='rank'
+          onChange={e => updateTalent(e, talentIndex)}
+          min='0'
+        />
 
-      <Input
-        label='XP Cost:'
-        type='number'
-        value={xpCost}
-        name='xpCost'
-        onChange={e => updateTalent(e, talentIndex)}
-        min='0'
-      />
+        <Input
+          className='w-20 h-5'
+          type='number'
+          value={xpCost}
+          name='xpCost'
+          onChange={e => updateTalent(e, talentIndex)}
+          min='0'
+        />
 
-      <Input
-        label='Passive?'
-        type='checkbox'
-        name='passive'
-        checked={passive}
-        onChange={e => passiveCheck(e, talentIndex)}
-      />
+        <Input
+          className='w-20 h-5'
+          type='checkbox'
+          name='passive'
+          checked={passive}
+          onChange={e => passiveCheck(e, talentIndex)}
+        />
 
-      <Input
-        label='Summary:'
-        type='text'
-        value={summary}
-        name='summary'
-        onChange={e => updateTalent(e, talentIndex)}
-      />
-      <button onClick={removeTalent}>
-        <span className='material-symbols-outlined'>delete</span>
-      </button>
+        <Input
+          className='w-20 h-5'
+          type='text'
+          value={summary}
+          name='summary'
+          onChange={e => updateTalent(e, talentIndex)}
+        />
+        <button onClick={removeTalent}>
+          <span className='material-symbols-outlined'>delete</span>
+        </button>
+      </div>
     </React.Fragment>
   )
 }

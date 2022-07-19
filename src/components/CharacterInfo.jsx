@@ -1,6 +1,8 @@
 import React from 'react'
 import Career from './Career'
 import Input from './ui/Input'
+import ReactTooltip from 'react-tooltip'
+import { useState } from 'react'
 
 export default function CharacterInfo({
   setCharacterForm,
@@ -19,6 +21,9 @@ export default function CharacterInfo({
   },
   characterForm,
 }) {
+  const [careerTip, setCareerTip] = useState(false)
+  const [showSpeciesTip, setShowSpeciesTip] = useState(false)
+
   const allCareers = careers.map((career, idx) => {
     return (
       <Career
@@ -45,14 +50,27 @@ export default function CharacterInfo({
 
   return (
     <div className='container mx-auto bg-slate-500 p-10 rounded'>
-      <h2 className='starjedi'>Character info</h2>
-      <a
-        href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Species'
-        target='_blank'
-        rel='noreferrer'
-      >
-        Species Guide
-      </a>
+      <h2 className='text-2xl text-gray-800 font-extrabold'>
+        <div className='flex items-center'>
+          <span className='starjedi'>Character info</span>
+          <a
+            href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Species'
+            target='_blank'
+            rel='noreferrer'
+            data-tip='Species Guide'
+            data-for='species'
+            onMouseEnter={() => setShowSpeciesTip(true)}
+            onMouseLeave={() => setShowSpeciesTip(false)}
+            className='material-symbols-outlined ml-2'
+          >
+            help
+          </a>
+          <div className={`${!showSpeciesTip ? 'hidden' : ''}`}>
+            <ReactTooltip id='species' />
+          </div>
+        </div>
+      </h2>
+
       <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <Input
           label='Name:'
@@ -146,21 +164,33 @@ export default function CharacterInfo({
         />
       </div>
       <div>
-        <details open={true}>
-          <summary>
-            Careers{' '}
-            <a
-              href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Careers'
-              target='_blank'
-              rel='noreferrer'
-            >
-              Careers Guide
-            </a>
-          </summary>
+        <details>
+          <summary className='text-gray-800 text-xl font-bold'>Careers</summary>
+          <div className='text-center text-white text-xl font-extrabold grid grid-cols-2 bg-gray-800 rounded-md'>
+            <span className='flex items-center justify-center'>
+              <span>Career</span>
+              <a
+                href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Careers'
+                target='_blank'
+                rel='noreferrer'
+                data-tip='Careers Guide'
+                data-for='career'
+                onMouseEnter={() => setCareerTip(true)}
+                onMouseLeave={() => setCareerTip(false)}
+                className='material-symbols-outlined ml-2'
+              >
+                help
+              </a>
+              <div className={`${!careerTip ? 'hidden' : ''}`}>
+                <ReactTooltip id='career' />
+              </div>
+            </span>
+            <span>Specialization</span>
+          </div>
           {allCareers}
           <button onClick={addCareer}>
             <span className='material-symbols-outlined'>add</span>
-          </button>
+          </button>{' '}
         </details>
       </div>
     </div>

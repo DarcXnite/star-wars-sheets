@@ -13,16 +13,13 @@ export default function CombatInfo({
     // const keyId = uuidv4()
     const { _id } = weapon
     return (
-      <details open={true}>
-        <summary>Weapon</summary>
-        <Weapon
-          key={_id}
-          weapon={weapon}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          weaponIndex={idx}
-        />
-      </details>
+      <Weapon
+        key={_id}
+        weapon={weapon}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        weaponIndex={idx}
+      />
     )
   })
 
@@ -30,16 +27,13 @@ export default function CombatInfo({
     // const keyId = uuidv4()
     const { _id } = power
     return (
-      <details open={true}>
-        <summary>Force Power</summary>
-        <ForcePower
-          key={_id}
-          power={power}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          powerIndex={idx}
-        />
-      </details>
+      <ForcePower
+        key={_id}
+        power={power}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        powerIndex={idx}
+      />
     )
   })
 
@@ -47,16 +41,13 @@ export default function CombatInfo({
     // const keyId = uuidv4()
     const { _id } = talent
     return (
-      <details open={true}>
-        <summary>Talent</summary>
-        <Talent
-          key={_id}
-          talent={talent}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          talentIndex={idx}
-        />
-      </details>
+      <Talent
+        key={_id}
+        talent={talent}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        talentIndex={idx}
+      />
     )
   })
 
@@ -64,16 +55,13 @@ export default function CombatInfo({
     // const keyId = uuidv4()
     const { _id } = crit
     return (
-      <details open={true}>
-        <summary>Critical Injury</summary>
-        <CritInjury
-          key={_id}
-          crit={crit}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          critIndex={idx}
-        />
-      </details>
+      <CritInjury
+        key={_id}
+        crit={crit}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        critIndex={idx}
+      />
     )
   })
 
@@ -137,8 +125,15 @@ export default function CombatInfo({
   return (
     <div className='container mx-auto bg-slate-500 p-10 rounded'>
       <div>
-        <div>
-          <h2>Weapons</h2>
+        <h2 className='text-2xl text-gray-800 font-extrabold starjedi'>
+          combat
+        </h2>
+        <details>
+          <summary className='text-gray-800 text-xl font-bold'>Weapons</summary>
+          {allWeapons}
+          <button onClick={addWeapon}>
+            <span className='material-symbols-outlined'>add</span>
+          </button>
           <span>
             ({' '}
             <a
@@ -149,13 +144,22 @@ export default function CombatInfo({
             </a>{' '}
             )
           </span>
-        </div>
-        {allWeapons}
-        <button onClick={addWeapon}>Add a weapon</button>
+        </details>
+        <div></div>
       </div>
       <div>
-        <div>
-          <h2>Critical Injuries</h2>
+        <details>
+          <summary className='text-gray-800 text-xl font-bold'>
+            Critical Injuries
+          </summary>
+          <div className='text-center text-white text-xl font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
+            <span>Name</span>
+            <span>Roll Range</span>
+          </div>
+          {allCritInjuries}
+          <button onClick={addCritInjury}>
+            <span className='material-symbols-outlined'>add</span>
+          </button>
           <span>
             ({' '}
             <a
@@ -166,13 +170,24 @@ export default function CombatInfo({
             </a>{' '}
             )
           </span>
-        </div>
-        {allCritInjuries}
-        <button onClick={addCritInjury}>Add Critical Injury</button>
+        </details>
+        <div></div>
       </div>
       <div>
-        <div>
-          <h2>Force Powers </h2>
+        <details>
+          <summary className='text-gray-800 text-xl font-bold'>
+            Force Powers
+          </summary>
+          <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
+            <span>Name</span>
+            <span>Modifiers</span>
+            <span>XP Cost</span>
+            <span>Summary</span>
+          </div>
+          {allForcePowers}
+          <button onClick={addForcePower}>
+            <span className='material-symbols-outlined'>add</span>
+          </button>
           <span>
             ({' '}
             <a
@@ -183,26 +198,35 @@ export default function CombatInfo({
             </a>{' '}
             )
           </span>
-        </div>
-        {allForcePowers}
-        <button onClick={addForcePower}>Add Force Power</button>
+        </details>
+        <div></div>
       </div>
-      <div>
-        <div>
-          <h2>Talents</h2>
-          <span>
-            ({' '}
-            <a
-              href='https://star-wars-rpg-saga-edition.fandom.com/wiki/Talents'
-              target='_blank'
-            >
-              Talents Guide
-            </a>{' '}
-            )
-          </span>
+      <details>
+        <summary className='text-gray-800 text-xl font-bold'>Talents</summary>
+        <div className='text-center text-white text-xl font-extrabold grid grid-cols-6 bg-gray-800 rounded-md'>
+          <span>Talent</span>
+          <span>Rank</span>
+          <span>XP Cost</span>
+          <span>Passive</span>
+          <span>Rarity</span>
         </div>
         {allTalents}
-        <button onClick={addTalent}>Add Talent</button>
+        <button onClick={addTalent}>
+          <span className='material-symbols-outlined'>add</span>
+        </button>
+        <span>
+          ({' '}
+          <a
+            href='https://star-wars-rpg-saga-edition.fandom.com/wiki/Talents'
+            target='_blank'
+          >
+            Talents Guide
+          </a>{' '}
+          )
+        </span>
+      </details>
+      <div>
+        <div></div>
       </div>
     </div>
   )

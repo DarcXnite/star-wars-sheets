@@ -42,7 +42,7 @@ export default function CustomSkill({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-4 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-20 h-5'
           id='skill'
@@ -76,7 +76,9 @@ export default function CustomSkill({
           value={rank}
           onChange={e => updateCustomSkill(e, idx)}
         />
-        <button onClick={deleteSkill}>Delete Skill</button>
+        <button onClick={deleteSkill}>
+          <span className='material-symbols-outlined'>delete</span>
+        </button>
       </div>
     </React.Fragment>
   )

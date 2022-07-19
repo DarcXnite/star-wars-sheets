@@ -10,17 +10,14 @@ export default function ToolsInfo({
   const allTools = tools.map((tool, idx) => {
     const { _id } = tool
     return (
-      <details>
-        <summary>Tools</summary>
-        <Tool
-          key={_id}
-          tool={tool}
-          tools={tools}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          toolIdx={idx}
-        />
-      </details>
+      <Tool
+        key={_id}
+        tool={tool}
+        tools={tools}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        toolIdx={idx}
+      />
     )
   })
 
@@ -38,7 +35,12 @@ export default function ToolsInfo({
 
   return (
     <div>
-      <h2>Tools</h2>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
+        <span>Name</span>
+        <span>Encum</span>
+        <span>Summary</span>
+        <span>Rarity</span>
+      </div>
       {allTools}
       <button onClick={addTool}>
         <span className='material-symbols-outlined'>add</span>

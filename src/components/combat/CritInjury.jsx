@@ -27,22 +27,24 @@ export default function CritInjury({
 
   return (
     <React.Fragment>
-      <Input
-        label='Critical Injury:'
-        type='text'
-        name='criticalName'
-        value={criticalName}
-        onChange={e => updateInjury(e, critIndex)}
-      />
+      <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-45 h-5'
+          type='text'
+          name='criticalName'
+          value={criticalName}
+          onChange={e => updateInjury(e, critIndex)}
+        />
 
-      <Input
-        label='Roll Range:'
-        type='text'
-        name='rollRange'
-        value={rollRange}
-        onChange={e => updateInjury(e, critIndex)}
-      />
-      <button onClick={healInjury}>Heal</button>
+        <Input
+          className='w-45 h-5'
+          type='text'
+          name='rollRange'
+          value={rollRange}
+          onChange={e => updateInjury(e, critIndex)}
+        />
+        <button onClick={healInjury}>Heal</button>
+      </div>
     </React.Fragment>
   )
 }

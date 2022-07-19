@@ -21,7 +21,7 @@ export default function CombatSkill({
 
   return (
     <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
-      <p className='text-white text-lg font-bold'>{`${skill} (${type})`}</p>
+      <p className='text-white sm:text-lg text-xs font-bold'>{`${skill} (${type})`}</p>
       <Input
         id='career'
         type='checkbox'

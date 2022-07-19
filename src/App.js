@@ -77,11 +77,7 @@ function App() {
             )
           }
         />
-        <Route
-          exact
-          path='/characters/:id'
-          element={currentUser ? <CharacterSheet /> : <Navigate to='/login' />}
-        />
+        <Route exact path='/characters/:id' element={<CharacterSheet />} />
       </Routes>
     </div>
   )

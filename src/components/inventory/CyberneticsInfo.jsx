@@ -9,17 +9,14 @@ export default function CyberneticsInfo({
   const allCybernetics = cybernetics.map((cybernetic, idx) => {
     const { _id } = cybernetic
     return (
-      <details>
-        <summary>Cybernetics</summary>
-        <Cybernetic
-          key={_id}
-          cybernetics={cybernetics}
-          cybernetic={cybernetic}
-          setCharacterForm={setCharacterForm}
-          characterForm={characterForm}
-          cyberneticIdx={idx}
-        />
-      </details>
+      <Cybernetic
+        key={_id}
+        cybernetics={cybernetics}
+        cybernetic={cybernetic}
+        setCharacterForm={setCharacterForm}
+        characterForm={characterForm}
+        cyberneticIdx={idx}
+      />
     )
   })
 
@@ -37,7 +34,12 @@ export default function CyberneticsInfo({
 
   return (
     <div>
-      <h2>Cybernetics</h2>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
+        <span>Implant</span>
+        <span>Active</span>
+        <span>Summary</span>
+        <span>Rarity</span>
+      </div>
       {allCybernetics}
       <button onClick={addCybernetic}>
         <span className='material-symbols-outlined'>add</span>

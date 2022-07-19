@@ -139,7 +139,7 @@ export default function CharacterSheet() {
   }
 
   const tabs = (
-    <ul className='flex flex-wrap justify-evenly text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 mt-4'>
+    <ul className='flex flex-wrap justify-evenly text-sm font-medium text-center text-gray-500 dark:border-gray-700 dark:text-gray-400 mt-4'>
       <li className='mx-2'>
         <button
           onClick={() => {

@@ -42,43 +42,45 @@ export default function Cybernetics({
   }
   return (
     <React.Fragment>
-      <Input
-        label='Implant Name:'
-        id='implantName'
-        type='text'
-        name='implantName'
-        value={implantName}
-        onChange={e => updateCybernetic(e, cyberneticIdx)}
-      />
-      <Input
-        label='Active:'
-        id='active'
-        type='checkbox'
-        name='active'
-        value={active}
-        onChange={e => activeCheck(e, cyberneticIdx)}
-        checked={active}
-      />
-      <Input
-        label='Summary'
-        id='summary'
-        type='text'
-        name='summary'
-        value={summary}
-        onChange={e => updateCybernetic(e, cyberneticIdx)}
-      />
-      <Input
-        label='Rarity:'
-        id='rarity'
-        type='number'
-        name='rarity'
-        value={rarity}
-        onChange={e => updateCybernetic(e, cyberneticIdx)}
-        min='0'
-      />
-      <button onClick={deleteCybernetic}>
-        <span className='material-symbols-outlined'>delete</span>
-      </button>
+      <div className='grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-20 h-5'
+          id='implantName'
+          type='text'
+          name='implantName'
+          value={implantName}
+          onChange={e => updateCybernetic(e, cyberneticIdx)}
+        />
+        <Input
+          className='w-20 h-5'
+          id='active'
+          type='checkbox'
+          name='active'
+          value={active}
+          onChange={e => activeCheck(e, cyberneticIdx)}
+          checked={active}
+        />
+        <Input
+          className='w-25 h-5'
+          id='summary'
+          type='text'
+          name='summary'
+          value={summary}
+          onChange={e => updateCybernetic(e, cyberneticIdx)}
+        />
+        <Input
+          className='w-20 h-5'
+          id='rarity'
+          type='number'
+          name='rarity'
+          value={rarity}
+          onChange={e => updateCybernetic(e, cyberneticIdx)}
+          min='0'
+        />
+        <button onClick={deleteCybernetic}>
+          <span className='material-symbols-outlined'>delete</span>
+        </button>
+      </div>
     </React.Fragment>
   )
 }

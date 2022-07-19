@@ -27,26 +27,31 @@ export default function Careers({
 
   return (
     <React.Fragment>
-      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
+      <div className='grid grid-cols-2 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
-          label='Career:'
+          className='w-45 h-5'
           id='career'
           type='text'
           name='career'
           value={careerName}
           onChange={e => updateCareer(e, careerIndex)}
         />
-        <Input
-          label='Specialization:'
-          id='spec'
-          type='text'
-          name='specialization'
-          value={careerSpec}
-          onChange={e => updateCareer(e, careerIndex)}
-        />
-        <button onClick={removeCareer}>
-          <span className='material-symbols-outlined'>delete</span>
-        </button>
+        <div className='flex items-center justify-center'>
+          <Input
+            className='w-45 h-5'
+            id='spec'
+            type='text'
+            name='specialization'
+            value={careerSpec}
+            onChange={e => updateCareer(e, careerIndex)}
+          />
+          <button
+            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded'
+            onClick={removeCareer}
+          >
+            <span className='material-symbols-outlined'>delete</span>
+          </button>
+        </div>
       </div>
     </React.Fragment>
   )

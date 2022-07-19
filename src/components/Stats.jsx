@@ -86,23 +86,6 @@ export default function Stats({
         </div>
 
         <div className='px-5 py-3 space-x-1.5'>
-          <h3 className='text-gray-800 text-xl font-bold starjedi'>Soak</h3>
-          <Input
-            className='w-20 text-center'
-            label='Value'
-            type='number'
-            value={soakValue}
-            onChange={e =>
-              setCharacterForm({
-                ...characterForm,
-                soakValue: parseInt(e.target.value),
-              })
-            }
-            min='0'
-          />
-        </div>
-
-        <div className='px-5 py-3 space-x-1.5'>
           <h3 className='text-gray-800 text-xl font-bold starjedi'>Defense</h3>
           <Input
             className='w-20 text-center'
@@ -162,6 +145,23 @@ export default function Stats({
               setCharacterForm({
                 ...characterForm,
                 encumCurrent: parseInt(e.target.value),
+              })
+            }
+            min='0'
+          />
+        </div>
+
+        <div className='px-5 py-3 space-x-1.5'>
+          <h3 className='text-gray-800 text-xl font-bold starjedi'>Soak</h3>
+          <Input
+            className='w-20 text-center'
+            label='Value'
+            type='number'
+            value={soakValue}
+            onChange={e =>
+              setCharacterForm({
+                ...characterForm,
+                soakValue: parseInt(e.target.value),
               })
             }
             min='0'

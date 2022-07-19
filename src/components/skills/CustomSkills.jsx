@@ -32,14 +32,16 @@ export default function CustomSkills({
 
   return (
     <div>
-      <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
         <span>Skill</span>
         <span>Career</span>
         <span>Type</span>
         <span>Rank</span>
       </div>
       {allCustomSkills}
-      <button onClick={addCustomSkill}>Add a Custom Skill</button>
+      <button onClick={addCustomSkill}>
+        <span className='material-symbols-outlined'>add</span>
+      </button>
     </div>
   )
 }

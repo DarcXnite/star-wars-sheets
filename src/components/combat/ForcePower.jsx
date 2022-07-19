@@ -57,42 +57,43 @@ export default function ForcePower({
 
   return (
     <React.Fragment>
-      <Input
-        label='Power Name:'
-        type='text'
-        name='powerName'
-        value={powerName}
-        onChange={e => updatePower(e, powerIndex)}
-      />
-      <Input
-        label='Modifiers:'
-        type='text'
-        name='modifiers'
-        value={modifiers}
-        onChange={e => updatePower(e, powerIndex)}
-      />
-      <Input
-        label='XP Cost:'
-        type='number'
-        name='xpCost'
-        value={xpCost}
-        onChange={e => updatePower(e, powerIndex)}
-        min='0'
-      />
-      <Input
-        label='Summary:'
-        type='text'
-        name='summary'
-        value={summary}
-        onChange={e => updatePower(e, powerIndex)}
-      />
+      <div className='grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-20 h-5'
+          type='text'
+          name='powerName'
+          value={powerName}
+          onChange={e => updatePower(e, powerIndex)}
+        />
+        <Input
+          className='w-20 h-5'
+          type='text'
+          name='modifiers'
+          value={modifiers}
+          onChange={e => updatePower(e, powerIndex)}
+        />
+        <Input
+          className='w-20 h-5'
+          type='number'
+          name='xpCost'
+          value={xpCost}
+          onChange={e => updatePower(e, powerIndex)}
+          min='0'
+        />
+        <Input
+          className='w-20 h-5'
+          type='text'
+          name='summary'
+          value={summary}
+          onChange={e => updatePower(e, powerIndex)}
+        />
+        <button onClick={removePower}>
+          <span className='material-symbols-outlined'>delete</span>
+        </button>
+      </div>
       {allUpgrades}
-
       <button onClick={addUpgrade}>
         <span className='material-symbols-outlined'>add</span>
-      </button>
-      <button onClick={removePower}>
-        <span className='material-symbols-outlined'>delete</span>
       </button>
     </React.Fragment>
   )
