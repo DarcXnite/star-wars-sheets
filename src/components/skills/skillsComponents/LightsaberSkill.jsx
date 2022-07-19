@@ -31,6 +31,17 @@ export default function CombatSkill({
     setCharacterForm({ ...characterForm, combatSkills: updatedLightsaber })
   }
 
+  const updateRank = (e, idx) => {
+    const updatedSkills = generalSkills.map((skill, i) => {
+      if (idx === i) {
+        return { ...skill, [e.target.name]: e.target.value }
+      } else {
+        return skill
+      }
+    })
+    setCharacterForm({ ...characterForm, generalSkills: updatedSkills })
+  }
+
   return (
     <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
       <p className='flex flex-wrap text-white sm:text-lg text-xs font-bold'>
@@ -63,6 +74,7 @@ export default function CombatSkill({
         id='rank'
         type='number'
         name='rank'
+        onChange={e => updateRank(e, idx)}
         value={rank}
       />
     </div>
