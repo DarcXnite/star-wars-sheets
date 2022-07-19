@@ -219,7 +219,7 @@ export default function CombatInfo({
           toolTipBool={talentTip}
           name='Talents'
         />
-        <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md sm:visible invisible'>
+        <div className='text-center text-white sm:text-xl text-sm font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
           <span>Talent</span>
           <span>Rank</span>
           <span>XP Cost</span>

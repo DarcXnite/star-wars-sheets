@@ -26,7 +26,7 @@ export default function Tool({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-4 px-9 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='sm:grid grid-cols-4 px-9 sm:py-3 pb-32 pt-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-25 h-5'
           id='toolName'

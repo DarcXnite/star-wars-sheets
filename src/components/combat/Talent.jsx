@@ -38,7 +38,7 @@ export default function Talent({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='sm:grid flex flex-wrap items-center justify-center grid-cols-5 px-5 sm:py-3 pb-16 pt-3  space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-20 h-5'
           type='text'
@@ -48,7 +48,7 @@ export default function Talent({
         />
 
         <Input
-          className='w-20 h-5'
+          className='sm:w-20 w-10 h-5'
           type='number'
           value={rank}
           name='rank'
@@ -57,7 +57,7 @@ export default function Talent({
         />
 
         <Input
-          className='w-20 h-5'
+          className='sm:w-20 w-10 h-5'
           type='number'
           value={xpCost}
           name='xpCost'
@@ -71,7 +71,7 @@ export default function Talent({
           checked={passive}
           onChange={e => passiveCheck(e, talentIndex)}
         />
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center sm:justify-between'>
           <div></div>
           <Input
             className='w-20 h-5'
@@ -81,7 +81,7 @@ export default function Talent({
             onChange={e => updateTalent(e, talentIndex)}
           />
           <button
-            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            className='sm:ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
             onClick={removeTalent}
           >
             <span className='material-symbols-outlined'>delete</span>

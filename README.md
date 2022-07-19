@@ -17,6 +17,10 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 - React
 - Node.js
 
+## Approach
+
+## Installation Instructions
+
 ## RESTful Routing Chart
 
 <details>
@@ -66,7 +70,7 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 - [x] Create page 3 (Combat)
 - [x] Create page 4 (Inventory)
 - [x] Create page 5 (Notes)
-- [ ] Style character sheets
+- [x] Style character sheets
 
 ### Stretch
 
@@ -77,3 +81,5 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 ### Potential Roadblocks
 
 - No forseeable potential roadblocks at this time.
+
+## Hurdles
