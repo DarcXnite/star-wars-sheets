@@ -256,12 +256,14 @@ export default function CharacterSheet() {
         <CharacterInfo
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
+          saveCharacterSheet={saveCharacterSheet}
         />
       ) : null}
       {showSkills ? (
         <SkillsInfo
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
+          saveCharacterSheet={saveCharacterSheet}
         />
       ) : null}
       {showCombat ? (
@@ -270,18 +272,21 @@ export default function CharacterSheet() {
           weapon={weapon}
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
+          saveCharacterSheet={saveCharacterSheet}
         />
       ) : null}
       {showInventory ? (
         <InventoryInfo
           setCharacterForm={setCharacterForm}
           characterForm={characterForm}
+          saveCharacterSheet={saveCharacterSheet}
         />
       ) : null}
       {showNotes ? (
         <Notes
           characterForm={characterForm}
           setCharacterForm={setCharacterForm}
+          saveCharacterSheet={saveCharacterSheet}
         />
       ) : null}
 

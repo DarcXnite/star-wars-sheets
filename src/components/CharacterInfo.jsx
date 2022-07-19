@@ -20,6 +20,7 @@ export default function CharacterInfo({
     careers,
   },
   characterForm,
+  saveCharacterSheet,
 }) {
   const [careerTip, setCareerTip] = useState(false)
   const [showSpeciesTip, setShowSpeciesTip] = useState(false)
@@ -51,29 +52,34 @@ export default function CharacterInfo({
   return (
     <div className='container mx-auto bg-slate-500 p-10 rounded'>
       <h2 className='text-2xl text-gray-800 font-extrabold'>
-        <div className='flex items-center'>
-          <span className='starjedi'>Character info</span>
-          <a
-            href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Species'
-            target='_blank'
-            rel='noreferrer'
-            data-tip='Species Guide'
-            data-for='species'
-            onMouseEnter={() => setShowSpeciesTip(true)}
-            onMouseLeave={() => setShowSpeciesTip(false)}
-            className='material-symbols-outlined ml-2'
-          >
-            help
-          </a>
-          <div className={`${!showSpeciesTip ? 'hidden' : ''}`}>
-            <ReactTooltip id='species' />
+        <div className='flex items-center justify-between'>
+          <div>
+            <span className='starjedi'>Character info</span>
+            <a
+              href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Species'
+              target='_blank'
+              rel='noreferrer'
+              data-tip='Species Guide'
+              data-for='species'
+              onMouseEnter={() => setShowSpeciesTip(true)}
+              onMouseLeave={() => setShowSpeciesTip(false)}
+              className='material-symbols-outlined ml-2'
+            >
+              help
+            </a>
+            <div className={`${!showSpeciesTip ? 'hidden' : ''}`}>
+              <ReactTooltip id='species' />
+            </div>
+          </div>
+          <div>
+            <button onClick={saveCharacterSheet}>Save</button>
           </div>
         </div>
       </h2>
 
       <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
         <Input
-          label='Name:'
+          label='Name'
           id='name'
           type='text'
           value={name}
@@ -82,7 +88,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Species:'
+          label='Species'
           id='species'
           type='text'
           value={species}
@@ -91,7 +97,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Gender:'
+          label='Gender'
           id='gender'
           type='text'
           value={gender}
@@ -100,7 +106,8 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Age:'
+          className='w-16 text-center'
+          label='Age'
           id='age'
           type='number'
           value={age}
@@ -109,7 +116,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Height:'
+          label='Height'
           id='height'
           type='text'
           value={height}
@@ -118,7 +125,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Build:'
+          label='Build'
           id='build'
           type='text'
           value={build}
@@ -127,7 +134,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Eyes:'
+          label='Eyes'
           id='eyes'
           type='text'
           value={eyes}
@@ -136,7 +143,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Hair:'
+          label='Hair'
           id='hair'
           type='text'
           value={hair}
@@ -145,22 +152,26 @@ export default function CharacterInfo({
           }
         />
         <Input
-          label='Morality:'
+          className='w-16 text-center'
+          label='Morality'
           id='morality'
           type='number'
           value={morality}
           onChange={e =>
             setCharacterForm({ ...characterForm, morality: e.target.value })
           }
+          min='0'
         />
         <Input
-          label='Conflict:'
+          className='w-16 text-center'
+          label='Conflict'
           id='conflict'
-          type='text'
+          type='number'
           value={conflict}
           onChange={e =>
             setCharacterForm({ ...characterForm, conflict: e.target.value })
           }
+          min='0'
         />
       </div>
       <div>
@@ -188,8 +199,9 @@ export default function CharacterInfo({
             <span>Specialization</span>
           </div>
           {allCareers}
-          <button onClick={addCareer}>
-            <span className='material-symbols-outlined'>add</span>
+          <button className='flex' onClick={addCareer}>
+            <span className='material-symbols-outlined text-gray-800'>add</span>
+            <span className='text-gray-800'>Add</span>
           </button>{' '}
         </details>
       </div>

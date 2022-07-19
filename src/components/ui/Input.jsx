@@ -10,7 +10,7 @@ export default function Input({ className, label, ...props }) {
           {label}
         </label>
         <input
-          className={`${className} max-w-sm bg-gray-200 text-red-700 rounded-sm shadow-inner hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-red-700 px-4 py-2 placeholder:text-red-700`}
+          className={`${className} max-w-sm bg-gray-200 text-red-700 rounded-sm shadow-inner hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset focus:ring-red-700 p-2 placeholder:text-red-700`}
           {...props}
         />
       </div>
