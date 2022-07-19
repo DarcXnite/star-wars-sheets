@@ -85,11 +85,11 @@ export default function Weapons({
   return (
     <React.Fragment>
       <div>
-        <div className='grid grid-cols-4 px-5 py-3 space-x-1.5 m-5'>
-          <div className='bg-gray-800 rounded-md m-2'>
+        <div className='sm:grid grid-cols-4 px-5 py-3 space-x-1.5 m-5'>
+          <div className='bg-gray-800 rounded-md sm:m-2 ml-2'>
             <Input
               label='Damage'
-              className='w-20 h-10 text-center'
+              className='w-20 h-10 text-center mb-3'
               id='damage'
               type='number'
               name='damage'
@@ -101,7 +101,7 @@ export default function Weapons({
           <div className='bg-gray-800 rounded-md m-2'>
             <Input
               label='Critical'
-              className='w-20 h-10 text-center'
+              className='w-20 h-10 text-center mb-3'
               id='critRating'
               type='number'
               name='critRating'
@@ -113,7 +113,7 @@ export default function Weapons({
           <div className='bg-gray-800 rounded-md m-2'>
             <Input
               label='Encum'
-              className='w-20 h-10 text-center'
+              className='w-20 h-10 text-center mb-3'
               id='encumbrance'
               type='number'
               name='encumbrance'
@@ -125,7 +125,7 @@ export default function Weapons({
           <div className='bg-gray-800 rounded-md m-2'>
             <Input
               label='HP'
-              className='w-20 h-10 text-center'
+              className='w-20 h-10 text-center mb-3'
               id='hardPoints'
               type='number'
               name='hardPoints'
@@ -135,7 +135,7 @@ export default function Weapons({
             />
           </div>
         </div>
-        <div className='grid grid-cols-2 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-50'>
+        <div className='sm:grid grid-cols-2 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-50'>
           <Input
             label='Weapon Name:'
             id='weaponName'
@@ -222,7 +222,7 @@ export default function Weapons({
         </div>
       </div>
       <div>
-        <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
+        <div className='text-center text-white sm:text-xl text-xs font-extrabold grid grid-cols-4 bg-gray-800 rounded-md sm:visible invisible'>
           <span>Attachment</span>
           <span>Hard Point</span>
           <span>Modifications</span>

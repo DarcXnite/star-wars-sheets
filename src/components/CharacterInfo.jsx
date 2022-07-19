@@ -79,10 +79,10 @@ export default function CharacterInfo({
         </div>
       </h2>
 
-      <div className='grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-50'>
+      <div className='sm:grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-50 flex flex-wrap items-center justify-center'>
         <Input
           label='Name'
-          className='w-40 h-7'
+          className='w-50 h-7'
           id='name'
           type='text'
           value={name}
@@ -210,8 +210,10 @@ export default function CharacterInfo({
           </div>
           {allCareers}
           <button className='flex' onClick={addCareer}>
-            <span className='material-symbols-outlined text-gray-800'>add</span>
-            <span className='text-gray-800'>Add</span>
+            <span className='material-symbols-outlined text-gray-800 hover:text-red-800'>
+              add
+            </span>
+            <span className='text-gray-800 hover:text-red-800'>Add</span>
           </button>{' '}
         </details>
       </div>

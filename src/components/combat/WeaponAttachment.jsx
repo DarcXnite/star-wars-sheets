@@ -61,7 +61,7 @@ export default function WeaponAttachment({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-4 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='flex flex-wrap items-center justify-center sm:grid grid-cols-4 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-20 h-5'
           id='attachment'
@@ -81,17 +81,17 @@ export default function WeaponAttachment({
         />
 
         <Input
-          className='w-20 h-5'
+          className='sm:w-20 w-16 h-5'
           id='modifications'
           type='text'
           name='modifications'
           value={modifications}
           onChange={e => updateAttachments(e, idx)}
         />
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center md:justify-between justify-center'>
           <div> </div>
           <Input
-            className='w-20 h-5'
+            className='sm:w-20 w-6 h-5'
             id='rarity'
             type='number'
             name='rarity'
@@ -99,7 +99,7 @@ export default function WeaponAttachment({
             onChange={e => updateAttachments(e, idx)}
           />
           <button
-            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            className='sm:ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
             onClick={removeAttachment}
           >
             <span className='material-symbols-outlined'>delete</span>

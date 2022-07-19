@@ -67,10 +67,10 @@ export default function CustomSkill({
           value={type}
           onChange={e => updateCustomSkill(e, idx)}
         />
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center sm:justify-between'>
           <div></div>
           <Input
-            className='w-20 h-6'
+            className='sm:w-20 w-6 h-6 sm:m-0 ml-5'
             id='rank'
             type='number'
             name='rank'
@@ -78,7 +78,7 @@ export default function CustomSkill({
             onChange={e => updateCustomSkill(e, idx)}
           />
           <button
-            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            className='sm:ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
             onClick={deleteSkill}
           >
             <span className='material-symbols-outlined'>delete</span>

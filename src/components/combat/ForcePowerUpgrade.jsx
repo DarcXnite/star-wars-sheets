@@ -67,7 +67,7 @@ export default function ForcePowerUpgrade({
           onChange={e => updateUpgrade(e, idx)}
         />
         <Input
-          className='w-20 h-5'
+          className='sm:w-20 w-10 h-5 ml-4'
           id='rank'
           type='number'
           name='rank'
@@ -76,7 +76,7 @@ export default function ForcePowerUpgrade({
           min='0'
         />
         <Input
-          className='w-20 h-5'
+          className='sm:w-20 w-10 h-5'
           id='xpCost'
           type='number'
           name='xpCost'
@@ -84,10 +84,10 @@ export default function ForcePowerUpgrade({
           onChange={e => updateUpgrade(e, idx)}
           min='0'
         />
-        <div className='flex items-center justify-between'>
+        <div className='flex items-center sm:justify-between'>
           <div></div>
           <Input
-            className='w-20 h-5'
+            className='sm:w-20 w-16 h-5'
             id='description'
             type='text'
             name='description'
@@ -95,7 +95,7 @@ export default function ForcePowerUpgrade({
             onChange={e => updateUpgrade(e, idx)}
           />
           <button
-            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            className='sm:ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
             onClick={removeUpgrade}
           >
             <span className='material-symbols-outlined'>delete</span>

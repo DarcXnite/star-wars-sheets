@@ -29,7 +29,7 @@ export default function CritInjury({
     <React.Fragment>
       <div className='grid grid-cols-2 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
-          className='w-45 h-5'
+          className='sm:w-45 w-20 h-5'
           type='text'
           name='criticalName'
           value={criticalName}
@@ -38,7 +38,7 @@ export default function CritInjury({
         <div className='flex items-center justify-between'>
           <div></div>
           <Input
-            className='w-45 h-5'
+            className='sm:w-45 w-16 h-5'
             type='text'
             name='rollRange'
             value={rollRange}

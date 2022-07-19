@@ -42,8 +42,10 @@ export default function CyberneticsInfo({
       </div>
       {allCybernetics}
       <button className='flex' onClick={addCybernetic}>
-        <span className='material-symbols-outlined text-gray-800'>add</span>
-        <span className='text-gray-800'>Add</span>
+        <span className='material-symbols-outlined text-gray-800 hover:text-red-800'>
+          add
+        </span>
+        <span className='text-gray-800 hover:text-red-800'>Add</span>
       </button>{' '}
     </div>
   )

@@ -119,9 +119,7 @@ export default function Stats({
         </div>
 
         <div className='px-5 py-3 space-x-1.5'>
-          <h3 className='text-gray-800 text-xl font-bold starjedi'>
-            Encumbrance
-          </h3>
+          <h3 className='text-gray-800 text-xl font-bold starjedi'>Encumb</h3>
           <Input
             className='w-20 text-center'
             label='Threshold'

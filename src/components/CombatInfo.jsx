@@ -153,8 +153,10 @@ export default function CombatInfo({
           />
           {allWeapons}
           <button className='flex' onClick={addWeapon}>
-            <span className='material-symbols-outlined text-gray-800'>add</span>
-            <span className='text-gray-800'>Add</span>
+            <span className='material-symbols-outlined text-gray-800 hover:text-red-800'>
+              add
+            </span>
+            <span className='text-gray-800 hover:text-red-800'>Add</span>
           </button>{' '}
         </details>
       </div>
@@ -174,8 +176,10 @@ export default function CombatInfo({
           </div>
           {allCritInjuries}
           <button className='flex' onClick={addCritInjury}>
-            <span className='material-symbols-outlined text-gray-800'>add</span>
-            <span className='text-gray-800'>Add</span>
+            <span className='material-symbols-outlined text-gray-800 hover:text-red-800'>
+              add
+            </span>
+            <span className='text-gray-800 hover:text-red-800'>Add</span>
           </button>{' '}
         </details>
         <div></div>
@@ -190,7 +194,7 @@ export default function CombatInfo({
             toolTipBool={powerTip}
             name='Force Powers'
           />
-          <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
+          <div className='text-center text-white sm:text-xl text-sm font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
             <span>Name</span>
             <span>Modifiers</span>
             <span>XP Cost</span>
@@ -198,8 +202,10 @@ export default function CombatInfo({
           </div>
           {allForcePowers}
           <button className='flex' onClick={addForcePower}>
-            <span className='material-symbols-outlined text-gray-800'>add</span>
-            <span className='text-gray-800'>Add</span>
+            <span className='material-symbols-outlined text-gray-800 hover:text-red-800'>
+              add
+            </span>
+            <span className='text-gray-800 hover:text-red-800'>Add</span>
           </button>{' '}
         </details>
         <div></div>
@@ -213,7 +219,7 @@ export default function CombatInfo({
           toolTipBool={talentTip}
           name='Talents'
         />
-        <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
+        <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md sm:visible invisible'>
           <span>Talent</span>
           <span>Rank</span>
           <span>XP Cost</span>
@@ -222,8 +228,10 @@ export default function CombatInfo({
         </div>
         {allTalents}
         <button className='flex' onClick={addTalent}>
-          <span className='material-symbols-outlined text-gray-800'>add</span>
-          <span className='text-gray-800'>Add</span>
+          <span className='material-symbols-outlined text-gray-800 hover:text-red-800'>
+            add
+          </span>
+          <span className='text-gray-800 hover:text-red-800'>Add</span>
         </button>{' '}
       </details>
       <div>

@@ -39,9 +39,11 @@ export default function CustomSkills({
         <span>Rank</span>
       </div>
       {allCustomSkills}
-      <button onClick={addCustomSkill}>
-        <span className='material-symbols-outlined'>add</span>
-        <span className='text-gray-800'>Add</span>
+      <button className='flex' onClick={addCustomSkill}>
+        <span className='material-symbols-outlined text-gray-800 hover:text-red-800'>
+          add
+        </span>
+        <span className='text-gray-800 hover:text-red-800'>Add</span>
       </button>
     </div>
   )
