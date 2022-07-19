@@ -42,9 +42,10 @@ export default function ToolsInfo({
         <span>Rarity</span>
       </div>
       {allTools}
-      <button onClick={addTool}>
-        <span className='material-symbols-outlined'>add</span>
-      </button>
+      <button className='flex' onClick={addTool}>
+        <span className='material-symbols-outlined text-gray-800'>add</span>
+        <span className='text-gray-800'>Add</span>
+      </button>{' '}
     </div>
   )
 }

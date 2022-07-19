@@ -52,7 +52,6 @@ export default function Cybernetics({
           onChange={e => updateCybernetic(e, cyberneticIdx)}
         />
         <Input
-          className='w-20 h-5'
           id='active'
           type='checkbox'
           name='active'

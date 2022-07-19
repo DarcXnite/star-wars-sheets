@@ -66,7 +66,6 @@ export default function Talent({
         />
 
         <Input
-          className='w-20 h-5'
           type='checkbox'
           name='passive'
           checked={passive}

@@ -152,9 +152,10 @@ export default function CombatInfo({
             name='Weapons'
           />
           {allWeapons}
-          <button onClick={addWeapon}>
-            <span className='material-symbols-outlined'>add</span>
-          </button>
+          <button className='flex' onClick={addWeapon}>
+            <span className='material-symbols-outlined text-gray-800'>add</span>
+            <span className='text-gray-800'>Add</span>
+          </button>{' '}
         </details>
       </div>
       <div>
@@ -172,9 +173,10 @@ export default function CombatInfo({
             <span>Roll Range</span>
           </div>
           {allCritInjuries}
-          <button onClick={addCritInjury}>
-            <span className='material-symbols-outlined'>add</span>
-          </button>
+          <button className='flex' onClick={addCritInjury}>
+            <span className='material-symbols-outlined text-gray-800'>add</span>
+            <span className='text-gray-800'>Add</span>
+          </button>{' '}
         </details>
         <div></div>
       </div>
@@ -195,9 +197,10 @@ export default function CombatInfo({
             <span>Summary</span>
           </div>
           {allForcePowers}
-          <button onClick={addForcePower}>
-            <span className='material-symbols-outlined'>add</span>
-          </button>
+          <button className='flex' onClick={addForcePower}>
+            <span className='material-symbols-outlined text-gray-800'>add</span>
+            <span className='text-gray-800'>Add</span>
+          </button>{' '}
         </details>
         <div></div>
       </div>
@@ -218,9 +221,10 @@ export default function CombatInfo({
           <span>Rarity</span>
         </div>
         {allTalents}
-        <button onClick={addTalent}>
-          <span className='material-symbols-outlined'>add</span>
-        </button>
+        <button className='flex' onClick={addTalent}>
+          <span className='material-symbols-outlined text-gray-800'>add</span>
+          <span className='text-gray-800'>Add</span>
+        </button>{' '}
       </details>
       <div>
         <div></div>

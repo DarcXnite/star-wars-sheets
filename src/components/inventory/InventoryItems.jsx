@@ -42,8 +42,9 @@ export default function InventoryItems({
         <span>Description</span>
       </div>
       {allInventoryItems}
-      <button onClick={addInventoryItem}>
-        <span className='material-symbols-outlined'>add</span>
+      <button className='flex' onClick={addInventoryItem}>
+        <span className='material-symbols-outlined text-gray-800'>add</span>
+        <span className='text-gray-800'>Add</span>
       </button>
     </div>
   )

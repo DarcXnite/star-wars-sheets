@@ -41,9 +41,10 @@ export default function CyberneticsInfo({
         <span>Rarity</span>
       </div>
       {allCybernetics}
-      <button onClick={addCybernetic}>
-        <span className='material-symbols-outlined'>add</span>
-      </button>
+      <button className='flex' onClick={addCybernetic}>
+        <span className='material-symbols-outlined text-gray-800'>add</span>
+        <span className='text-gray-800'>Add</span>
+      </button>{' '}
     </div>
   )
 }

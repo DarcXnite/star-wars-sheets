@@ -106,9 +106,10 @@ export default function ForcePower({
         </div>
         {allUpgrades}
       </div>
-      <button onClick={addUpgrade}>
-        <span className='material-symbols-outlined'>add</span>
-      </button>
+      <button className='flex' onClick={addUpgrade}>
+        <span className='material-symbols-outlined text-gray-800'>add</span>
+        <span className='text-gray-800'>Add Upgrade</span>
+      </button>{' '}
     </React.Fragment>
   )
 }

@@ -120,7 +120,10 @@ export default function Armor({
         </div>
       </div>
       {allArmorAttachments}
-      <button onClick={addArmorAttachments}>Add Attachment</button>
+      <button className='flex' onClick={addArmorAttachments}>
+        <span className='material-symbols-outlined text-gray-800'>add</span>
+        <span className='text-gray-800'>Add Attachment</span>
+      </button>{' '}
     </React.Fragment>
   )
 }

@@ -46,9 +46,10 @@ export default function ArmorInfo({
         <span>Rarity</span>
       </div>
       {allArmor}
-      <button onClick={addArmor}>
-        <span className='material-symbols-outlined'>add</span>
-      </button>
+      <button className='flex' onClick={addArmor}>
+        <span className='material-symbols-outlined text-gray-800'>add</span>
+        <span className='text-gray-800'>Add</span>
+      </button>{' '}
     </div>
   )
 }

@@ -52,7 +52,6 @@ export default function CustomSkill({
           onChange={e => updateCustomSkill(e, idx)}
         />
         <Input
-          className='w-20 h-5'
           id='career'
           type='checkbox'
           name='career'
