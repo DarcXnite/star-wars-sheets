@@ -203,20 +203,21 @@ export default function Weapons({
             onChange={e => updateWeapon(e, weaponIndex)}
             min='0'
           />
-          <div className='flex flex-col-3 justify-between'>
-            <button
-              className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3 order-1'
-              onClick={addAttachment}
-            >
-              Add Attachment
-            </button>
-            <div className='order-2'></div>
-            <button
-              className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3 w-6 order-3'
-              onClick={deleteWeapon}
-            >
-              <span className='material-symbols-outlined'>delete</span>
-            </button>
+          <div className='col-span-2 mt-4'>
+            <div className='flex justify-between'>
+              <button
+                className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3 place-items-start p-1'
+                onClick={addAttachment}
+              >
+                Add Attachment
+              </button>
+              <button
+                className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3 w-6 place-items-end'
+                onClick={deleteWeapon}
+              >
+                <span className='material-symbols-outlined'>delete</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
