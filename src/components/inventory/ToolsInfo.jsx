@@ -35,7 +35,7 @@ export default function ToolsInfo({
 
   return (
     <div>
-      <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
         <span>Name</span>
         <span>Encum</span>
         <span>Summary</span>

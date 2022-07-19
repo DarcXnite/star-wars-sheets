@@ -13,7 +13,7 @@ export default function ForcePower({
   const allUpgrades = upgrades.map((upg, idx) => {
     return (
       <details open={true}>
-        <summary>Upgrade</summary>
+        <summary className='text-gray-800 text-xl font-bold'>Upgrade</summary>
         <ForcePowerUpgrade
           key={upg._id}
           characterForm={characterForm}
@@ -57,7 +57,7 @@ export default function ForcePower({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='grid grid-cols-4 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-20 h-5'
           type='text'
@@ -80,18 +80,32 @@ export default function ForcePower({
           onChange={e => updatePower(e, powerIndex)}
           min='0'
         />
-        <Input
-          className='w-20 h-5'
-          type='text'
-          name='summary'
-          value={summary}
-          onChange={e => updatePower(e, powerIndex)}
-        />
-        <button onClick={removePower}>
-          <span className='material-symbols-outlined'>delete</span>
-        </button>
+        <div className='flex items-center justify-between'>
+          <div></div>
+          <Input
+            className='w-20 h-5'
+            type='text'
+            name='summary'
+            value={summary}
+            onChange={e => updatePower(e, powerIndex)}
+          />
+          <button
+            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            onClick={removePower}
+          >
+            <span className='material-symbols-outlined'>delete</span>
+          </button>
+        </div>
       </div>
-      {allUpgrades}
+      <div>
+        <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
+          <span>Type</span>
+          <span>Rank</span>
+          <span>XP Cost</span>
+          <span>Description</span>
+        </div>
+        {allUpgrades}
+      </div>
       <button onClick={addUpgrade}>
         <span className='material-symbols-outlined'>add</span>
       </button>

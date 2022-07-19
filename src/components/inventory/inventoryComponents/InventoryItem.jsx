@@ -29,7 +29,7 @@ export default function InventoryItem({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-5 px-10 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='grid grid-cols-4 px-10 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-22 h-5'
           id='itemName'
@@ -56,17 +56,22 @@ export default function InventoryItem({
           onChange={e => updateInventoryItem(e, inventoryIdx)}
           min='0'
         />
-        <Input
-          className='w-30 h-5'
-          id='description'
-          type='text'
-          name='description'
-          value={description}
-          onChange={e => updateInventoryItem(e, inventoryIdx)}
-        />
-        <button onClick={deleteInventoryItem}>
-          <span className='material-symbols-outlined'>delete</span>
-        </button>
+        <div className='flex items-center justify-center'>
+          <Input
+            className='w-30 h-5'
+            id='description'
+            type='text'
+            name='description'
+            value={description}
+            onChange={e => updateInventoryItem(e, inventoryIdx)}
+          />
+          <button
+            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded'
+            onClick={deleteInventoryItem}
+          >
+            <span className='material-symbols-outlined'>delete</span>
+          </button>
+        </div>
       </div>
     </React.Fragment>
   )

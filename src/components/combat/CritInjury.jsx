@@ -27,7 +27,7 @@ export default function CritInjury({
 
   return (
     <React.Fragment>
-      <div className='grid grid-cols-3 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+      <div className='grid grid-cols-2 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
         <Input
           className='w-45 h-5'
           type='text'
@@ -35,15 +35,22 @@ export default function CritInjury({
           value={criticalName}
           onChange={e => updateInjury(e, critIndex)}
         />
-
-        <Input
-          className='w-45 h-5'
-          type='text'
-          name='rollRange'
-          value={rollRange}
-          onChange={e => updateInjury(e, critIndex)}
-        />
-        <button onClick={healInjury}>Heal</button>
+        <div className='flex items-center justify-between'>
+          <div></div>
+          <Input
+            className='w-45 h-5'
+            type='text'
+            name='rollRange'
+            value={rollRange}
+            onChange={e => updateInjury(e, critIndex)}
+          />
+          <button
+            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            onClick={healInjury}
+          >
+            Heal
+          </button>
+        </div>
       </div>
     </React.Fragment>
   )

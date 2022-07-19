@@ -57,43 +57,51 @@ export default function ForcePowerUpgrade({
 
   return (
     <React.Fragment>
-      <Input
-        label='Type:'
-        id='type'
-        type='text'
-        name='type'
-        value={type}
-        onChange={e => updateUpgrade(e, idx)}
-      />
-      <Input
-        label='Rank:'
-        id='rank'
-        type='number'
-        name='rank'
-        value={rank}
-        onChange={e => updateUpgrade(e, idx)}
-        min='0'
-      />
-      <Input
-        label='XP Cost:'
-        id='xpCost'
-        type='number'
-        name='xpCost'
-        value={xpCost}
-        onChange={e => updateUpgrade(e, idx)}
-        min='0'
-      />
-      <Input
-        label='Description:'
-        id='description'
-        type='text'
-        name='description'
-        value={description}
-        onChange={e => updateUpgrade(e, idx)}
-      />
-      <button onClick={removeUpgrade}>
-        <span className='material-symbols-outlined'>delete</span>
-      </button>
+      <div className='grid grid-cols-4 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-12'>
+        <Input
+          className='w-20 h-5'
+          id='type'
+          type='text'
+          name='type'
+          value={type}
+          onChange={e => updateUpgrade(e, idx)}
+        />
+        <Input
+          className='w-20 h-5'
+          id='rank'
+          type='number'
+          name='rank'
+          value={rank}
+          onChange={e => updateUpgrade(e, idx)}
+          min='0'
+        />
+        <Input
+          className='w-20 h-5'
+          id='xpCost'
+          type='number'
+          name='xpCost'
+          value={xpCost}
+          onChange={e => updateUpgrade(e, idx)}
+          min='0'
+        />
+        <div className='flex items-center justify-between'>
+          <div></div>
+          <Input
+            className='w-20 h-5'
+            id='description'
+            type='text'
+            name='description'
+            value={description}
+            onChange={e => updateUpgrade(e, idx)}
+          />
+          <button
+            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            onClick={removeUpgrade}
+          >
+            <span className='material-symbols-outlined'>delete</span>
+          </button>
+        </div>
+      </div>
     </React.Fragment>
   )
 }

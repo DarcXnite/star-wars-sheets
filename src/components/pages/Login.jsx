@@ -95,6 +95,9 @@ export default function Login({ currentUser, setCurrentUser }) {
               <span className='text-sky-600 hover:text-red-700'>HERE!</span>
             </Link>
           </span>
+          <p className='text-white mt-3'>
+            Just Testing? Use test@test.com / 123456
+          </p>
         </div>
       </div>
     </div>

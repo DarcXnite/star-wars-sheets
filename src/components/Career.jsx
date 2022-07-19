@@ -36,7 +36,8 @@ export default function Careers({
           value={careerName}
           onChange={e => updateCareer(e, careerIndex)}
         />
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center justify-between'>
+          <div> </div>
           <Input
             className='w-45 h-5'
             id='spec'
@@ -46,7 +47,7 @@ export default function Careers({
             onChange={e => updateCareer(e, careerIndex)}
           />
           <button
-            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded'
+            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
             onClick={removeCareer}
           >
             <span className='material-symbols-outlined'>delete</span>

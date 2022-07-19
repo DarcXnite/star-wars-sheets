@@ -37,7 +37,7 @@ export default function ArmorInfo({
 
   return (
     <div>
-      <div className='text-center text-white text-xl font-extrabold grid grid-cols-7 bg-gray-800 rounded-md'>
+      <div className='text-center text-white text-xl font-extrabold grid grid-cols-6 bg-gray-800 rounded-md'>
         <span>Name</span>
         <span>Condition</span>
         <span>Value</span>

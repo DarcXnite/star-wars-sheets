@@ -16,6 +16,7 @@ export default function Stats({
   },
   characterForm,
   setCharacterForm,
+  saveCharacterSheet,
 }) {
   return (
     <div className='bg-red-700 text-center'>
@@ -187,6 +188,12 @@ export default function Stats({
           />
         </div>
       </div>
+      <button
+        className='text-2xl text-gray-800 font-extrabold hover:text-white mb-3'
+        onClick={saveCharacterSheet}
+      >
+        Save
+      </button>
     </div>
   )
 }

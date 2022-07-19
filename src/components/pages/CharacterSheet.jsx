@@ -20,22 +20,7 @@ export default function CharacterSheet() {
   const [showCombat, setShowCombat] = useState(false)
   const [showInventory, setShowInventory] = useState(false)
   const [showNotes, setShowNotes] = useState(false)
-  // const [character, setCharacter] = useState({
-  // careers: [],
-  // combatSkills: [],
-  // generalSkills: [],
-  // knowledgeSkills: [],
-  // customSkills: [],
-  // inventory: [],
-  // weapons: [],
-  // talents: [],
-  // forcePowers: [],
-  // criticalInjuries: [],
-  // armors: [],
-  // cybernetics: [],
-  // tools: [],
-  // })
-  // const [updateCharacter, setUpdateCharacter] = useState(false)
+  const [updateCharacter, setUpdateCharacter] = useState(false)
   const [weapon, setWeapon] = useState({
     weaponName: '',
     usesSkill: '',
@@ -118,6 +103,7 @@ export default function CharacterSheet() {
   // }
 
   const saveCharacterSheet = async () => {
+    setUpdateCharacter(true)
     try {
       console.log('character updated')
       await axios.put(`${serverUrl}/characters/${id}`, characterForm)
@@ -126,6 +112,9 @@ export default function CharacterSheet() {
     } catch (err) {
       console.warn(err)
     }
+    setTimeout(() => {
+      setUpdateCharacter(false)
+    }, 2000)
   }
 
   const deleteCharacter = async () => {
@@ -235,10 +224,28 @@ export default function CharacterSheet() {
   )
 
   return (
-    <div>
-      <h2>Character Sheet</h2>
-      <button onClick={saveCharacterSheet}>Save</button>
-      <button onClick={deleteCharacter}>Delete Character</button>
+    <div className='mt-20'>
+      {updateCharacter ? (
+        <div className='text-center bg-green-500 py-3'>
+          Character Sheet Saved!
+        </div>
+      ) : null}
+
+      <div className='flex items-center justify-between text-2xl text-gray-800 font-extrabold'>
+        <button
+          className='ml-3 hover:text-red-700'
+          onClick={saveCharacterSheet}
+        >
+          Save
+        </button>
+        <h2 className='flex flex-col justify-center item-center text-center'>
+          <span className='starjedi'>Character Sheet</span>
+          <span className='text-xs'>(Be sure to save your changes!)</span>
+        </h2>
+        <button className='mr-3 hover:text-red-700' onClick={deleteCharacter}>
+          Delete
+        </button>
+      </div>
 
       <Characteristics
         setCharacterForm={setCharacterForm}
@@ -248,6 +255,7 @@ export default function CharacterSheet() {
       <Stats
         characterForm={characterForm}
         setCharacterForm={setCharacterForm}
+        saveCharacterSheet={saveCharacterSheet}
       />
 
       {tabs}
@@ -289,8 +297,6 @@ export default function CharacterSheet() {
           saveCharacterSheet={saveCharacterSheet}
         />
       ) : null}
-
-      <button onClick={saveCharacterSheet}>Save</button>
     </div>
   )
 }

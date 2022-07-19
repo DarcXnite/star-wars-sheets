@@ -72,14 +72,17 @@ export default function CharacterInfo({
             </div>
           </div>
           <div>
-            <button onClick={saveCharacterSheet}>Save</button>
+            <button className='hover:text-red-700' onClick={saveCharacterSheet}>
+              Save
+            </button>
           </div>
         </div>
       </h2>
 
-      <div className='flex flex-wrap px-5 py-3 space-x-1.5'>
+      <div className='grid grid-cols-5 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-50'>
         <Input
           label='Name'
+          className='w-40 h-7'
           id='name'
           type='text'
           value={name}
@@ -89,6 +92,7 @@ export default function CharacterInfo({
         />
         <Input
           label='Species'
+          className='w-20 h-7'
           id='species'
           type='text'
           value={species}
@@ -98,6 +102,7 @@ export default function CharacterInfo({
         />
         <Input
           label='Gender'
+          className='w-20 h-7'
           id='gender'
           type='text'
           value={gender}
@@ -106,7 +111,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          className='w-16 text-center'
+          className='w-20 h-7'
           label='Age'
           id='age'
           type='number'
@@ -114,9 +119,11 @@ export default function CharacterInfo({
           onChange={e =>
             setCharacterForm({ ...characterForm, age: e.target.value })
           }
+          min='0'
         />
         <Input
           label='Height'
+          className='w-20 h-7'
           id='height'
           type='text'
           value={height}
@@ -126,6 +133,7 @@ export default function CharacterInfo({
         />
         <Input
           label='Build'
+          className='w-20 h-7'
           id='build'
           type='text'
           value={build}
@@ -135,6 +143,7 @@ export default function CharacterInfo({
         />
         <Input
           label='Eyes'
+          className='w-20 h-7'
           id='eyes'
           type='text'
           value={eyes}
@@ -144,6 +153,7 @@ export default function CharacterInfo({
         />
         <Input
           label='Hair'
+          className='w-20 h-7'
           id='hair'
           type='text'
           value={hair}
@@ -152,7 +162,7 @@ export default function CharacterInfo({
           }
         />
         <Input
-          className='w-16 text-center'
+          className='w-20 h-7'
           label='Morality'
           id='morality'
           type='number'
@@ -163,7 +173,7 @@ export default function CharacterInfo({
           min='0'
         />
         <Input
-          className='w-16 text-center'
+          className='w-20 h-7'
           label='Conflict'
           id='conflict'
           type='number'

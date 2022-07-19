@@ -48,8 +48,10 @@ export default function Weapons({
 
   const allWeaponAttachments = attachments.map((attachment, idx) => {
     return (
-      <details>
-        <summary>Attachment</summary>
+      <details open={true}>
+        <summary className='text-gray-800 text-xl font-bold'>
+          Attachment
+        </summary>
         <WeaponAttachment
           key={attachment._id}
           characterForm={characterForm}
@@ -83,114 +85,150 @@ export default function Weapons({
   return (
     <React.Fragment>
       <div>
-        <Input
-          label='Weapon Name:'
-          id='weaponName'
-          type='text'
-          name='weaponName'
-          value={weaponName}
-          onChange={e => updateWeapon(e, weaponIndex)}
-        />
-        <Input
-          label='Uses Skill:'
-          id='usesSkill'
-          type='text'
-          name='usesSkill'
-          value={usesSkill}
-          onChange={e => updateWeapon(e, weaponIndex)}
-        />
-        <Input
-          label='Damage:'
-          id='damage'
-          type='number'
-          name='damage'
-          value={damage}
-          onChange={e => updateWeapon(e, weaponIndex)}
-          min='0'
-        />
-        <Input
-          label='Range:'
-          id='range'
-          type='text'
-          name='range'
-          value={range}
-          onChange={e => updateWeapon(e, weaponIndex)}
-        />
-        <Input
-          label='Encumbrance:'
-          id='encumbrance'
-          type='number'
-          name='encumbrance'
-          value={encumbrance}
-          onChange={e => updateWeapon(e, weaponIndex)}
-          min='0'
-        />
-        <Input
-          label='Hard Points:'
-          id='hardPoints'
-          type='number'
-          name='hardPoints'
-          value={hardPoints}
-          onChange={e => updateWeapon(e, weaponIndex)}
-          min='0'
-        />
-        <Input
-          label='Crit Rating:'
-          id='critRating'
-          type='number'
-          name='critRating'
-          value={critRating}
-          onChange={e => updateWeapon(e, weaponIndex)}
-          min='0'
-        />
-        <Input
-          label='Condition:'
-          id='condition'
-          type='text'
-          name='condition'
-          value={condition}
-          onChange={e => updateWeapon(e, weaponIndex)}
-        />
-        <Input
-          label='Restricted?'
-          id='restricted'
-          type='checkbox'
-          name='restricted'
-          onChange={e => restrictedCheck(e, weaponIndex)}
-          checked={restricted}
-        />
-        <Input
-          label='Qualities:'
-          id='qualities'
-          type='text'
-          name='qualities'
-          value={qualities}
-          onChange={e => updateWeapon(e, weaponIndex)}
-        />
-        <Input
-          label='Modifiers:'
-          id='modifiers'
-          type='text'
-          name='modifiers'
-          value={modifiers}
-          onChange={e => updateWeapon(e, weaponIndex)}
-        />
-        <Input
-          label='Rarity:'
-          id='rarity'
-          type='number'
-          name='rarity'
-          value={rarity}
-          onChange={e => updateWeapon(e, weaponIndex)}
-          min='0'
-        />
+        <div className='grid grid-cols-4 px-5 py-3 space-x-1.5 m-5'>
+          <div className='bg-gray-800 rounded-md m-2'>
+            <Input
+              label='Damage'
+              className='w-20 h-10 text-center'
+              id='damage'
+              type='number'
+              name='damage'
+              value={damage}
+              onChange={e => updateWeapon(e, weaponIndex)}
+              min='0'
+            />
+          </div>
+          <div className='bg-gray-800 rounded-md m-2'>
+            <Input
+              label='Critical'
+              className='w-20 h-10 text-center'
+              id='critRating'
+              type='number'
+              name='critRating'
+              value={critRating}
+              onChange={e => updateWeapon(e, weaponIndex)}
+              min='0'
+            />
+          </div>
+          <div className='bg-gray-800 rounded-md m-2'>
+            <Input
+              label='Encum'
+              className='w-20 h-10 text-center'
+              id='encumbrance'
+              type='number'
+              name='encumbrance'
+              value={encumbrance}
+              onChange={e => updateWeapon(e, weaponIndex)}
+              min='0'
+            />
+          </div>
+          <div className='bg-gray-800 rounded-md m-2'>
+            <Input
+              label='HP'
+              className='w-20 h-10 text-center'
+              id='hardPoints'
+              type='number'
+              name='hardPoints'
+              value={hardPoints}
+              onChange={e => updateWeapon(e, weaponIndex)}
+              min='0'
+            />
+          </div>
+        </div>
+        <div className='grid grid-cols-2 px-5 py-3 space-x-1.5 bg-gray-800 m-5 rounded-md h-50'>
+          <Input
+            label='Weapon Name:'
+            id='weaponName'
+            type='text'
+            name='weaponName'
+            value={weaponName}
+            onChange={e => updateWeapon(e, weaponIndex)}
+          />
+          <Input
+            label='Uses Skill:'
+            id='usesSkill'
+            type='text'
+            name='usesSkill'
+            value={usesSkill}
+            onChange={e => updateWeapon(e, weaponIndex)}
+          />
+          <Input
+            label='Range:'
+            id='range'
+            type='text'
+            name='range'
+            value={range}
+            onChange={e => updateWeapon(e, weaponIndex)}
+          />
+          <Input
+            label='Condition:'
+            className='w-20 h-10 text-center'
+            id='condition'
+            type='text'
+            name='condition'
+            value={condition}
+            onChange={e => updateWeapon(e, weaponIndex)}
+          />
+          <Input
+            label='Restricted?'
+            id='restricted'
+            type='checkbox'
+            name='restricted'
+            onChange={e => restrictedCheck(e, weaponIndex)}
+            checked={restricted}
+          />
+          <Input
+            label='Qualities:'
+            id='qualities'
+            type='text'
+            name='qualities'
+            value={qualities}
+            onChange={e => updateWeapon(e, weaponIndex)}
+          />
+          <Input
+            label='Modifiers:'
+            id='modifiers'
+            type='text'
+            name='modifiers'
+            value={modifiers}
+            onChange={e => updateWeapon(e, weaponIndex)}
+          />
+          <Input
+            label='Rarity:'
+            className='w-20 text-center'
+            id='rarity'
+            type='number'
+            name='rarity'
+            value={rarity}
+            onChange={e => updateWeapon(e, weaponIndex)}
+            min='0'
+          />
+          <div className='flex flex-col-3 justify-between'>
+            <button
+              className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3 order-1'
+              onClick={addAttachment}
+            >
+              Add Attachment
+            </button>
+            <div className='order-2'></div>
+            <button
+              className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3 w-6 order-3'
+              onClick={deleteWeapon}
+            >
+              <span className='material-symbols-outlined'>delete</span>
+            </button>
+          </div>
+        </div>
       </div>
-      {allWeaponAttachments}
-
-      <button onClick={addAttachment}>Add Attachment</button>
-      <button onClick={deleteWeapon}>
-        <span className='material-symbols-outlined'>delete</span>
-      </button>
+      <div>
+        <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
+          <span>Attachment</span>
+          <span>Hard Point</span>
+          <span>Modifications</span>
+          <span>Rarity</span>
+        </div>
+        {allWeaponAttachments}
+      </div>
     </React.Fragment>
   )
 }

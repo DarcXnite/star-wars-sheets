@@ -10,6 +10,7 @@ export default function CombatInfo({
   setCharacterForm,
   characterForm: { weapons, talents, criticalInjuries, forcePowers },
   characterForm,
+  saveCharacterSheet,
 }) {
   const [weaponTip, setWeaponTip] = useState(false)
   const [critTip, setCritTip] = useState(false)
@@ -132,9 +133,15 @@ export default function CombatInfo({
   return (
     <div className='container mx-auto bg-slate-500 p-10 rounded'>
       <div>
-        <h2 className='text-2xl text-gray-800 font-extrabold starjedi'>
-          combat
-        </h2>
+        <div className='flex items-center justify-between text-2xl text-gray-800 font-extrabold '>
+          <h2 className='starjedi'>combat</h2>
+          <div>
+            <button className='hover:text-red-700' onClick={saveCharacterSheet}>
+              Save
+            </button>
+          </div>
+        </div>
+
         <details>
           <Summary
             link='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Weapon'
@@ -152,10 +159,15 @@ export default function CombatInfo({
       </div>
       <div>
         <details>
-          <summary className='text-gray-800 text-xl font-bold'>
-            Critical Injuries
-          </summary>
-          <div className='text-center text-white text-xl font-extrabold grid grid-cols-3 bg-gray-800 rounded-md'>
+          <Summary
+            link='https://sw-eote-srd.vercel.app/personal/status-recovery/critical-injuries/'
+            toolTip='Critical Injuries Guide'
+            id='crit'
+            toolTipFunc={setCritTip}
+            toolTipBool={critTip}
+            name='Critical Injuries'
+          />
+          <div className='text-center text-white text-xl font-extrabold grid grid-cols-2 bg-gray-800 rounded-md'>
             <span>Name</span>
             <span>Roll Range</span>
           </div>
@@ -163,25 +175,20 @@ export default function CombatInfo({
           <button onClick={addCritInjury}>
             <span className='material-symbols-outlined'>add</span>
           </button>
-          <span>
-            ({' '}
-            <a
-              href='https://sw-eote-srd.vercel.app/personal/status-recovery/critical-injuries/'
-              target='_blank'
-            >
-              Critical Injuries Guide
-            </a>{' '}
-            )
-          </span>
         </details>
         <div></div>
       </div>
       <div>
         <details>
-          <summary className='text-gray-800 text-xl font-bold'>
-            Force Powers
-          </summary>
-          <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
+          <Summary
+            link='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Force_Power'
+            toolTip='Force Powers Guide'
+            id='power'
+            toolTipFunc={setPowerTip}
+            toolTipBool={powerTip}
+            name='Force Powers'
+          />
+          <div className='text-center text-white text-xl font-extrabold grid grid-cols-4 bg-gray-800 rounded-md'>
             <span>Name</span>
             <span>Modifiers</span>
             <span>XP Cost</span>
@@ -191,22 +198,19 @@ export default function CombatInfo({
           <button onClick={addForcePower}>
             <span className='material-symbols-outlined'>add</span>
           </button>
-          <span>
-            ({' '}
-            <a
-              href='https://star-wars-rpg-ffg.fandom.com/wiki/Category:Force_Power'
-              target='_blank'
-            >
-              Force Powers Guide
-            </a>{' '}
-            )
-          </span>
         </details>
         <div></div>
       </div>
       <details>
-        <summary className='text-gray-800 text-xl font-bold'>Talents</summary>
-        <div className='text-center text-white text-xl font-extrabold grid grid-cols-6 bg-gray-800 rounded-md'>
+        <Summary
+          link='https://star-wars-rpg-saga-edition.fandom.com/wiki/Talents'
+          toolTip='Talents Guide'
+          id='talents'
+          toolTipFunc={setTalentTip}
+          toolTipBool={talentTip}
+          name='Talents'
+        />
+        <div className='text-center text-white text-xl font-extrabold grid grid-cols-5 bg-gray-800 rounded-md'>
           <span>Talent</span>
           <span>Rank</span>
           <span>XP Cost</span>
@@ -217,16 +221,6 @@ export default function CombatInfo({
         <button onClick={addTalent}>
           <span className='material-symbols-outlined'>add</span>
         </button>
-        <span>
-          ({' '}
-          <a
-            href='https://star-wars-rpg-saga-edition.fandom.com/wiki/Talents'
-            target='_blank'
-          >
-            Talents Guide
-          </a>{' '}
-          )
-        </span>
       </details>
       <div>
         <div></div>

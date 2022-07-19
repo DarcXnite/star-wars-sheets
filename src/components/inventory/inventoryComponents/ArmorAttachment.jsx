@@ -84,19 +84,24 @@ export default function ArmorAttachments({
           onChange={e => updateAttachments(e, idx)}
           min='0'
         />
-
-        <Input
-          className='w-25 h-5'
-          id='description'
-          type='text'
-          name='description'
-          value={description}
-          onChange={e => updateAttachments(e, idx)}
-        />
+        <div className='flex items-center justify-between'>
+          <div> </div>
+          <Input
+            className='w-25 h-5'
+            id='description'
+            type='text'
+            name='description'
+            value={description}
+            onChange={e => updateAttachments(e, idx)}
+          />
+          <button
+            className='ml-5 text-white hover:text-red-700 hover:bg-gray-200 rounded flex mb-3'
+            onClick={removeAttachment}
+          >
+            <span className='material-symbols-outlined'>delete</span>
+          </button>
+        </div>
       </div>
-      <button onClick={removeAttachment}>
-        <span className='material-symbols-outlined'>delete</span>
-      </button>
     </React.Fragment>
   )
 }
