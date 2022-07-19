@@ -83,3 +83,6 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 - No forseeable potential roadblocks at this time.
 
 ## Hurdles
+
+- Handling all components without getting lost or losing code
+- Functionality for nested embedded references in backend schemas
