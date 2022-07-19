@@ -46,9 +46,9 @@ export default function Register({ currentUser, setCurrentUser }) {
   }
 
   return (
-    <div className='bg-red-700 flex justify-between items-center px-12 py-12 h-full'>
-      <div className='bg-gray-800 mx-auto px-14 py-6 rounded-3xl shadow-md pt-12 max-w-lg w-[500px]'>
-        <h1 className='text-3xl text-center font-bold mb-5 text-white'>
+    <div className='bg-gray-700 flex justify-between items-center px-12 py-12 h-screen'>
+      <div className='bg-gray-800 shrink border-8 border-double border-red-800 mx-auto px-14 py-6 rounded-3xl shadow-md pt-12 max-w-lg sm:w-[500px] w-[280px]'>
+        <h1 className='text-3xl starjedi text-center font-bold mb-5 text-white'>
           Register for an Account:
         </h1>
 
@@ -94,12 +94,20 @@ export default function Register({ currentUser, setCurrentUser }) {
               onChange={e => setPassword(e.target.value)}
             />
           </div>
-          <button type='submit'>Register</button>
+          <button className='flex justify-center items-center text-white bg-gray-700 rounded px-4 py-2 mt-3 w-full starjedi hover:bg-gray-600 hover:text-red-700' type='submit'>
+            <span className='material-symbols-outlined mr-2'>login</span>
+            <span>Register</span>
+          </button>
         </form>
+        <div className='text-center mt-3'>
+          <span className='text-white'>
+            Already have an account? Sign in{' '}
+            <Link to='/login'>
+              <span className='text-sky-600 hover:text-red-700'>HERE!</span>
+            </Link>
+          </span>
+        </div>
       </div>
-      <Link to='/login'>
-        <span>Already have an account? Sign in here!</span>
-      </Link>
     </div>
   )
 }
