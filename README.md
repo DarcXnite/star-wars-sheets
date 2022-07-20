@@ -19,10 +19,6 @@ Think Dungeons & Dragons character sheets, but translated for the use in Star Wa
 - React
 - Node.js
 
-## Approach
-
-## Installation Instructions
-
 ## RESTful Routing Chart
 
 <details>
