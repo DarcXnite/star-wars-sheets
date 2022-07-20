@@ -133,7 +133,7 @@ export default function Profile({
 
   const loggedIn = (
     <div className='mt-20 text-center'>
-      <h2 className='starjedi text-7xl'>Your Characters</h2>
+      <h2 className='starjedi sm:text-7xl text-4xl'>Your Characters</h2>
       {/* <a href='https://sw-eote-srd.vercel.app/character-creation/'>
         Character Creation Guide
       </a> */}
