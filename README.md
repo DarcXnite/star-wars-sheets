@@ -1,6 +1,6 @@
 # Star Wars Character Sheets
 
-## See it live [Here!](https://62d6fd69b37fce05fc6ee543--stellar-smakager-1871e6.netlify.app/characters/62d6fdf4e8e3b05b7f02972f)
+## See it live [Here!](https://62d6fd69b37fce05fc6ee543--stellar-smakager-1871e6.netlify.app/)
 
 ## Project Description
 
