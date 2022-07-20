@@ -114,24 +114,53 @@ export default function Navbar({ currentUser, handleLogout }) {
                   </label>
                 </div> */}
                 {/* end of darkmode toggler */}
-                <a
-                  href='/profile'
-                  className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium'
-                  aria-current='page'
-                >
-                  <span className='material-symbols-outlined mr-2'>
-                    account_circle
-                  </span>
-                  <span>Your Profile</span>
-                </a>
-                <div
-                  onClick={() => handleLogout()}
-                  className='bg-gray-900 flex starjedi hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:cursor-pointer'
-                  aria-current='page'
-                >
-                  <span className='material-symbols-outlined mr-2'>logout</span>
-                  <span>Sign out</span>
-                </div>
+                {currentUser ? (
+                  <React.Fragment>
+                    <a
+                      href='/profile'
+                      className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium'
+                      aria-current='page'
+                    >
+                      <span className='material-symbols-outlined mr-2'>
+                        account_circle
+                      </span>
+                      <span>Your Profile</span>
+                    </a>
+                    <div
+                      onClick={() => handleLogout()}
+                      className='bg-gray-900 flex starjedi hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:cursor-pointer'
+                      aria-current='page'
+                    >
+                      <span className='material-symbols-outlined mr-2'>
+                        logout
+                      </span>
+                      <span>Sign out</span>
+                    </div>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <a
+                      href='/'
+                      className='starjedi flex bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium'
+                      aria-current='page'
+                    >
+                      <span className='material-symbols-outlined mr-2'>
+                        login
+                      </span>
+                      <span>Login</span>
+                    </a>
+                    <a
+                      href='/register'
+                      className='bg-gray-900 flex starjedi hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium hover:cursor-pointer'
+                      aria-current='page'
+                    >
+                      <span className='material-symbols-outlined mr-2'>
+                        how_to_reg
+                      </span>
+                      <span>Register</span>
+                    </a>
+                  </React.Fragment>
+                )}
               </div>
             </div>
           </div>
