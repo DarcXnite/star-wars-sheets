@@ -28,8 +28,13 @@ export default function Character({
           <span>{name}</span>
         </div>
       </Link>
-      <button onClick={deleteCharacter}>
-        <span className='material-symbols-outlined'>delete</span>
+      <button
+        className='hover:text-red-700 hover:bg-gray-800 rounded'
+        onClick={deleteCharacter}
+      >
+        <div className='flex items-center justify-center'>
+          <span className='material-symbols-outlined'>delete</span>
+        </div>
       </button>
     </div>
   )
