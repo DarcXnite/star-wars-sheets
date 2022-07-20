@@ -224,9 +224,9 @@ export default function CharacterSheet() {
   )
 
   return (
-    <div className='mt-20'>
+    <div className='mt-16'>
       {updateCharacter ? (
-        <div className='text-center bg-green-500 py-3'>
+        <div className='text-center bg-green-500 py-3 sticky top-16'>
           Character Sheet Saved!
         </div>
       ) : null}
@@ -238,7 +238,7 @@ export default function CharacterSheet() {
         >
           Save
         </button>
-        <h2 className='flex flex-col justify-center item-center text-center'>
+        <h2 className='flex flex-col justify-center item-center text-center pt-4'>
           <span className='starjedi'>Character Sheet</span>
           <span className='text-xs'>(Be sure to save your changes!)</span>
         </h2>

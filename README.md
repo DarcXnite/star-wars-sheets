@@ -112,11 +112,7 @@ Starting with as basic functionality as we could. We added CRUD functionality to
 
 - No forseeable potential roadblocks at this time.
 
-<<<<<<< HEAD
 ## Hurdles
 
 - Handling all components without getting lost or losing code
 - Functionality for nested embedded references in backend schemas
-=======
-## Hurdles
->>>>>>> 504ccd0a6c577c06dcd9e600294b4a6d62a8f7c9
